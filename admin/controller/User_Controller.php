@@ -90,7 +90,7 @@ class User_Controller extends Base_Controller
         $user->email = $_POST['email'];
         $user->password = $_POST['password'];
         $user->role = $_POST['role'];
-        $user->status = $_POST['status'];             ;
+        $user->status = $_POST['status'];            
         $user->update();
 
         go_back();
