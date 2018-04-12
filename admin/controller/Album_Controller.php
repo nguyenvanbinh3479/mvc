@@ -87,7 +87,7 @@ class Album_Controller extends Base_Controller
         $album = $this->model->Album->findById($_POST['id']);
         $album->bai_hat_id = $_POST['bai_hat_id'];
         $album->anh = $_POST['anh'];
-        $album->ten = $_POST['ten'];            ;
+        $album->ten = $_POST['ten'];           
         $album->update();
 
         go_back();
