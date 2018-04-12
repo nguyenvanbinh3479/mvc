@@ -7,19 +7,19 @@
 	    <input type="hidden" name="c" value="user">
 	    <input type="hidden" name="a" value="store">
 	    <div class="row">   		
-	    	<h2>Edit user</h2>
+	    	<h2>Create user</h2>
 	    </div>
 	    <div class="row">   		
 	    	<label>Email:</label>
 	    </div>
 	    <div class="row">   		
-	    	<input type="text" class="form-control p-2 m-2" name="email">
+	    	<input type="text" class="form-control p-2 m-2" name="email" required>
 	    </div>
 	    <div class="row">   		
 	    	<label>Password:</label>
 	    </div>
 	    <div class="row">   	
-	    	<input type="text" class="form-control p-2 m-2" name="password">
+	    	<input type="text" class="form-control p-2 m-2" name="password" required>
 	    </div>
 	    <div class="row">   		
 	    	<label>Role:</label>

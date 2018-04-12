@@ -6,5 +6,5 @@ function string_to_int($str) {
 }
 
 function csrf_token(){
-	return bin2hex(random_bytes(16));
+	return bin2hex(mt_rand(16));
 }
