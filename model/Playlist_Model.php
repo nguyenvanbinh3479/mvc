@@ -1,8 +1,8 @@
 <?php
 class Playlist_Model{
     public $id;
-    public $ten;
 	public $user_id;
+    public $ten;
 	public $anh;
 
     public function all(){
@@ -17,8 +17,8 @@ class Playlist_Model{
 		while ($row = mysqli_fetch_assoc($result)){
             $playlist = new Playlist_Model();
             $playlist->id = $row['id'];
-            $playlist->ten = $row['ten'];
 			$playlist->user_id = $row['user_id'];
+            $playlist->ten = $row['ten'];
 			$playlist->anh = $row['anh'];
 			
             $list_playlist[] = $playlist;            
@@ -29,8 +29,8 @@ class Playlist_Model{
 
 	public function save(){
 		$conn = FT_Database::instance()->getConnection();
-		$stmt = $conn->prepare("INSERT INTO playlists (ten, user_id, anh) VALUES (?, ?, ?)");
-		$stmt->bind_param("sis", $this->ten, $this->user_id, $this->anh);
+		$stmt = $conn->prepare("INSERT INTO playlists (user_id, ten, anh) VALUES (?, ?, ?)");
+		$stmt->bind_param("iss", $this->user_id, $this->ten, $this->anh);
 		$rs = $stmt->execute();
 		$this->id = $stmt->insert_id;		
 		$stmt->close();
@@ -46,10 +46,10 @@ class Playlist_Model{
 			die('Error: ');
 
 		$row = mysqli_fetch_assoc($result);
-        $playlist = new playlist_Model();
+        $playlist = new Playlist_Model();
         $playlist->id = $row['id'];
-        $playlist->ten = $row['ten'];
         $playlist->user_id = $row['user_id'];
+        $playlist->ten = $row['ten'];
         $playlist->anh = $row['anh'];
 
         return $playlist;
@@ -65,8 +65,8 @@ class Playlist_Model{
 
 	public function update(){
 		$conn = FT_Database::instance()->getConnection();
-		$stmt = $conn->prepare("UPDATE playlists SET ten=?, user_id=?, link=? WHERE id=?");
-		$stmt->bind_param("sisi", $this->ten, $this->user_id, $this->link, $_POST['id']);
+		$stmt = $conn->prepare("UPDATE playlists SET user_id=?, ten=?, link=? WHERE id=?");
+		$stmt->bind_param("issi", $this->user_id, $this->ten, $this->link, $_POST['id']);
 		$stmt->execute();
 		$stmt->close();
 	}

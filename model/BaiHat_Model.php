@@ -1,11 +1,12 @@
 <?php 
 class BaiHat_Model{
 	public $id;
-	public $ten;
-	public $anh;
 	public $casi_id;
 	public $album_id;
 	public $theloai_id;
+	public $ten;
+	public $anh;
+	public $loi_bai_hat;
 	public $link;
 	
     public function all(){
@@ -20,11 +21,12 @@ class BaiHat_Model{
 		while ($row = mysqli_fetch_assoc($result)){
             $baihat = new BaiHat_Model();
             $baihat->id = $row['id'];
-            $baihat->ten = $row['ten'];
-			$baihat->anh = $row['anh'];
 			$baihat->casi_id = $row['casi_id'];
 			$baihat->album_id = $row['album_id'];
 			$baihat->theloai_id = $row['theloai_id'];
+            $baihat->ten = $row['ten'];
+			$baihat->anh = $row['anh'];
+			$baihat->loi_bai_hat = $row['loi_bai_hat'];
 			$baihat->link = $row['link'];
             $list_baihat[] = $baihat;            
         }
@@ -34,8 +36,8 @@ class BaiHat_Model{
 
 	public function save(){
 		$conn = FT_Database::instance()->getConnection();
-		$stmt = $conn->prepare("INSERT INTO baihats (ten, anh, casi_id, album_id, theloai_id, link) VALUES (?, ?, ?, ?, ?, ?)");
-		$stmt->bind_param("ssiiis", $this->ten, $this->anh, $this->casi_id, $this->album_id, $this->theloai_id, $this->link);
+		$stmt = $conn->prepare("INSERT INTO baihats (casi_id, album_id, theloai_id, ten, anh, loi_bai_hat, link) VALUES (?, ?, ?, ?, ?, ?, ?)");
+		$stmt->bind_param("iiissss", $this->casi_id, $this->album_id, $this->theloai_id, $this->ten, $this->anh, $this->loi_bai_hat, $this->link);
 		$rs = $stmt->execute();
 		$this->id = $stmt->insert_id;		
 		$stmt->close();
@@ -53,11 +55,12 @@ class BaiHat_Model{
 		$row = mysqli_fetch_assoc($result);
         $baihat = new BaiHat_Model();
         $baihat->id = $row['id'];
-        $baihat->ten = $row['ten'];
-		$baihat->anh = $row['anh'];
 		$baihat->casi_id = $row['casi_id'];
         $baihat->album_id = $row['album_id'];
 		$baihat->theloai_id = $row['theloai_id'];
+        $baihat->ten = $row['ten'];
+		$baihat->anh = $row['anh'];
+		$baihat->loi_bai_hat = $row['loi_bai_hat'];
 		$baihat->link = $row['link'];
 
         return $baihat;
@@ -73,8 +76,8 @@ class BaiHat_Model{
 
 	public function update(){
 		$conn = FT_Database::instance()->getConnection();
-		$stmt = $conn->prepare("UPDATE baihats SET ten=?, anh=?, casi_id=?, album_id=?, theloai_id=?, link=? WHERE id=?");
-		$stmt->bind_param("ssiiisi", $this->ten, $this->anh, $this->casi_id,,$this->album_id, $this->theloai_id, $this->link, $_POST['id']);
+		$stmt = $conn->prepare("UPDATE baihats SET casi_id=?, album_id=?, theloai_id=?, ten=?, anh=?, loi_bai_hat=?, link=? WHERE id=?");
+		$stmt->bind_param("iiissssi", $this->casi_id, $this->album_id, $this->theloai_id, $this->ten, $this->anh, $this->loi_bai_hat, $this->link, $_POST['id']);
 		$stmt->execute();
 		$stmt->close();
 	}
