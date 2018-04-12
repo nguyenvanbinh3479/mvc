@@ -16,7 +16,6 @@ class YeuThich_Model{
             $yeu_thich = new YeuThich_Model();
             $yeu_thich->baihat_id = $row['baihat_id'];
             $yeu_thich->user_id = $row['user_id'];
-            $yeu_thich->noi_dung = $row['noi_dung'];
             $list_yeu_thich[] = $yeu_thich;            
         }
 

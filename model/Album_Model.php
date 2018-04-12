@@ -15,7 +15,7 @@ class Album_Model{
 			die('Error: '.mysqli_query_error());
 
 		while ($row = mysqli_fetch_assoc($result)){
-            $album = new album_Model();
+            $album = new Album_Model();
             $album->id = $row['id'];
             $album->bai_hat_id = $row['bai_hat_id'];
             $album->anh = $row['anh'];
