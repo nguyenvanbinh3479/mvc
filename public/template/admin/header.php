@@ -27,6 +27,22 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <a class="dropdown-item" href="admin.php?c=user&a=index">Danh sach user</a>
                   <a class="dropdown-item" href="admin.php?c=user&a=create">Them moi user</a>
+                  <a class="dropdown-item" href="admin.php?c=album&a=index">Danh sach album</a>
+                  <a class="dropdown-item" href="admin.php?c=album&a=create">Them moi album</a>
+                  <a class="dropdown-item" href="admin.php?c=baihat&a=index">Danh sach baihat</a>
+                  <a class="dropdown-item" href="admin.php?c=baihat&a=create">Them moi baihat</a>
+                  <a class="dropdown-item" href="admin.php?c=binhluan&a=index">Danh sach binhluan</a>
+                  <a class="dropdown-item" href="admin.php?c=binhluan&a=create">Them moi binhluan</a>
+                  <a class="dropdown-item" href="admin.php?c=casi&a=index">Danh sach casi</a>
+                  <a class="dropdown-item" href="admin.php?c=casi&a=create">Them moi casi</a>
+                  <a class="dropdown-item" href="admin.php?c=chitietplaylist&a=index">Danh sach chitietplaylist</a>
+                  <a class="dropdown-item" href="admin.php?c=chitietplaylist&a=create">Them moi chitietplaylist</a>
+                  <a class="dropdown-item" href="admin.php?c=playlist&a=index">Danh sach playlist</a>
+                  <a class="dropdown-item" href="admin.php?c=playlist&a=create">Them moi playlist</a>
+                  <a class="dropdown-item" href="admin.php?c=theloai&a=index">Danh sach theloai</a>
+                  <a class="dropdown-item" href="admin.php?c=theloai&a=create">Them moi theloai</a>
+                  <a class="dropdown-item" href="admin.php?c=yeuthich&a=index">Danh sach yeuthich</a>
+                  <a class="dropdown-item" href="admin.php?c=yeuthich&a=create">Them moi yeuthich</a>
                 </div>
               </li>              
             </ul>            
