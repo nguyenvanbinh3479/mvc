@@ -10,15 +10,6 @@
 	    	<h2>Create album</h2>
 	    </div>
 	    <div class="row">   		
-	    	<label>Bai Hat:</label>
-	    </div>
-	    <div class="row">
-	    	<select class="form-control p-2 m-2" name="bai_hat_id">
-	    		<option value="admin">Admin</option>
-	    		<option value="user">User</option>
-	    	</select>
-	    </div>
-	    <div class="row">   		
 	    	<label>anh:</label>
 	    </div>
 	    <div class="row">   	
