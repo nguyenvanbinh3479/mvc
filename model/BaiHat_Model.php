@@ -8,7 +8,7 @@ class BaiHat_Model{
 	public $anh;
 	public $loi_bai_hat;
 	public $link;
-	
+
     public function all(){
 		$conn = FT_Database::instance()->getConnection();
 		$sql = 'select * from baihats';
@@ -19,7 +19,7 @@ class BaiHat_Model{
 			die('Error: '.mysqli_query_error());
 
 		while ($row = mysqli_fetch_assoc($result)){
-            $baihat = new BaiHat_Model();
+			$baihat = new BaiHat_Model();
             $baihat->id = $row['id'];
 			$baihat->casi_id = $row['casi_id'];
 			$baihat->album_id = $row['album_id'];
@@ -28,9 +28,9 @@ class BaiHat_Model{
 			$baihat->anh = $row['anh'];
 			$baihat->loi_bai_hat = $row['loi_bai_hat'];
 			$baihat->link = $row['link'];
-            $list_baihat[] = $baihat;            
+			$list_baihat[] = $baihat;  
         }
-
+		// print_r ($list_ten_baihat);
         return $list_baihat;
 	}
 
