@@ -9,7 +9,6 @@
         <thead>
           <tr>
             <th>STT</th>
-            <th>Bai Hat</th>
             <th>anh</th>
             <th>ten</th>
             <th>Edit</th>
@@ -20,7 +19,6 @@
         <?php foreach ($list_album as $album) { ?>    
           <tr>
             <td><?php echo increment_once($index); ?></td>
-            <td><?php echo $album->bai_hat_id; ?></td>
             <td><?php echo $album->anh; ?></td>
             <td><?php echo $album->ten; ?></td>
             <td><a href="admin.php?c=album&a=edit&id=<?php echo $album->id; ?>">Edit</a></td>
