@@ -5,7 +5,7 @@
     <div class="row">
         <h3>Danh sach user</h3>
     </div>
-    <table class="table">
+    <table class="table table-hover">
         <thead>
           <tr>
             <th>STT</th>
