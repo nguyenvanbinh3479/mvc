@@ -52,7 +52,6 @@ class Album_Controller extends Base_Controller
     public function store()
     {        
         $this->model->load('Album');
-        $this->model->Album->bai_hat_id = $_POST['bai_hat_id'];
         $this->model->Album->anh = $_POST['anh'];
         $this->model->Album->ten = $_POST['ten'];
         $this->model->Album->save();
@@ -85,7 +84,6 @@ class Album_Controller extends Base_Controller
     {        
         $this->model->load('Album');
         $album = $this->model->Album->findById($_POST['id']);
-        $album->bai_hat_id = $_POST['bai_hat_id'];
         $album->anh = $_POST['anh'];
         $album->ten = $_POST['ten'];           
         $album->update();
