@@ -14,8 +14,7 @@ class BaiHat_Controller extends Base_Controller
             'title' => 'index',
             'list_baihat' => $list_baihat
         );
-
-        // Load view
+       
         $this->view->load('baihats/index', $data);
     }
 
@@ -42,7 +41,24 @@ class BaiHat_Controller extends Base_Controller
     */
     public function create()
     {        
-        $this->view->load('baihats/create');
+
+        $this->model->load('Album');
+        $this->model->load('CaSi');
+        $this->model->load('TheLoai');
+
+        $list_album = $this->model->Album->all();
+        $list_casi = $this->model->CaSi->all();
+        $list_theloai = $this->model->TheLoai->all();
+
+        $data = array(
+            'title' => 'index',
+            'list_album' => $list_album,
+            'list_casi' => $list_casi,
+            'list_theloai' => $list_theloai
+        );
+
+        $this->view->load('baihats/create',$data);
+
     }
 
      /**
