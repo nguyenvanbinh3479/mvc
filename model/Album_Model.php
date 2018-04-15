@@ -1,13 +1,8 @@
 <?php
 class Album_Model{
 	public $id;
-<<<<<<< HEAD
-    
-=======
->>>>>>> d8aa10e73901e31ae02c4def5a0cc04dc26abe48
     public $anh;
     public $ten;
-
     public function all(){
 		$conn = FT_Database::instance()->getConnection();
 		$sql = 'select * from albums';
@@ -20,10 +15,6 @@ class Album_Model{
 		while ($row = mysqli_fetch_assoc($result)){
             $album = new Album_Model();
             $album->id = $row['id'];
-<<<<<<< HEAD
-            
-=======
->>>>>>> d8aa10e73901e31ae02c4def5a0cc04dc26abe48
             $album->anh = $row['anh'];
             $album->ten = $row['ten'];
             $list_album[] = $album;            
