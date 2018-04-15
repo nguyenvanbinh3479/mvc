@@ -19,7 +19,7 @@
 	    	<label>Password:</label>
 	    </div>
 	    <div class="row">   	
-	    	<input type="text" class="form-control p-2 m-2" name="password" required>
+	    	<input type="password" class="form-control p-2 m-2" name="password" required>
 	    </div>
 	    <div class="row">   		
 	    	<label>Role:</label>
