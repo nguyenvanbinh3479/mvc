@@ -3,8 +3,8 @@ class Album_Model{
 	public $id;
     public $bai_hat_id;
     public $anh;
-    public $ten;
-
+	public $ten;
+	echo "nothings";
     public function all(){
 		$conn = FT_Database::instance()->getConnection();
 		$sql = 'select * from albums';
