@@ -2,8 +2,7 @@
 class Album_Model{
 	public $id;
     public $anh;
-	public $ten;
-	echo "nothings";
+    public $ten;
     public function all(){
 		$conn = FT_Database::instance()->getConnection();
 		$sql = 'select * from albums';
@@ -60,6 +59,14 @@ class Album_Model{
 	}
 
 	public function update(){
+		$conn = FT_Database::instance()->getConnection();
+		$stmt = $conn->prepare("UPDATE albums SET anh=?, ten=? WHERE id=?");
+		$stmt->bind_param("ssi", $this->anh, $this->ten, $_POST['id']);
+		$stmt->execute();
+		$stmt->close();
+	}
+
+	public function change(){
 		$conn = FT_Database::instance()->getConnection();
 		$stmt = $conn->prepare("UPDATE albums SET anh=?, ten=? WHERE id=?");
 		$stmt->bind_param("ssi", $this->anh, $this->ten, $_POST['id']);
