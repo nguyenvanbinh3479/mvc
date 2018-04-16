@@ -65,5 +65,10 @@ class Album_Model{
 		$stmt->execute();
 		$stmt->close();
 	}
+
+	public public function FunctionName(Type $var = null)
+	{
+		# code...
+	}
     
 }
