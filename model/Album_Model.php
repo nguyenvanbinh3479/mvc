@@ -66,9 +66,12 @@ class Album_Model{
 		$stmt->close();
 	}
 
-	public public function FunctionName(Type $var = null)
-	{
-		# code...
+	public function change(){
+		$conn = FT_Database::instance()->getConnection();
+		$stmt = $conn->prepare("UPDATE albums SET anh=?, ten=? WHERE id=?");
+		$stmt->bind_param("ssi", $this->anh, $this->ten, $_POST['id']);
+		$stmt->execute();
+		$stmt->close();
 	}
     
 }
