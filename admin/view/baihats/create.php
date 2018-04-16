@@ -24,8 +24,9 @@
 	    </div>
 	    <div class="row">   	
 			<select class="form-control p-2 m-2" name="album_id">
-	    		<option value="visible">Visible</option>
-	    		<option value="disbale">Disable</option>
+	    		<?php foreach ($list_album as $key => $value) { 
+					$arr = (array) $value;?>
+					<option value="<?php print_r($arr['id'])?>"> <?php print_r($arr['ten']); }?></option>
 	    	</select>
 	    </div>
 	    <div class="row">   		
@@ -33,8 +34,9 @@
 	    </div>
 	    <div class="row">
 	    	<select class="form-control p-2 m-2" name="theloai_id">
-	    		<option value="admin">Admin</option>
-	    		<option value="baihat">baihat</option>
+	    		<?php foreach ($list_theloai as $key => $value) {
+					$arr = (array) $value;?>
+					<option value="<?php print_r($arr['id'])?>"><?php print_r($arr['ten']); }?></option>
 	    	</select>
 	    </div>
 	    <div class="row">   		
