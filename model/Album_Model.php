@@ -2,12 +2,7 @@
 class Album_Model{
 	public $id;
     public $anh;
-<<<<<<< HEAD
     public $ten;
-=======
-	public $ten;
-	echo "nothings";
->>>>>>> e6674155036bce76b6988b4bbfa68beeeea5f1c6
     public function all(){
 		$conn = FT_Database::instance()->getConnection();
 		$sql = 'select * from albums';
