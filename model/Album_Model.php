@@ -2,7 +2,9 @@
 class Album_Model{
 	public $id;
     public $anh;
-    public $ten;
+	public $ten;
+	public $casi_id;
+	
     public function all(){
 		$conn = FT_Database::instance()->getConnection();
 		$sql = 'select * from albums';
@@ -17,6 +19,7 @@ class Album_Model{
             $album->id = $row['id'];
             $album->anh = $row['anh'];
             $album->ten = $row['ten'];
+            $album->casi_id = $row['casi_id'];
             $list_album[] = $album;            
         }
 
@@ -25,8 +28,8 @@ class Album_Model{
 
 	public function save(){
 		$conn = FT_Database::instance()->getConnection();
-		$stmt = $conn->prepare("INSERT INTO albums (anh, ten) VALUES (?, ?)");
-		$stmt->bind_param("ss", $this->anh, $this->ten);
+		$stmt = $conn->prepare("INSERT INTO albums (anh, ten) VALUES (?, ?, ?)");
+		$stmt->bind_param("ssi", $this->anh, $this->ten, $this->casi_id);
 		$rs = $stmt->execute();
 		$this->id = $stmt->insert_id;		
 		$stmt->close();
@@ -46,6 +49,7 @@ class Album_Model{
         $album->id = $row['id'];
         $album->anh = $row['anh'];
         $album->ten = $row['ten'];
+        $album->casi_id = $row['casi_id'];
 
         return $album;
 	}
@@ -60,8 +64,8 @@ class Album_Model{
 
 	public function update(){
 		$conn = FT_Database::instance()->getConnection();
-		$stmt = $conn->prepare("UPDATE albums SET anh=?, ten=? WHERE id=?");
-		$stmt->bind_param("ssi", $this->anh, $this->ten, $_POST['id']);
+		$stmt = $conn->prepare("UPDATE albums SET anh=?, ten=?, casi_id=? WHERE id=?");
+		$stmt->bind_param("ssii", $this->anh, $this->ten, $this->casi_id, $_POST['id']);
 		$stmt->execute();
 		$stmt->close();
 	}

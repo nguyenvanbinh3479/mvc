@@ -15,7 +15,9 @@
 	    </div>
 		<div class="row">
 	    	<select class="form-control p-2 m-2" name="casi_id">
-	    		<option value="visible"><?php echo $baihat->casi_id; ?></option>
+	    		<option value="<?php $baihat->casi_id; ?>"><?php foreach ($list_casi as $key => $value) {
+					$arr = (array) $value;print_r($arr['ten']) ;}?>
+				</option>
 	    	</select>
 	    </div>
 	    <div class="row">   		
@@ -31,7 +33,7 @@
 	    </div>
 	    <div class="row">
 	    	<select class="form-control p-2 m-2" name="theloai_id">
-	    		<option value="admin"><?php echo $baihat->casi_id; ?></option>
+	    		<option value="admin"><?php echo $baihat->theloai_id; ?></option>
 	    	</select>
 	    </div>
 	    <div class="row">   		
