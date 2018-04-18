@@ -87,7 +87,12 @@ class BaiHat_Controller extends Base_Controller
     public function edit()
     {        
         $this->model->load('BaiHat');
+        $this->model->load('CaSi');
+        $this->model->load('TheLoai');
+
         $baihat = $this->model->BaiHat->findById($_GET['id']);
+        $casi = $this->model->CaSi->findById($_GET['id']);
+        $theloai = $this->model->TheLoai->findById($_GET['id']);
         $data = array(
             'title' => 'edit',
             'baihat' => $baihat
