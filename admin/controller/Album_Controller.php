@@ -10,15 +10,19 @@ class Album_Controller extends Base_Controller
     {        
         $this->model->load('Album');
         $this->model->load('CaSi');
+        // $this->model->load('TheLoai');
         $list_album = $this->model->Album->all();
         $list_casi = $this->model->CaSi->all();
+        // $list_theloai = $this->model->TheLoai->all();
         $data = array(
             'title' => 'index',
             'list_album' => $list_album,
             'list_casi' => $list_casi
+            // 'list_theloai' => $list_theloai
         );
-
+        
         // Load view
+
         $this->view->load('albums/index', $data);
     }
 
@@ -45,7 +49,18 @@ class Album_Controller extends Base_Controller
     */
     public function create()
     {        
-        $this->view->load('albums/create');
+
+        $this->model->load('CaSi');
+        $this->model->load('TheLoai');
+        $list_casi = $this->model->CaSi->all();
+        $list_theloai = $this->model->TheLoai->all();
+        $data = array(
+            'title' => 'index',
+            'list_casi' => $list_casi,
+            'list_theloai' => $list_theloai
+        );
+
+        $this->view->load('albums/create',$data);
     }
 
      /**
