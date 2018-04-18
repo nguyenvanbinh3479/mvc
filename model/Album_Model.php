@@ -1,10 +1,10 @@
 <?php
 class Album_Model{
 	public $id;
-    public $anh;
+  public $anh;
 	public $ten;
 	public $casi_id;
-	
+
     public function all(){
 		$conn = FT_Database::instance()->getConnection();
 		$sql = 'select * from albums';
@@ -20,7 +20,7 @@ class Album_Model{
             $album->anh = $row['anh'];
             $album->ten = $row['ten'];
             // $album->casi_id = $row['casi_id'];
-            $list_album[] = $album;            
+            $list_album[] = $album;
         }
 
         return $list_album;
@@ -31,7 +31,7 @@ class Album_Model{
 		$stmt = $conn->prepare("INSERT INTO albums (anh, ten) VALUES (?, ?, ?)");
 		$stmt->bind_param("ssi", $this->anh, $this->ten, $this->casi_id);
 		$rs = $stmt->execute();
-		$this->id = $stmt->insert_id;		
+		$this->id = $stmt->insert_id;
 		$stmt->close();
 		return $rs;
 	}
@@ -69,5 +69,5 @@ class Album_Model{
 		$stmt->execute();
 		$stmt->close();
 	}
-    
+
 }
