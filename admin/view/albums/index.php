@@ -11,7 +11,8 @@
             <th>STT</th>
             <th>anh</th>
             <th>ten</th>
-            <th>Edit</th>
+            <th>casi</th>
+            <!-- <th>Edit</th> -->
             <th>Delete</th>
           </tr>
         </thead>

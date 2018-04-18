@@ -9,10 +9,13 @@ class Album_Controller extends Base_Controller
     public function index()
     {        
         $this->model->load('Album');
+        $this->model->load('CaSi');
         $list_album = $this->model->Album->all();
+        $list_casi = $this->model->CaSi->all();
         $data = array(
             'title' => 'index',
-            'list_album' => $list_album
+            'list_album' => $list_album,
+            'list_casi' => $list_casi
         );
 
         // Load view
@@ -54,6 +57,7 @@ class Album_Controller extends Base_Controller
         $this->model->load('Album');
         $this->model->Album->anh = $_POST['anh'];
         $this->model->Album->ten = $_POST['ten'];
+        $this->model->Album->casi_id = $_POST['casi_id'];
         $this->model->Album->save();
 
         go_back();
@@ -85,7 +89,8 @@ class Album_Controller extends Base_Controller
         $this->model->load('Album');
         $album = $this->model->Album->findById($_POST['id']);
         $album->anh = $_POST['anh'];
-        $album->ten = $_POST['ten'];           
+        $album->ten = $_POST['ten'];  
+        $album->casi_id = $_POST['casi_id'];           
         $album->update();
 
         go_back();
