@@ -1,5 +1,5 @@
 <?php
-class Album_Model{
+class TacGia_Model{
   public $id;
   public $anh;
   public $ten;
@@ -9,13 +9,13 @@ class Album_Model{
     $conn = FT_Database::instance()->getConnection();
     $sql = 'select * from tacgias';
     $result = mysqli_query($conn, $sql);
-    $list_album = array();
+    $list_tacgia = array();
 
     if(!$result)
       die('Error: '.mysqli_query_error());
 
     while ($row = mysqli_fetch_assoc($result)){
-            $tacgia = new Album_Model();
+            $tacgia = new TacGia_Model();
             $tacgia->id = $row['id'];
             $tacgia->anh = $row['anh'];
             $tacgia->ten = $row['ten'];
@@ -28,8 +28,8 @@ class Album_Model{
 
   public function save(){
     $conn = FT_Database::instance()->getConnection();
-    $stmt = $conn->prepare("INSERT INTO tacgias (anh, ten, thongtin) VALUES (?, ?, ?,?)");
-    $stmt->bind_param("ssi", $this->anh, $this->ten, $this->thongtin);
+    $stmt = $conn->prepare("INSERT INTO tacgias (anh, ten, thongtin) VALUES (?, ?, ?)");
+    $stmt->bind_param("sss", $this->anh, $this->ten, $this->thongtin);
     $rs = $stmt->execute();
     $this->id = $stmt->insert_id;
     $stmt->close();
@@ -38,20 +38,20 @@ class Album_Model{
 
   public function findById($id){
     $conn = FT_Database::instance()->getConnection();
-    $sql = 'select * from tacgia where id='.$id;
+    $sql = 'select * from tacgias where id='.$id;
     $result = mysqli_query($conn, $sql);
 
     if(!$result)
       die('Error: ');
 
     $row = mysqli_fetch_assoc($result);
-        $album = new Album_Model();
-        $album->id = $row['id'];
-        $album->anh = $row['anh'];
-        $album->ten = $row['ten'];
-        $album->thongtin = $row['thongtin'];
+        $tacgia = new TacGia_Model();
+        $tacgia->id = $row['id'];
+        $tacgia->anh = $row['anh'];
+        $tacgia->ten = $row['ten'];
+        $tacgia->thongtin = $row['thongtin'];
 
-        return $album;
+        return $tacgia;
   }
 
   public function delete(){
@@ -64,8 +64,8 @@ class Album_Model{
 
   public function update(){
     $conn = FT_Database::instance()->getConnection();
-    $stmt = $conn->prepare("UPDATE albums SET anh=?, ten=?, thongtin=? WHERE id=?");
-    $stmt->bind_param("ssii", $this->anh, $this->ten, $this->thongtin, $_POST['id']);
+    $stmt = $conn->prepare("UPDATE tacgias SET anh=?, ten=?, thongtin=? WHERE id=?");
+    $stmt->bind_param("sssi", $this->anh, $this->ten, $this->thongtin, $_POST['id']);
     $stmt->execute();
     $stmt->close();
   }

@@ -1,6 +1,6 @@
 <?php if ( ! defined('PATH_SYSTEM')) die ('Bad requested!');
 
-class User_Controller extends Base_Controller
+class Tacgia_Controller extends Base_Controller
 {
     /**
     * action index: show all users
@@ -12,7 +12,7 @@ class User_Controller extends Base_Controller
         $list_tacgia = $this->model->TacGia->all();
         $data = array(
             'title' => 'index',
-            'list_user' => $list_tacgia
+            'list_tacgia' => $list_tacgia
         );
 
         // Load view
@@ -29,7 +29,7 @@ class User_Controller extends Base_Controller
         $tacgia = $this->model->TacGia->findById($_GET['id']);
         $data = array(
             'title' => 'show',
-            'user' => $tacgia
+            'tacgia' => $tacgia
         );
 
         // Load view
@@ -51,7 +51,7 @@ class User_Controller extends Base_Controller
     */
     public function store()
     {
-        $this->model->load('TacGias');
+        $this->model->load('TacGia');
         $this->model->TacGia->anh = $_POST['anh'];
         $this->model->TacGia->ten = $_POST['ten'];
         $this->model->TacGia->thongtin = $_POST['thongtin'];
@@ -66,11 +66,11 @@ class User_Controller extends Base_Controller
     */
     public function edit()
     {
-        $this->model->load('TacGias');
+        $this->model->load('TacGia');
         $tacgia = $this->model->TacGias->findById($_GET['id']);
         $data = array(
             'title' => 'edit',
-            'user' => $tacgia
+            'tacgia' => $tacgia
         );
 
         // Load view
@@ -83,7 +83,7 @@ class User_Controller extends Base_Controller
     */
     public function update()
     {
-        $this->model->load('TacGias');
+        $this->model->load('TacGia');
         $tacgia = $this->model->TacGias->findById($_POST['id']);
         $tacgia->anh = $_POST['anh'];
         $tacgia->ten = $_POST['ten'];
@@ -99,7 +99,7 @@ class User_Controller extends Base_Controller
     */
     public function delete()
     {
-        $this->model->load('TacGias');
+        $this->model->load('TacGia');
         $tacgia = $this->model->TacGias->findById($_GET['id']);
         $tacgia->delete();
 
