@@ -14,10 +14,8 @@
 	    	<label>Ca si:</label>
 	    </div>
 		<div class="row">
-	    	<select class="form-control p-2 m-2" name="casi_id">
-	    		<option value="<?php $baihat->casi_id; ?>"><?php foreach ($list_casi as $key => $value) {
-					$arr = (array) $value;print_r($arr['ten']) ;}?>
-				</option>
+			<select class="form-control p-2 m-2" name="album_id">
+				<option value="visible"><?php echo $baihat->casi_id;?></option>
 	    	</select>
 	    </div>
 	    <div class="row">   		

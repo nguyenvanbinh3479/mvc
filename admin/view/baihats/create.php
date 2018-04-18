@@ -16,7 +16,7 @@
 	    	<select class="form-control p-2 m-2" name="casi_id">
 	    		 <?php foreach ( $list_casi as $key => $value) { 
 					 $arr = (array) $value;?>
- 			<option value="<?php print_r($arr['id']); ?> "> <?php print_r($arr['ten']) ; }?></option>
+ 					<option value="<?php print_r($arr['id']); ?> "> <?php print_r($arr['ten']) ; }?></option>
 	    	</select>
 	    </div>
 	    <div class="row">   		
