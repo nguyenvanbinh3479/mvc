@@ -22,26 +22,6 @@
 	    	<input type="text" class="form-control p-2 m-2" name="ten" required>
 	    </div>
 	     <div class="row">   		
-	    	<label>ten:</label>
-	    </div>
-		<div class="row">
-	    	<select class="form-control p-2 m-2" name="casi_id">
-	    		 <?php foreach ( $list_casi as $key => $value) { 
-					 $arr = (array) $value;?>
- 					<option value="<?php print_r($arr['id']); ?> "> <?php print_r($arr['ten']) ; }?></option>
-	    	</select>
-	    </div>
-	     <div class="row">   		
-	    	<label>baihat:</label>
-	    </div>
-		<div class="row">
-	    	<select class="form-control p-2 m-2" name="casi_id">
-	    		 <?php foreach ( $list_casi as $key => $value) { 
-					 $arr = (array) $value;?>
- 					<option value="<?php print_r($arr['id']); ?> "> <?php print_r($arr['ten']) ; }?></option>
-	    	</select>
-	    </div>
-	     <div class="row">   		
 	    	<label>Ca si:</label>
 	    </div>
 		<div class="row">
@@ -55,8 +35,8 @@
 	    	<label>theloai:</label>
 	    </div>
 		<div class="row">
-	    	<select class="form-control p-2 m-2" name="casi_id">
-	    		 <?php foreach ( $list_casi as $key => $value) { 
+	    	<select class="form-control p-2 m-2" name="theloai_id">
+	    		 <?php foreach ( $list_theloai as $key => $value) { 
 					 $arr = (array) $value;?>
  					<option value="<?php print_r($arr['id']); ?> "> <?php print_r($arr['ten']) ; }?></option>
 	    	</select>
