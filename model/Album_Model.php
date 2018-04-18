@@ -19,7 +19,7 @@ class Album_Model{
             $album->id = $row['id'];
             $album->anh = $row['anh'];
             $album->ten = $row['ten'];
-            $album->casi_id = $row['casi_id'];
+            // $album->casi_id = $row['casi_id'];
             $list_album[] = $album;            
         }
 

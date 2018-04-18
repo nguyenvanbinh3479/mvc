@@ -11,8 +11,8 @@
             <th>STT</th>
             <th>anh</th>
             <th>ten</th>
-            <th>casi</th>
-            <!-- <th>Edit</th> -->
+            <!-- <th>casi</th> -->
+            <th>Edit</th>
             <th>Delete</th>
           </tr>
         </thead>
@@ -22,6 +22,7 @@
             <td><?php echo increment_once($index); ?></td>
             <td><?php echo $album->anh; ?></td>
             <td><?php echo $album->ten; ?></td>
+            <!-- <td><?php echo $album->casi_id; ?></td> -->
             <td><a href="admin.php?c=album&a=edit&id=<?php echo $album->id; ?>">Edit</a></td>
             <td><a href="admin.php?c=album&a=delete&id=<?php echo $album->id; ?>">Delete</a</td>
           </tr>
