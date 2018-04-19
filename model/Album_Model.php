@@ -1,11 +1,15 @@
 <?php
 class Album_Model{
 	public $id;
-    public $anh;
+  public $anh;
 	public $ten;
 	public $casi_id;
+<<<<<<< HEAD
 	public $theloai_id;
 	
+=======
+
+>>>>>>> 5af5a24f786ef4eb25d3e11f1bf4853b2dccd853
     public function all(){
 		$conn = FT_Database::instance()->getConnection();
 		$sql = 'select * from albums';
@@ -20,9 +24,14 @@ class Album_Model{
             $album->id = $row['id'];
             $album->anh = $row['anh'];
             $album->ten = $row['ten'];
+<<<<<<< HEAD
             $album->casi_id = $row['casi_id'];
             $album->theloai_id = $row['theloai_id'];
             $list_album[] = $album;            
+=======
+            // $album->casi_id = $row['casi_id'];
+            $list_album[] = $album;
+>>>>>>> 5af5a24f786ef4eb25d3e11f1bf4853b2dccd853
         }
 
         return $list_album;
@@ -33,7 +42,7 @@ class Album_Model{
 		$stmt = $conn->prepare("INSERT INTO albums (anh, ten,casi_id, theloai_id) VALUES (?, ?, ?, ?)");
 		$stmt->bind_param("ssii", $this->anh, $this->ten, $this->casi_id, $this->theloai_id);
 		$rs = $stmt->execute();
-		$this->id = $stmt->insert_id;		
+		$this->id = $stmt->insert_id;
 		$stmt->close();
 		return $rs;
 	}
@@ -72,5 +81,5 @@ class Album_Model{
 		$stmt->execute();
 		$stmt->close();
 	}
-    
+
 }
