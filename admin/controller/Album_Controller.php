@@ -20,8 +20,9 @@ class Album_Controller extends Base_Controller
             'list_casi' => $list_casi,
             'list_theloai' => $list_theloai
         );
-
+      
         // Load view
+
         $this->view->load('albums/index', $data);
     }
 
@@ -47,7 +48,7 @@ class Album_Controller extends Base_Controller
     * method: GET
     */
     public function create()
-    {   
+    {        
 
         $this->model->load('CaSi');
         $this->model->load('TheLoai');
