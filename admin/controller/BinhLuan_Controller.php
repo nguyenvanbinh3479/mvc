@@ -42,6 +42,18 @@ class BinhLuan_Controller extends Base_Controller
     */
     public function create()
     {        
+        $this->model->load('BaiHat');
+        $this->model->load('User');
+        
+        $list_baihat = $this->model->BaiHat->all();
+        $list_user = $this->model->User->all();
+
+        $data = array(
+            'title' => 'index',
+            'list_baihat' => $list_baihat,
+            'list_user' => $list_user,
+        );
+
         $this->view->load('binhluans/create');
     }
 
@@ -67,7 +79,12 @@ class BinhLuan_Controller extends Base_Controller
     public function edit()
     {        
         $this->model->load('BinhLuan');
+        $this->model->load('BaiHat');
+        $this->model->load('User');
+
         $binhluan = $this->model->BinhLuan->findById($_GET['id']);
+        $baihat = $this->model->BaiHat->findById($_GET['id']);
+        $user = $this->model->User->findById($_GET['id']);
         $data = array(
             'title' => 'edit',
             'binhluan' => $binhluan

@@ -10,7 +10,7 @@
           <tr>
             <th>STT</th>
             <th>bai hat</th>
-            <th>binhluan</th>
+            <th>user</th>
             <th>noi_dung</th>
             <th>Edit</th>
             <th>Delete</th>
