@@ -20,8 +20,9 @@
         <?php foreach ($list_playlist as $playlist) { ?>    
           <tr>
             <td><?php echo increment_once($index); ?></td>
-            <td><?php echo $playlist->email; ?></td>
-            <td><?php echo $playlist->role; ?></td>
+            <td><?php echo $playlist->user_id; ?></td>
+            <td><?php echo $playlist->ten; ?></td>
+            <td><?php echo $playlist->anh; ?></td>
             <td><a href="admin.php?c=playlist&a=edit&id=<?php echo $playlist->id; ?>">Edit</a></td>
             <td><a href="admin.php?c=playlist&a=delete&id=<?php echo $playlist->id; ?>">Delete</a></td>
           </tr>
