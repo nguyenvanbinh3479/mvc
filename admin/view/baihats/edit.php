@@ -34,6 +34,14 @@
 	    		<option value="admin"><?php echo $baihat->theloai_id; ?></option>
 	    	</select>
 	    </div>
+		<div class="row">   		
+	    	<label>Tac Gia:</label>
+	    </div>
+	    <div class="row">
+	    	<select class="form-control p-2 m-2" name="tacgia_id">
+	    		<option value="admin"><?php echo $baihat->tacgia_id; ?></option>
+	    	</select>
+	    </div>
 	    <div class="row">   		
 	    	<label>Ten Bai Hat:</label>
 	    </div>
