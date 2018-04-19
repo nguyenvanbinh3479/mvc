@@ -21,7 +21,6 @@
 	    <div class="row">   	
 	    	<input type="text" class="form-control p-2 m-2" name="ten" required>
 	    </div>
-	   
 	     <div class="row">   		
 	    	<label>Ca si:</label>
 	    </div>
@@ -32,15 +31,13 @@
  					<option value="<?php print_r($arr['id']); ?> "> <?php print_r($arr['ten']) ; }?></option>
 	    	</select>
 	    </div>
-	     <div class="row">   		
-	    	<label>theloai:</label>
-	    </div>
-		<div class="row">
-	    	<select class="form-control p-2 m-2" name="casi_id">
+    <div class="row">
+	    	<select class="form-control p-2 m-2" name="theloai_id">
 	    		 <?php foreach ( $list_theloai as $key => $value) { 
 					 $arr = (array) $value;?>
  					<option value="<?php print_r($arr['id']); ?> "> <?php print_r($arr['ten']) ; }?></option>
 	    	</select>
+	    </div>
 	    </div>
 	    <div class="row">   
 	    	<button class="btn btn-primary p-2 m-2" type="submit">Apply</button>

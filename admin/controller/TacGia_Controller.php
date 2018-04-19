@@ -1,6 +1,6 @@
 <?php if ( ! defined('PATH_SYSTEM')) die ('Bad requested!');
 
-class Tacgia_Controller extends Base_Controller
+class TacGia_Controller extends Base_Controller
 {
     /**
     * action index: show all users
@@ -67,7 +67,7 @@ class Tacgia_Controller extends Base_Controller
     public function edit()
     {
         $this->model->load('TacGia');
-        $tacgia = $this->model->TacGias->findById($_GET['id']);
+        $tacgia = $this->model->TacGia->findById($_GET['id']);
         $data = array(
             'title' => 'edit',
             'tacgia' => $tacgia
@@ -84,7 +84,7 @@ class Tacgia_Controller extends Base_Controller
     public function update()
     {
         $this->model->load('TacGia');
-        $tacgia = $this->model->TacGias->findById($_POST['id']);
+        $tacgia = $this->model->TacGia->findById($_POST['id']);
         $tacgia->anh = $_POST['anh'];
         $tacgia->ten = $_POST['ten'];
         $tacgia->thongtin = $_POST['thongtin'];
@@ -100,7 +100,7 @@ class Tacgia_Controller extends Base_Controller
     public function delete()
     {
         $this->model->load('TacGia');
-        $tacgia = $this->model->TacGias->findById($_GET['id']);
+        $tacgia = $this->model->TacGia->findById($_GET['id']);
         $tacgia->delete();
 
         go_back();
