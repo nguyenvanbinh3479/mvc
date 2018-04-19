@@ -3,16 +3,16 @@
 
 <head>
     <meta charset="utf-8" />
-    <link rel="apple-touch-icon" sizes="76x76" href="public/img/msc-icon.png"/>
-    <link rel="icon" type="image/png" href="public/img/msc-icon.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/msc-icon.png"/>
+    <link rel="icon" type="image/png" href="assets/img/msc-icon.png" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>M.S.C - Home</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
     <!-- Bootstrap core CSS     -->
-    <link href="public/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
     <!--  Material Dashboard CSS    -->
-    <link href="public/css/material-dashboard.css?v=1.2.0" rel="stylesheet" />
+    <link href="assets/css/material-dashboard.css?v=1.2.0" rel="stylesheet" />
     <!--     Fonts and icons     -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons" rel='stylesheet'>
@@ -20,7 +20,7 @@
 
 <body>
     <div class="wrapper">
-        <div class="sidebar" data-color="red" data-image="public/img/sidebar-2.jpg">
+        <div class="sidebar" data-color="red" data-image="assets/img/sidebar-2.jpg">
             <div class="logo">
                 <a href="index.php" class="simple-text">
                     M.S.C - Universe
@@ -406,21 +406,21 @@
     </div>
 </body>
 <!--   Core JS Files   -->
-<script src="public/js/jquery-3.2.1.min.js" type="text/javascript"></script>
-<script src="public/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="public/js/material.min.js" type="text/javascript"></script>
+<script src="assets/js/jquery-3.2.1.min.js" type="text/javascript"></script>
+<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="assets/js/material.min.js" type="text/javascript"></script>
 <!--  Charts Plugin -->
-<script src="public/js/chartist.min.js"></script>
+<script src="assets/js/chartist.min.js"></script>
 <!--  Dynamic Elements plugin -->
-<script src="public/js/arrive.min.js"></script>
+<script src="assets/js/arrive.min.js"></script>
 <!--  PerfectScrollbar Library -->
-<script src="public/js/perfect-scrollbar.jquery.min.js"></script>
+<script src="assets/js/perfect-scrollbar.jquery.min.js"></script>
 <!--  Notifications Plugin    -->
-<script src="public/js/bootstrap-notify.js"></script>
+<script src="assets/js/bootstrap-notify.js"></script>
 <!-- Material Dashboard javascript methods -->
-<script src="public/js/material-dashboard.js?v=1.2.0"></script>
+<script src="assets/js/material-dashboard.js?v=1.2.0"></script>
 <!-- Material Dashboard DEMO methods, don't include it in your project! -->
-<script src="public/js/demo.js"></script>
+<script src="assets/js/demo.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
 
