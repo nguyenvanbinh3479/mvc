@@ -12,7 +12,8 @@
             <th>anh</th>
             <th>ten</th>
             <th>casi</th>
-            <!-- <th>Edit</th> -->
+            <th>theloai</th>
+            <th>Edit</th>
             <th>Delete</th>
           </tr>
         </thead>
@@ -22,6 +23,25 @@
             <td><?php echo increment_once($index); ?></td>
             <td><?php echo $album->anh; ?></td>
             <td><?php echo $album->ten; ?></td>
+            <?php 
+            $arr = (array) $list_casi;
+            foreach ($arr as $key => $value) {
+                $casi = (array) $value;
+                if ($casi['id'] == $album->casi_id)   
+                   echo '<td> '. $casi['ten'] .' </td>';
+            }
+           
+            ?>
+            <?php 
+            $arr = (array) $list_theloai;
+            foreach ($arr as $key => $value) {
+                $theloai = (array) $value;
+                if ($theloai['id'] == $album->theloai_id)   
+                   echo '<td> '. $theloai['ten'] .' </td>';
+            }
+           
+            ?>
+
             <td><a href="admin.php?c=album&a=edit&id=<?php echo $album->id; ?>">Edit</a></td>
             <td><a href="admin.php?c=album&a=delete&id=<?php echo $album->id; ?>">Delete</a</td>
           </tr>
