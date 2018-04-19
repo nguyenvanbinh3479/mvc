@@ -100,7 +100,25 @@
                   <a class="dropdown-item" href="admin.php?c=yeuthich&a=index">Danh sach yeuthich</a>
                   <a class="dropdown-item" href="admin.php?c=yeuthich&a=create">Them moi yeuthich</a>
                 </div>
-              </li>                
+              </li>       
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Tac Gia
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="admin.php?c=tacgia&a=index">Danh sach tacgia</a>
+                  <a class="dropdown-item" href="admin.php?c=tacgia&a=create">Them moi tacgia</a>
+                </div>
+              </li>  
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Luot Nghe
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="admin.php?c=luotnghe&a=index">Danh sach luotnghe</a>
+                  <a class="dropdown-item" href="admin.php?c=luotnghe&a=create">Them moi luotnghe</a>
+                </div>
+              </li>           
             </ul>            
         </div>
 
