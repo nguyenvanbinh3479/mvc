@@ -45,16 +45,19 @@ class BaiHat_Controller extends Base_Controller
         $this->model->load('Album');
         $this->model->load('CaSi');
         $this->model->load('TheLoai');
+        $this->model->load('TacGia');
 
         $list_album = $this->model->Album->all();
         $list_casi = $this->model->CaSi->all();
         $list_theloai = $this->model->TheLoai->all();
+        $list_tacgia= $this->model->TacGia->all();
 
         $data = array(
             'title' => 'index',
             'list_album' => $list_album,
             'list_casi' => $list_casi,
-            'list_theloai' => $list_theloai
+            'list_theloai' => $list_theloai,
+            'list_tacgia' => $list_tacgia
         );
 
         $this->view->load('baihats/create',$data);
@@ -71,6 +74,7 @@ class BaiHat_Controller extends Base_Controller
         $this->model->BaiHat->casi_id = $_POST['casi_id'];
         $this->model->BaiHat->album_id = $_POST['album_id'];
         $this->model->BaiHat->theloai_id = $_POST['theloai_id'];
+        $this->model->BaiHat->tacgia_id = $_POST['tacgia_id'];
         $this->model->BaiHat->ten = $_POST['ten'];
         $this->model->BaiHat->anh = $_POST['anh'];
         $this->model->BaiHat->loi_bai_hat = $_POST['loi_bai_hat'];
@@ -89,10 +93,12 @@ class BaiHat_Controller extends Base_Controller
         $this->model->load('BaiHat');
         $this->model->load('CaSi');
         $this->model->load('TheLoai');
+        $this->model->load('TacGia');
 
         $baihat = $this->model->BaiHat->findById($_GET['id']);
         $casi = $this->model->CaSi->findById($_GET['id']);
         $theloai = $this->model->TheLoai->findById($_GET['id']);
+        $tacgia = $this->model->TacGia->findById($_GET['id']);
         $data = array(
             'title' => 'edit',
             'baihat' => $baihat
@@ -113,6 +119,7 @@ class BaiHat_Controller extends Base_Controller
         $baihat->casi_id = $_POST['casi_id'];
         $baihat->album_id = $_POST['album_id'];
         $baihat->theloai_id = $_POST['theloai_id'];
+        $baihat->tacgia_id = $_POST['tacgia_id'];
         $baihat->ten = $_POST['ten'];
         $baihat->anh = $_POST['anh'];
         $baihat->loi_bai_hat = $_POST['loi_bai_hat'];

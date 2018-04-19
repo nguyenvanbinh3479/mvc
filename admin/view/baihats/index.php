@@ -12,6 +12,7 @@
             <th>Ca Si</th>
             <th>Album</th>
             <th>The Loai</th>
+            <th>Tac Gia</th>
             <th>Ten</th>
             <th>Anh</th>
             <th>Loi Bai Hat</th>
@@ -27,6 +28,7 @@
             <td><?php echo $baihat->casi_id; ?></td>
             <td><?php echo $baihat->album_id; ?></td>
             <td><?php echo $baihat->theloai_id; ?></td>
+            <td><?php echo $baihat->tacgia_id; ?></td>
             <td><?php echo $baihat->ten; ?></td>
             <td><?php echo $baihat->anh; ?></td>
             <td><?php echo $baihat->loi_bai_hat; ?></td>
