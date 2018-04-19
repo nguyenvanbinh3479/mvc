@@ -23,14 +23,6 @@
 	    	<input type="text" class="form-control p-2 m-2" name="ten" value="<?php echo $album->ten; ?>">
 	    </div>
 	    <div class="row">   		
-	    	<label>anh:</label>
-	    </div>
-	    <div class="row">   	
-			<select class="form-control p-2 m-2" name="album_id">
-	    		<option value="visible"><?php echo $baihat->album_id; ?></option>
-	    	</select>
-	    </div>
-	    <div class="row">   		
 	    	<label>casi:</label>
 	    </div>
 	    <div class="row">   	
