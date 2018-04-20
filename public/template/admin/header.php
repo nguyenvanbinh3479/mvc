@@ -3,7 +3,7 @@
     <head>
         <title><?php if(isset($title)) echo $title; ?></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="public/css/style.css">
+        <link rel="stylesheet" type="text/css" href="public/css/material-dashboard.css">
         <link rel="stylesheet" type="text/css" href="public/css/bootstrap.min.css">
         <script src="public/js/jquery-3.2.1.slim.min.js"></script>
         <script type="text/javascript" src="public/js/bootstrap.min.js"></script>

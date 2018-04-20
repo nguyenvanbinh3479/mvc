@@ -87,7 +87,13 @@ class Album_Controller extends Base_Controller
     public function edit()
     {        
         $this->model->load('Album');
+        $this->model->load('CaSi');
+        $this->model->load('TheLoai');
         $album = $this->model->Album->findById($_GET['id']);
+        $casi = $this->model->CaSi->findById($_GET['id']);
+        $theloai = $this->model->TheLoai->findById($_GET['id']);
+        print_r($casi);
+        print_r($theloai;
         $data = array(
             'title' => 'edit',
             'album' => $album
