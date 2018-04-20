@@ -1,5 +1,4 @@
-                </div>
-            </div>
+
             <footer class="footer">
                 <div class="container-fluid">
                     <nav class="pull-left">
@@ -10,7 +9,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="https://nguyenvanbinh3479.github.io/">
                                     Blog
                                 </a>
                             </li>

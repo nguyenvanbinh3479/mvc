@@ -19,19 +19,19 @@
                         </a>
                     </li>
                     <li>
-                        <a href="admin.php?c=home">
+                        <a href="admin.php?c=notification">
                             <i class="material-icons">notifications</i>
                             <p>Notifications</p>
                         </a>
                     </li>
                     <li>
-                        <a href="admin.php?c=home">
+                        <a href="admin.php?c=profile">
                             <i class="material-icons">account_box</i>
                             <p>Admin Profile</p>
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="admin.php?c=setting">
                             <i class="material-icons">settings</i>
                             <p>Settings</p>
                         </a>
@@ -50,45 +50,33 @@
                             <span class="icon-bar"></span>
                         </button>
                         <a class="navbar-brand" href="https://goo.gl/CYpD4c">Channel</a>
-                        <a class="navbar-brand" href="#">Blog</a>
+                        <a class="navbar-brand" href="https://nguyenvanbinh3479.github.io/">Blog</a>
                     </div>
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <a href="admin.php?c=notification" class="dropdown-toggle" data-toggle="dropdown">
                                     <i class="material-icons">notifications</i>
-                                    <span class="notification">5</span>
+                                    <span class="notification">1</span>
                                     <p class="hidden-lg hidden-md">Notifications</p>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="admin.php?c=notifications">Mike John responded to your email</a>
-                                    </li>
-                                    <li>
-                                        <a href="admin.php?c=notifications">You have 5 new tasks</a>
-                                    </li>
-                                    <li>
-                                        <a href="admin.php?c=notifications">You're now friend with Andrew</a>
-                                    </li>
-                                    <li>
-                                        <a href="admin.php?c=notifications">Another Notification</a>
-                                    </li>
-                                    <li>
-                                        <a href="admin.php?c=notifications">Another One</a>
+                                        <a href="admin.php?c=notification">Tuấn responded to your email</a>
                                     </li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="user.php" class="dropdown-toggle" data-toggle="dropdown">
+                                <a href="admin.php?c=profile" class="dropdown-toggle" data-toggle="dropdown">
                                     <i class="material-icons">person</i>
                                     <p class="hidden-lg hidden-md">Profile</p>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="notifications.html">Logout</a>
+                                        <a href="index.php">Logout</a>
                                     </li>
                                     <li>
-                                        <a href="notifications.html">Settings</a>
+                                        <a href="admin.php?c=setting">Settings</a>
                                     </li>
                                 </ul>
                             </li>
@@ -110,7 +98,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-4">
-                            <a href="users.php">
+                            <a href="admin.php?c=user">
                                 <div class="card">
                                     <div class="card-header card-chart" data-background-color="green">
                                         <div class="ct-chart" id="dailySalesChart"></div>
@@ -130,7 +118,7 @@
                             </a>
                         </div>
                         <div class="col-md-4">
-                            <a href="listenings.php">
+                            <a href="admin.php?c=luotnghe">
                                 <div class="card">
                                     <div class="card-header card-chart" data-background-color="orange">
                                         <div class="ct-chart" id="emailsSubscriptionChart"></div>
@@ -149,8 +137,8 @@
                                 </div>
                             </a>
                         </div>
-                        <div class="col-md-4">
-                            <a href="comments.php">
+                        <div class="col-md-4">  
+                            <a href="admin.php?c=binhluan">
                                 <div class="card">
                                     <div class="card-header card-chart" data-background-color="red">
                                         <div class="ct-chart" id="completedTasksChart"></div>
@@ -172,7 +160,7 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-3 col-md-6 col-sm-6">
-                            <a href="songs.php">
+                            <a href="admin.php?c=baihat">
                                 <div class="card card-stats">
                                     <div class="card-header" data-background-color="purple">
                                         <i class="material-icons">queue_music</i>
@@ -192,7 +180,7 @@
                             </a>
                         </div>
                         <div class="col-lg-3 col-md-6 col-sm-6">
-                            <a href="albums.php">
+                            <a href="admin.php?c=album">
                                 <div class="card card-stats">
                                     <div class="card-header" data-background-color="orange">
                                         <i class="material-icons">library_music</i>
@@ -211,7 +199,7 @@
                             </a>
                         </div>
                         <div class="col-lg-3 col-md-6 col-sm-6">
-                            <a href="authors.php">
+                            <a href="admin.php?c=tacgia">
                                 <div class="card card-stats">
                                     <div class="card-header" data-background-color="green">
                                         <i class="material-icons">local_library</i>
@@ -231,7 +219,7 @@
                             </a>
                         </div>
                         <div class="col-lg-3 col-md-6 col-sm-6">
-                            <a href="singers.php">
+                            <a href="admin.php?c=casi">
                                 <div class="card card-stats">
                                     <div class="card-header" data-background-color="blue">
                                         <i class="material-icons">face</i>
@@ -250,7 +238,7 @@
                             </a>
                         </div>
                         <div class="col-lg-3 col-md-6 col-sm-6">
-                            <a href="types.php">
+                            <a href="admin.php?c=theloai">
                                 <div class="card card-stats">
                                     <div class="card-header" data-background-color="blue">
                                         <i class="material-icons">store</i>
@@ -269,7 +257,7 @@
                             </a>
                         </div>
                         <div class="col-lg-3 col-md-6 col-sm-6">
-                            <a href="faforites.php">
+                            <a href="admin.php?c=yeuthich">
                                 <div class="card card-stats">
                                     <div class="card-header" data-background-color="red">
                                         <i class="material-icons">favorite</i>
@@ -288,7 +276,7 @@
                             </a>
                         </div>  
                         <div class="col-lg-3 col-md-6 col-sm-6">
-                            <a href="playlists.php">
+                            <a href="admin.php?c=playlist">
                                 <div class="card card-stats">
                                     <div class="card-header" data-background-color="black">
                                         <i class="material-icons">account_box</i>
@@ -307,7 +295,7 @@
                             </a>
                         </div>     
                         <div class="col-lg-3 col-md-6 col-sm-6">
-                            <a href="playlist_details.php">
+                            <a href="admin.php?c=chitietplaylist">
                                 <div class="card card-stats">
                                     <div class="card-header" data-background-color="orange">
                                         <i class="material-icons">music_note</i>
@@ -366,4 +354,6 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
 <?php require_once(PATH_PUBLIC . '/template/admin/footer.php'); ?>                
