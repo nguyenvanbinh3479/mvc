@@ -5,8 +5,8 @@
                     <nav class="pull-left">
                         <ul>
                             <li>
-                                <a href="home.php">
-                                    Home
+                                <a href="https://goo.gl/CYpD4c">
+                                    Channel
                                 </a>
                             </li>
                             <li>
@@ -21,7 +21,7 @@
                         <script>
                             document.write(new Date().getFullYear())
                         </script>
-                        <a href="home.php">M.S.C Universe</a>, made with love for all songs
+                        <a href="admin.php?c=home">M.S.C Universe</a>, made with love for all songs
                     </p>
                 </div>
             </footer>
