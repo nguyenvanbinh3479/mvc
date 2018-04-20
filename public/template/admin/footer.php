@@ -5,7 +5,7 @@
                     <nav class="pull-left">
                         <ul>
                             <li>
-                                <a href="index.php">
+                                <a href="home.php">
                                     Home
                                 </a>
                             </li>
@@ -21,7 +21,7 @@
                         <script>
                             document.write(new Date().getFullYear())
                         </script>
-                        <a href="index.php">M.S.C Universe</a>, made with love for all songs
+                        <a href="home.php">M.S.C Universe</a>, made with love for all songs
                     </p>
                 </div>
             </footer>
