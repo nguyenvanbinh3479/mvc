@@ -138,7 +138,8 @@
 							</select>
 						</div>
 						<div class="row">   
-							<button class="btn btn-primary p-2 m-2" type="submit">Apply</button>
-						</div>
+                        <button class="btn btn-primary p-2 m-2" type="submit">Apply</button>                          
+                        <button class="btn btn-primary p-2 m-2" type="submit" style="padding: 12px 0"><a href="admin.php?c=user" style="color: white; padding: 14px 30px;">Cancel</a></button>                          
+					</div>
 					</form>
 <?php require_once(PATH_PUBLIC . '/template/admin/footer.php'); ?>

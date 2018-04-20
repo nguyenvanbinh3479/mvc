@@ -11,7 +11,7 @@
             </div>
             <div class="sidebar-wrapper">
                 <ul class="nav">
-                    <li class="active">
+                    <li>
                         <a href="index.php">
                             <i class="material-icons">home</i>
                             <p>Home</p>
@@ -23,7 +23,7 @@
                             <p>User Profile</p>
                         </a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="./table.html">
                             <i class="material-icons">content_paste</i>
                             <p>Table List</p>
