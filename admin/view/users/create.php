@@ -14,7 +14,7 @@
                     <li class="active">
                         <a href="index.php">
                             <i class="material-icons">home</i>
-                            <p>Home</p>
+                            <p><?php echo PATH_PUBLIC;?></p>
                         </a>
                     </li>
                     <li>
