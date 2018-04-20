@@ -1,6 +1,7 @@
 <?php if ( ! defined('PATH_PUBLIC')) die ('Bad requested!');
     require_once(PATH_PUBLIC . '/template/admin/header.php');
 ?>
+
 <body>
     <div class="wrapper">
         <div class="sidebar" data-color="red" data-image="public/img/sidebar-2.jpg">
