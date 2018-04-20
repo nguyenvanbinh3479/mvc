@@ -4,30 +4,36 @@
 
 <body>
     <div class="wrapper">
-        <div class="sidebar" data-color="red" data-image="public/img/sidebar-2.png" >
+        <div class="sidebar" data-color="red" data-image="public/img/sidebar-2.jpg" >
             <div class="logo">
-                <a href="index.php" class="simple-text">
+                <a href="admin.php?c=home" class="simple-text">
                     M.S.C - UNIVERSE
                 </a>
             </div>
             <div class="sidebar-wrapper">
                 <ul class="nav">
                     <li class="active">
-                        <a href="index.php">
+                        <a href="admin.php?c=home">
                             <i class="material-icons">home</i>
                             <p>home</p>
                         </a>
                     </li>
                     <li>
-                        <a href="./user.html">
-                            <i class="material-icons">person</i>
-                            <p>User Profile</p>
+                        <a href="admin.php?c=home">
+                            <i class="material-icons">notifications</i>
+                            <p>Notifications</p>
                         </a>
                     </li>
                     <li>
-                        <a href="./table.html">
-                            <i class="material-icons">content_paste</i>
-                            <p>Table List</p>
+                        <a href="admin.php?c=home">
+                            <i class="material-icons">account_box</i>
+                            <p>Admin Profile</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="material-icons">settings</i>
+                            <p>Settings</p>
                         </a>
                     </li>
                 </ul>
@@ -43,7 +49,8 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="index.php"> Home </a>
+                        <a class="navbar-brand" href="https://goo.gl/CYpD4c">Channel</a>
+                        <a class="navbar-brand" href="#">Blog</a>
                     </div>
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
@@ -55,24 +62,24 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="notifications.html">Mike John responded to your email</a>
+                                        <a href="admin.php?c=notifications">Mike John responded to your email</a>
                                     </li>
                                     <li>
-                                        <a href="notifications.html">You have 5 new tasks</a>
+                                        <a href="admin.php?c=notifications">You have 5 new tasks</a>
                                     </li>
                                     <li>
-                                        <a href="notifications.html">You're now friend with Andrew</a>
+                                        <a href="admin.php?c=notifications">You're now friend with Andrew</a>
                                     </li>
                                     <li>
-                                        <a href="notifications.html">Another Notification</a>
+                                        <a href="admin.php?c=notifications">Another Notification</a>
                                     </li>
                                     <li>
-                                        <a href="notifications.html">Another One</a>
+                                        <a href="admin.php?c=notifications">Another One</a>
                                     </li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="user.html" class="dropdown-toggle" data-toggle="dropdown">
+                                <a href="user.php" class="dropdown-toggle" data-toggle="dropdown">
                                     <i class="material-icons">person</i>
                                     <p class="hidden-lg hidden-md">Profile</p>
                                 </a>
@@ -302,7 +309,7 @@
                         <div class="col-lg-3 col-md-6 col-sm-6">
                             <a href="playlist_details.php">
                                 <div class="card card-stats">
-                                    <div class="card-header" data-background-color="purple">
+                                    <div class="card-header" data-background-color="orange">
                                         <i class="material-icons">music_note</i>
                                     </div>
                                     <div class="card-content">
@@ -320,38 +327,38 @@
                         </div>                 
                     </div>
                     <div class="row">
-                        <div class="col-lg-6 col-md-12">
+                        <div class="col-md-12">
                             <div class="card">
-                                <div class="card-header" data-background-color="orange">
-                                    <h4 class="title">Team Members</h4>
-                                    <p class="category">15th April 2018</p>
+                                <div class="card-header" data-background-color="green">
+                                    <h4 class="title">Team Member</h4>
+                                    <p class="category">Never Be Tired</p>
                                 </div>
                                 <div class="card-content table-responsive">
-                                    <table class="table table-hover">
-                                        <thead class="text-warning">
-                                            <th>ID</th>
+                                    <table class="table">
+                                        <thead class="text-primary">
                                             <th>Name</th>
-                                            <th>Salary</th>
-                                            <th>Country</th>
+                                            <th>From</th>
+                                            <th>Phone</th>
+                                            <th>Gmail</th>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>1</td>
                                                 <td>Nguyễn Văn Bình</td>
-                                                <td>$136,738</td>
                                                 <td>Quảng Trị</td>
+                                                <td>01633985817</td>
+                                                <td>binh.nguyenvan01@students.hueic.edu.vn</td>
                                             </tr>
                                             <tr>
-                                                <td>2</td>
                                                 <td>Nguyễn Quốc Tuấn</td>
-                                                <td>$23,789</td>
                                                 <td>Quảng Trị</td>
+                                                <td>01659906611</td>
+                                                <td>tuan.nguyenquoc01@students.hueic.edu.vn</td>
                                             </tr>
                                             <tr>
-                                                <td>3</td>
                                                 <td>Nguyễn Văn Tùng</td>
-                                                <td>$56,142</td>
                                                 <td>Huế</td>
+                                                <td>01689748352</td>
+                                                <td>tung.nguyenvan@students.hueic.edu.vn</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -359,59 +366,4 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <footer class="footer">
-                <div class="container-fluid">
-                    <nav class="pull-left">
-                        <ul>
-                            <li>
-                                <a href="index.php">
-                                    Home
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Blog
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <p class="copyright pull-right">
-                        &copy;
-                        <script>
-                            document.write(new Date().getFullYear())
-                        </script>
-                        <a href="index.php">M.S.C Universe</a>, made with love for all songs
-                    </p>
-                </div>
-            </footer>
-        </div>
-    </div>
-</body>
-<!--   Core JS Files   -->
-<script src="public/js/jquery-3.2.1.min.js" type="text/javascript"></script>
-<script src="public/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="public/js/material.min.js" type="text/javascript"></script>
-<!--  Charts Plugin -->
-<script src="public/js/chartist.min.js"></script>
-<!--  Dynamic Elements plugin -->
-<script src="public/js/arrive.min.js"></script>
-<!--  PerfectScrollbar Library -->
-<script src="public/js/perfect-scrollbar.jquery.min.js"></script>
-<!--  Notifications Plugin    -->
-<script src="public/js/bootstrap-notify.js"></script>
-<!-- Material Dashboard javascript methods -->
-<script src="public/js/material-dashboard.js?v=1.2.0"></script>
-<!-- Material Dashboard DEMO methods, don't include it in your project! -->
-<script src="public/js/demo.js"></script>
-<script type="text/javascript">
-    $(document).ready(function() {
-
-        // Javascript method's body can be found in public/js/demos.js
-        demo.initDashboardPageCharts();
-
-    });
-</script>
-
-</html>
+<?php require_once(PATH_PUBLIC . '/template/admin/footer.php'); ?>                
