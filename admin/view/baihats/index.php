@@ -1,7 +1,6 @@
 <?php if ( ! defined('PATH_PUBLIC')) die ('Bad requested!');
     require_once(PATH_PUBLIC . '/template/admin/header.php');
 ?>
-<div class="container">
     <div class="row">
         <h3>Danh sach baihat</h3>
     </div>
@@ -39,5 +38,4 @@
         <?php } ?>
         </tbody>
     </table>
-</div>
 <?php require_once(PATH_PUBLIC . '/template/admin/footer.php'); ?>
