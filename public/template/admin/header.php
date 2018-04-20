@@ -6,7 +6,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="public/img/msc-icon.png" />
     <link rel="icon" type="image/png" href="public/img/msc-icon.png" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>M.S.C - Home</title>
+    <title>M.S.C Universe</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
     <!-- Bootstrap core CSS     -->
