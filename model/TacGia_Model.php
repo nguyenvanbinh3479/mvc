@@ -44,7 +44,7 @@ class TacGia_Model{
     if(!$result)
       die('Error: ');
 
-    $row = mysqli_fetch_assoc($result);
+        $row = mysqli_fetch_assoc($result);
         $tacgia = new TacGia_Model();
         $tacgia->id = $row['id'];
         $tacgia->anh = $row['anh'];

@@ -108,16 +108,16 @@
                       <input type="text" class="form-control p-2 m-2" name="ten" required>
                     </div>
                     <div class="row">
-                      <label>thong tin:</label>
-                    </div>
-                    <div class="row">
-                      <input type="text" class="form-control p-2 m-2" name="mo_ta" required>
-                    </div>
-                    <div class="row">
                       <label>anh:</label>
                     </div>
                     <div class="row">
                       <input type="text" class="form-control p-2 m-2" name="anh" required>
+                    </div>
+                    <div class="row">
+                      <label>thong tin:</label>
+                    </div>
+                    <div class="row">
+                      <input type="text" class="form-control p-2 m-2" name="thongtin" required>
                     </div>
                     <div class="row">   
                       <button class="btn btn-success p-2 m-2" onclick="demo.showNotification('top','left')">Apply</button>

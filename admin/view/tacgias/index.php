@@ -107,8 +107,8 @@
                                         <thead class="text-success">
                                           <th>STT</th>
                                           <th>ten</th>
-                                          <th>thong_tin</th>
                                           <th>anh</th>
+                                          <th>thongtin</th>
                                           <th>Edit</th>
                                           <th>Delete</th>
                                       </thead>
@@ -117,8 +117,8 @@
                                         <tr>
                                           <td><?php echo increment_once($index); ?></td>
                                           <td><?php echo $tacgia->ten; ?></td>
-                                          <td><?php echo $tacgia->thongtin; ?></td>
                                           <td><?php echo $tacgia->anh; ?></td>
+                                          <td><?php echo $tacgia->thongtin; ?></td>
                                           <td><a href="admin.php?c=tacgia&a=edit&id=<?php echo $tacgia->id; ?>">Edit</a></td>
                                           <td><a href="admin.php?c=tacgia&a=delete&id=<?php echo $tacgia->id; ?>">Delete</a></td>
                                         </tr>
