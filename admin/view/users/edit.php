@@ -20,7 +20,7 @@
 	    	<label>Password:</label>
 	    </div>
 	    <div class="row">   	
-	    	<input type="text" class="form-control p-2 m-2" name="password" value="<?php echo $user->password; ?>">
+	    	<input type="password" class="form-control p-2 m-2" name="password" value="<?php echo $user->password; ?>">
 	    </div>
 	    <div class="row">   		
 	    	<label>Role:</label>

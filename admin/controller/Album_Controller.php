@@ -9,13 +9,20 @@ class Album_Controller extends Base_Controller
     public function index()
     {        
         $this->model->load('Album');
+        $this->model->load('CaSi');
+        $this->model->load('TheLoai');
         $list_album = $this->model->Album->all();
+        $list_casi = $this->model->CaSi->all();
+        $list_theloai = $this->model->TheLoai->all();
         $data = array(
             'title' => 'index',
-            'list_album' => $list_album
+            'list_album' => $list_album,
+            'list_casi' => $list_casi,
+            'list_theloai' => $list_theloai
         );
-
+      
         // Load view
+
         $this->view->load('albums/index', $data);
     }
 
@@ -42,7 +49,18 @@ class Album_Controller extends Base_Controller
     */
     public function create()
     {        
-        $this->view->load('albums/create');
+
+        $this->model->load('CaSi');
+        $this->model->load('TheLoai');
+        $list_casi = $this->model->CaSi->all();
+        $list_theloai = $this->model->TheLoai->all();
+        $data = array(
+            'title' => 'index',
+            'list_casi' => $list_casi,
+            'list_theloai' => $list_theloai
+        );
+
+        $this->view->load('albums/create',$data);
     }
 
      /**
@@ -52,9 +70,11 @@ class Album_Controller extends Base_Controller
     public function store()
     {        
         $this->model->load('Album');
-        $this->model->Album->bai_hat_id = $_POST['bai_hat_id'];
         $this->model->Album->anh = $_POST['anh'];
         $this->model->Album->ten = $_POST['ten'];
+        $this->model->Album->casi_id = $_POST['casi_id'];
+        $this->model->Album->theloai_id = $_POST['theloai_id'];
+        
         $this->model->Album->save();
 
         go_back();
@@ -67,7 +87,11 @@ class Album_Controller extends Base_Controller
     public function edit()
     {        
         $this->model->load('Album');
+        $this->model->load('CaSi');
+        $this->model->load('TheLoai');
         $album = $this->model->Album->findById($_GET['id']);
+        $casi = $this->model->CaSi->findById($_GET['id']);
+        $theloai = $this->model->TheLoai->findById($_GET['id']);
         $data = array(
             'title' => 'edit',
             'album' => $album
@@ -85,9 +109,9 @@ class Album_Controller extends Base_Controller
     {        
         $this->model->load('Album');
         $album = $this->model->Album->findById($_POST['id']);
-        $album->bai_hat_id = $_POST['bai_hat_id'];
         $album->anh = $_POST['anh'];
-        $album->ten = $_POST['ten'];           
+        $album->ten = $_POST['ten'];  
+        $album->casi_id = $_POST['casi_id'];           
         $album->update();
 
         go_back();
