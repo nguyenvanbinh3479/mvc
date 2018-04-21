@@ -116,11 +116,25 @@
                                             <?php foreach ($list_luotnghe as $luotnghe) { ?>    
                                                 <tr>
                                                     <td><?php echo increment_once($index); ?></td>
-                                                    <td><?php echo $luotnghe->baihat_id; ?></td>
-                                                    <td><?php echo $luotnghe->user_id; ?></td>
+                                                    <?php 
+                                                        foreach($list_baihat as $baihat){
+                                                        $arr_luotnghe = (array)$luotnghe;
+                                                        $arr_baihat = (array)$baihat;
+                                                        if($arr_baihat['id'] == $arr_luotnghe['baihat_id']){
+                                                        ?><td><?php echo $arr_baihat['ten']; ?></td><?php
+                                                        }
+                                                    }?>
+                                                    <?php 
+                                                        foreach($list_user as $user){
+                                                        $arr_luotnghe = (array)$luotnghe;
+                                                        $arr_user = (array)$user;
+                                                        if($arr_user['id'] == $arr_luotnghe['user_id']){
+                                                        ?><td><?php echo $arr_user['email']; ?></td><?php
+                                                        }
+                                                    }?>
                                                     <td><?php echo $luotnghe->ngay; ?></td>
-                                                    <td><a href="admin.php?c=luotnghe&a=edit&id=<?php echo $luotnghe->id; ?>">Edit</a></td>
-                                                    <td><a href="admin.php?c=luotnghe&a=delete&id=<?php echo $luotnghe->id; ?>">Delete</a></td>
+                                                    <td><a href="admin.php?c=luotnghe&a=edit&baihat_id=<?php echo $luotnghe->baihat_id; ?>&user_id=<?php echo $luotnghe->user_id; ?>">Edit</a></td>
+                                                    <td><a href="admin.php?c=luotnghe&a=delete&baihat_id=<?php echo $luotnghe->baihat_id; ?>&user_id=<?php echo $luotnghe->user_id; ?>">Delete</a></td>
                                                 </tr>
                                             <?php } ?>
                                         </tbody>
