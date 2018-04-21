@@ -27,7 +27,25 @@
 	    </div>
 	    <div class="row">   	
 			<select class="form-control p-2 m-2" name="album_id">
-	    		<option value="visible"><?php echo $baihat->album_id; ?></option>
+	    		
+
+                <?php
+                    foreach ($list_album as $album) {
+                        foreach ($list_casi as $casi) {
+                            $arr_album = (array) $album;
+                            $arr_casi = (array) $casi;
+                            if ($arr_album['casi_id'] == $arr_casi['id']) {
+                                <option value="visible"><?php echo $arr_casi['ten']; ?></option><?php
+
+                            }
+                            else {
+                                <option value="visible"><?php echo $arr_casi['ten']; ?></option>
+                            }
+
+                        }
+                    }
+                ?>
+
 	    	</select>
 	    </div>
 	    <div class="row">   		
