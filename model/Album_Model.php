@@ -66,7 +66,6 @@ class Album_Model{
 	}
 
 	public function update(){
-		// echo "string";
 		$conn = FT_Database::instance()->getConnection();
 		$stmt = $conn->prepare("UPDATE albums SET anh=?, ten=?, casi_id=?, theloai_id=? WHERE id=?");
 		$stmt->bind_param("ssiii", $this->anh, $this->ten, $this->casi_id, $this->theloai_id, $_POST['id']);
