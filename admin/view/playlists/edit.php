@@ -107,8 +107,7 @@
 						</div>
 						<div class="row">
 							<select class="form-control p-2 m-2" name="user_id">
-								<option value="visible">Visible</option>
-								<option value="disbale">Disable</option>
+								<option value="admin"><?php echo $playlist->user_id; ?></option>
 							</select>
 						</div>
 						<div class="row">   		
