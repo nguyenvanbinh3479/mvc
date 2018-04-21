@@ -88,7 +88,8 @@ class Playlist_Controller extends Base_Controller
         
         $data = array(
             'title' => 'edit',
-            'playlist' => $playlist
+            'playlist' => $playlist,
+            'user' => $user
         );
 
         // Load view

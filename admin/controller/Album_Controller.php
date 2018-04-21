@@ -114,9 +114,9 @@ class Album_Controller extends Base_Controller
         $album->anh = $_POST['anh'];
         $album->ten = $_POST['ten'];  
         $album->casi_id = $_POST['casi_id'];
-        $album->theloai_id = $_POST['theloai_id'];           
+        $album->theloai_id = $_POST['theloai_id'];      
         $album->update();
-
+        die();
         go_back();
     }
 
