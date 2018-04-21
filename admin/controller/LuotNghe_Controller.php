@@ -9,10 +9,18 @@ class LuotNghe_Controller extends Base_Controller
     public function index()
     {        
         $this->model->load('LuotNghe');
+        $this->model->load('BaiHat');
+        $this->model->load('User');
         $list_luotnghe = $this->model->LuotNghe->all();
+        $list_baihat = $this->model->BaiHat->all();
+        $list_user = $this->model->User->all();
         $data = array(
             'title' => 'index',
-            'list_luotnghe' => $list_luotnghe
+            'list_luotnghe' => $list_luotnghe,
+            'list_baihat' => $list_baihat,
+            'list_user' => $list_user
+
+            
         );
 
         // Load view
