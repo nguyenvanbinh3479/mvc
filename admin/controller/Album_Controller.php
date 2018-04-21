@@ -109,6 +109,7 @@ class Album_Controller extends Base_Controller
     */
     public function update()
     {        
+
         $this->model->load('Album');
         $album = $this->model->Album->findById($_POST['id']);
         $album->anh = $_POST['anh'];
@@ -116,7 +117,6 @@ class Album_Controller extends Base_Controller
         $album->casi_id = $_POST['casi_id'];
         $album->theloai_id = $_POST['theloai_id'];      
         $album->update();
-        die();
         go_back();
     }
 

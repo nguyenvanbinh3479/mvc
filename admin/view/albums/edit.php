@@ -163,7 +163,7 @@
 						</div>
 						<div class="row">   
                             <button class="btn btn-warning p-2 m-2" type="submit" style="padding: 12px 0"><a
-                            href="admin.php?c=album"  style="color: white; padding: 14px 30px;">Apply</a></button>                           
+                            style="color: white; padding: 14px 30px;">Apply</a></button>                           
                             <button class="btn btn-warning p-2 m-2" type="submit" style="padding: 12px 0"><a href="admin.php?c=album" style="color: white; padding: 14px 30px;">Cancel</a></button>                          
 					    </div>
 					</form>
