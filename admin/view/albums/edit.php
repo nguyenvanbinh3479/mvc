@@ -6,7 +6,7 @@
         <div class="sidebar" data-color="red" data-image="public/img/sidebar-2.jpg" >
             <div class="logo">
                 <a href="admin.php?c=home" class="simple-text">
-                    M.S.C - UNIVERSE
+                    M.S.C - UNIVERSEed
                 </a>
             </div>
             <div class="sidebar-wrapper">
