@@ -109,15 +109,21 @@
                       <input type="text" class="form-control p-2 m-2" name="ten" value="<?php echo $tacgia->ten; ?>">
                     </div>
                     <div class="row">
+                      <label>anh:</label>
+                    </div>
+                    <div class="row">
+                      <input type="text" class="form-control p-2 m-2" name="ten" value="<?php echo $tacgia->anh; ?>">
+                    </div>
+                    <div class="row">
                       <label>thong tin:</label>
                     </div>
                     <div class="row">
                       <input type="text" class="form-control p-2 m-2" name="thong_tin" value="<?php echo $thongtin->thong_tin; ?>">
-                    </div
-						        <div class="row">   
+                    </div>
+					<div class="row">   
                       <button class="btn btn-success p-2 m-2" type="submit">Apply</button>                          
                       <button class="btn btn-success p-2 m-2" type="submit" style="padding: 12px 0"><a href="admin.php?c=tacgia" style="color: white; padding: 14px 30px;">Cancel</a></button>                          
-					          </div>
+					</div>
                   </form>
                 </div>
               </div>
