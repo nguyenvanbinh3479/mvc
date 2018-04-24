@@ -99,7 +99,7 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header" data-background-color="purple">
-                                    <h4 class="title">Danh Sách Users</h4>
+                                    <h4 class="title">Danh Sách Bài Hát</h4>
                                     <p class="category">cập nhật mới nhất</p>
                                 </div>
                                 <div class="card-content table-responsive">
