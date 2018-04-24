@@ -115,10 +115,25 @@
                                       <?php foreach ($list_chitietplaylist as $chitietplaylist) { ?>    
                                         <tr>
                                           <td><?php echo increment_once($index); ?></td>
-                                          <td><?php echo $chitietplaylist->playlist_id; ?></td>
-                                          <td><?php echo $chitietplaylist->baihat_id; ?></td>
-                                          <td><a href="admin.php?c=chitietplaylist&a=edit&id=<?php echo $chitietplaylist->playlist_id; ?>">Edit</a></td>
-                                          <td><a href="admin.php?c=chitietplaylist&a=delete&id=<?php echo $chitietplaylist->playlist_id; ?>">Delete</a></td>
+                                            <?php 
+                                                $arr = (array) $list_playlist;
+                                                foreach ($arr as $key => $value) {
+                                                    $playlist = (array) $value;
+                                                    if ($playlist['id'] == $chitietplaylist->playlist_id)   
+                                                    echo '<td> '. $playlist['ten'] .' </td>';
+                                                }
+                                            ?>  
+
+                                            <?php 
+                                                $arr = (array) $list_baihat;
+                                                foreach ($arr as $key => $value) {
+                                                    $baihat = (array) $value;
+                                                    if ($baihat['id'] == $chitietplaylist->baihat_id)   
+                                                    echo '<td> '. $baihat['ten'] .' </td>';
+                                                }
+                                            ?>  
+                                          <td><a href="admin.php?c=chitietplaylist&a=edit&id=<?php echo $chitietplaylist->id; ?>">Edit</a></td>
+                                          <td><a href="admin.php?c=chitietplaylist&a=delete&id=<?php echo $chitietplaylist->id; ?>">Delete</a></td>
                                         </tr>
                                       <?php } ?>
                                       </tbody>
