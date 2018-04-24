@@ -21,7 +21,7 @@ class BinhLuan_Controller extends Base_Controller
             'list_binhluan' => $list_binhluan,
             'list_baihat' => $list_baihat,
             'list_user' => $list_user
-
+        );
         // Load view
         $this->view->load('binhluans/index', $data);
     }
