@@ -108,6 +108,7 @@
                                             <th>STT</th>
                                             <th>baihat</th>
                                             <th>user</th>
+                                            <th>Ngay</th>
                                             <th>Edit</th>
                                             <th>Delete</th>
                                         </thead>
@@ -115,10 +116,25 @@
                                         <?php foreach ($list_yeuthich as $yeuthich) { ?>    
                                             <tr>
                                             <td><?php echo increment_once($index); ?></td>
-                                            <td><?php echo $yeuthich->baihat_id; ?></td>
-                                            <td><?php echo $yeuthich->user_id; ?></td>
-                                            <td><a href="admin.php?c=yeuthich&a=edit&id=<?php echo $yeuthich->baihat_id; ?>">Edit</a></td>
-                                            <td><a href="admin.php?c=yeuthich&a=delete&id=<?php echo $yeuthich->baihat_id; ?>">Delete</a></td>
+                                            <?php 
+                                                $arr = (array) $list_baihat;
+                                                foreach ($arr as $key => $value) {
+                                                    $baihat = (array) $value;
+                                                    if ($baihat['id'] == $yeuthich->baihat_id)   
+                                                    echo '<td> '. $baihat['ten'] .' </td>';
+                                                }
+                                            ?>
+                                             <?php 
+                                                $arr = (array) $list_user;
+                                                foreach ($arr as $key => $value) {
+                                                    $user = (array) $value;
+                                                    if ($user['id'] == $yeuthich->user_id)   
+                                                    echo '<td> '. $user['email'] .' </td>';
+                                                }
+                                            ?>
+                                            <td><?php echo $yeuthich->ngay; ?></td>                                            
+                                            <td><a href="admin.php?c=yeuthich&a=edit&id=<?php echo $yeuthich->id; ?>">Edit</a></td>
+                                            <td><a href="admin.php?c=yeuthich&a=delete&id=<?php echo $yeuthich->id; ?>">Delete</a></td>
                                             </tr>
                                         <?php } ?>
                                         </tbody>

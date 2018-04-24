@@ -107,8 +107,22 @@
 						</div>
 						<div class="row">
 							<select class="form-control p-2 m-2" name="baihat_id">
-								<option value="admin">Admin</option>
-								<option value="yeuthich">yeuthich</option>
+                                <?php
+                                foreach ($list_baihat as $value)
+                                {
+                                    $baihat = (array) $value;
+                                    $id = $baihat['id'];
+                                    $baihat_id = $yeuthich->baihat_id;
+                                    $name = $baihat['ten'];
+                                    if ($baihat_id == $id) {
+                                        echo "<option value='$id' selected>$name
+                                        </option>";
+                                    }else {
+                                        echo "<option value='$id'> $name
+                                        </option>";
+                                    }
+                                }       
+                                ?> 
 							</select>
 						</div>
 						<div class="row">   		
@@ -116,12 +130,32 @@
 						</div>
 						<div class="row">
 							<select class="form-control p-2 m-2" name="user_id">
-								<option value="admin">Admin</option>
-								<option value="yeuthich">yeuthich</option>
+                                <?php
+                                foreach ($list_user as $value)
+                                {
+                                    $user = (array) $value;
+                                    $id = $user['id'];
+                                    $user_id = $yeuthich->user_id;
+                                    $name = $user['email'];
+                                    if ($user_id == $id) {
+                                        echo "<option value='$id' selected>$name
+                                        </option>";
+                                    }else {
+                                        echo "<option value='$id'> $name
+                                        </option>";
+                                    }
+                                }      
+                                ?> 
 							</select>
 						</div>
+                        <div class="row">   		
+							<label>Ngay:</label>
+						</div>
+						<div class="row">   	
+							<input type="text" class="form-control p-2 m-2" name="ngay" value="<?php echo $yeuthich->ngay; ?>">
+						</div>
 						<div class="row">   
-                            <button class="btn btn-danger p-2 m-2" type="submit">Apply</button>                          
+                            <button class="btn btn-danger p-2 m-2" type="submit" onclick="alert('Add success !')">Apply</button>                          
                             <button class="btn btn-danger p-2 m-2" type="submit" style="padding: 12px 0"><a href="admin.php?c=yeuthich" style="color: white; padding: 14px 30px;">Cancel</a></button>                          
 					    </div>
                     </form>

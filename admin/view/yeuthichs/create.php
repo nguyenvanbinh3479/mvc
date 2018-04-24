@@ -102,12 +102,13 @@
 							<h2>Create yeuthich</h2>
 						</div>
 						<div class="row">   		
-							<label>baihat_id:</label>
+							<label>bai hat:</label>
 						</div>
 						<div class="row">
 							<select class="form-control p-2 m-2" name="baihat_id">
-								<option value="visible">Visible</option>
-								<option value="disbale">Disable</option>
+                                <?php foreach ($list_baihat as $key => $value) {
+                                    $arr = (array) $value;?>
+                                    <option value="<?php print_r($arr['id']); ?> "> <?php print_r($arr['ten']) ; }?></option>
 							</select>
 						</div>
 						<div class="row">   		
@@ -115,12 +116,19 @@
 						</div>
 						<div class="row">
 							<select class="form-control p-2 m-2" name="user_id">
-								<option value="visible">Visible</option>
-								<option value="disbale">Disable</option>
+								<?php foreach ( $list_user as $key => $value) { 
+									$arr = (array) $value;?>
+									<option value="<?php print_r($arr['id']); ?> "> <?php print_r($arr['email']) ; }?></option>
 							</select>
 						</div>
+                        <div class="row">   		
+							<label>Ngay:</label>
+						</div>
+						<div class="row">   		
+							<input type="text" class="form-control p-2 m-2" name="ngay" placeholder="2018-05-10" required>
+						</div>
 						<div class="row">   
-                            <button class="btn btn-danger p-2 m-2" onclick="demo.showNotification('top','left')">Apply</button>
+                            <button class="btn btn-danger p-2 m-2"  onclick="ntf.showNotification('top','left')">Apply</button>                            
 							<button class="btn btn-danger p-2 m-2" type="submit" style="padding: 12px 0"><a href="admin.php?c=yeuthich" style="color: white; padding: 14px 30px;">Cancel</a></button>                          
 						</div>
                     </form>
