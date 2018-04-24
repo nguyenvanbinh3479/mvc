@@ -72,7 +72,7 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="index.php">Logout</a>
+                                        <a href="admin.php?c=login">Logout</a>
                                     </li>
                                     <li>
                                         <a href="admin.php?c=setting">Settings</a>
@@ -105,13 +105,13 @@
 							<label>Email:</label>
 						</div>
 						<div class="row">   		
-							<input type="text" class="form-control p-2 m-2" name="email" required>
+							<input type="email" class="form-control p-2 m-2" name="email" required>
 						</div>
 						<div class="row">   		
 							<label>Password:</label>
 						</div>
 						<div class="row">   	
-							<input type="password" class="form-control p-2 m-2" name="password" required>
+							<input type="password" class="form-control p-2 m-2" name="password" required> 
 						</div>
 						<div class="row">   		
 							<label>Role:</label>
@@ -132,7 +132,7 @@
 							</select>
 						</div>
 						<div class="row">   
-                            <button class="btn btn-success p-2 m-2" onclick="demo.showNotification('top','left')">Apply</button>
+                            <button class="btn btn-success p-2 m-2"  onclick="ntf.showNotification('top','left')">Apply</button>
 							<button class="btn btn-success p-2 m-2" type="submit" style="padding: 12px 0"><a href="admin.php?c=user" style="color: white; padding: 14px 30px;">Cancel</a></button>                          
 						</div>
                     </form>

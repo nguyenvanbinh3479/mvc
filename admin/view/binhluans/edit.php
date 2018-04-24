@@ -72,7 +72,7 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="index.php">Logout</a>
+                                        <a href="admin.php?c=login">Logout</a>
                                     </li>
                                     <li>
                                         <a href="admin.php?c=setting">Settings</a>
@@ -96,7 +96,7 @@
             <div class="content">
                 <div class="container-fluid">
 					<form method="post" action="admin.php">
-						<input type="hidden" name="binhluan_id" value="<?php echo $binhluan->user_id; ?>">
+						<input type="hidden" name="binhluan_id" value="<?php echo $binhluan->id; ?>">
 						<input type="hidden" name="c" value="binhluan">
 						<input type="hidden" name="a" value="update">
 						<div class="row">   		
@@ -107,17 +107,47 @@
 						</div>
 						<div class="row">
 							<select class="form-control p-2 m-2" name="baihat_id">
-								<option value="admin">Admin</option>
-								<option value="binhluan">binhluan</option>
+                            <?php
+                                foreach ($list_baihat as $value)
+                                {
+                                    $baihat = (array)$value;
+                                    $id = $baihat['id'];
+                                    $id_baihat = $binhluan->baihat_id;
+                                    $name = $baihat['ten'];
+                                    if ($id_baihat == $id) {
+                                        echo "<option value='$id' selected>$name
+                                        </option>";
+                                    }else {
+
+                                        echo "<option value='$id'> $name
+                                        </option>";
+                                    }
+                                }            
+                                ?>
 							</select>
 						</div>
 						<div class="row">   		
-							<label>binhluan:</label>
+							<label>User:</label>
 						</div>
 						<div class="row">
-							<select class="form-control p-2 m-2" name="binhluan_id">
-								<option value="admin">Admin</option>
-								<option value="binhluan">binhluan</option>
+							<select class="form-control p-2 m-2" name="user_id">
+                            <?php
+                                foreach ($list_user as $value)
+                                {
+                                    $user = (array)$value;
+                                    $id = $user['id'];
+                                    $id_user = $binhluan->user_id;
+                                    $name = $user['email'];
+                                    if ($id_user == $id) {
+                                        echo "<option value='$id' selected>$name
+                                        </option>";
+                                    }else {
+
+                                        echo "<option value='$id'> $name
+                                        </option>";
+                                    }
+                                }            
+                                ?>
 							</select>
 						</div>
 						<div class="row">   		
@@ -127,8 +157,8 @@
 							<input type="text" class="form-control p-2 m-2" name="noi_dung" value="<?php echo $binhluan->noi_dung; ?>">
 						</div>
 						<div class="row">   
-                            <button class="btn btn-success p-2 m-2" type="submit">Apply</button>                          
-                            <button class="btn btn-success p-2 m-2" type="submit" style="padding: 12px 0"><a href="admin.php?c=binhluan" style="color: white; padding: 14px 30px;">Cancel</a></button>                          
+                            <button class="btn btn-danger p-2 m-2" type="submit" onclick="alert('Add success !')">Apply</button>                          
+                            <button class="btn btn-danger p-2 m-2" type="submit" style="padding: 12px 0"><a href="admin.php?c=binhluan" style="color: white; padding: 14px 30px;">Cancel</a></button>                          
 					    </div>
 					</form>
 				</div>

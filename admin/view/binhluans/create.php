@@ -72,7 +72,7 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="index.php">Logout</a>
+                                        <a href="admin.php?c=login">Logout</a>
                                     </li>
                                     <li>
                                         <a href="admin.php?c=setting">Settings</a>
@@ -118,7 +118,7 @@
 							<select class="form-control p-2 m-2" name="user_id">
 								<?php foreach ( $list_user as $key => $value) { 
 									$arr = (array) $value;?>
-									<option value="<?php print_r($arr['id']); ?> "> <?php print_r($arr['ten']) ; }?></option>
+									<option value="<?php print_r($arr['id']); ?> "> <?php print_r($arr['email']) ; }?></option>
 							</select>
 						</div>
 						<div class="row">   		
@@ -128,7 +128,7 @@
 							<input type="text" class="form-control p-2 m-2" name="noi_dung" required>
 						</div>
 						<div class="row">   
-                            <button class="btn btn-danger p-2 m-2" onclick="demo.showNotification('top','left')">Apply</button>
+                            <button class="btn btn-danger p-2 m-2"  onclick="ntf.showNotification('top','left')">Apply</button>
 							<button class="btn btn-danger p-2 m-2" type="submit" style="padding: 12px 0"><a href="admin.php?c=binhluan" style="color: white; padding: 14px 30px;">Cancel</a></button>                          
 						</div>
 					</form>

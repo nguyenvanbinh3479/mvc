@@ -3,30 +3,36 @@
 ?>
 <body>
     <div class="wrapper">
-        <div class="sidebar" data-color="red" data-image="public/img/sidebar-2.jpg">
+        <div class="sidebar" data-color="red" data-image="public/img/sidebar-2.jpg" >
             <div class="logo">
-                <a href="index.php" class="simple-text">
-                    M.S.C - Universe
+                <a href="admin.php?c=home" class="simple-text">
+                    M.S.C - UNIVERSE
                 </a>
             </div>
             <div class="sidebar-wrapper">
                 <ul class="nav">
-                    <li class="active">
-                        <a href="index.php">
+                    <li>
+                        <a href="admin.php?c=home">
                             <i class="material-icons">home</i>
-                            <p>Home</p>
+                            <p>home</p>
                         </a>
                     </li>
                     <li>
-                        <a href="./user.html">
-                            <i class="material-icons">person</i>
-                            <p>User Profile</p>
+                        <a href="admin.php?c=notification">
+                            <i class="material-icons">notifications</i>
+                            <p>Notifications</p>
                         </a>
                     </li>
                     <li>
-                        <a href="./table.html">
-                            <i class="material-icons">content_paste</i>
-                            <p>Table List</p>
+                        <a href="admin.php?c=profile">
+                            <i class="material-icons">account_box</i>
+                            <p>Admin Profile</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="admin.php?c=setting">
+                            <i class="material-icons">settings</i>
+                            <p>Settings</p>
                         </a>
                     </li>
                 </ul>
@@ -42,45 +48,34 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="index.php"> Home </a>
+                        <a class="navbar-brand" href="https://goo.gl/CYpD4c">Channel</a>
+                        <a class="navbar-brand" href="https://nguyenvanbinh3479.github.io/">Blog</a>
                     </div>
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <a href="admin.php?c=notification" class="dropdown-toggle" data-toggle="dropdown">
                                     <i class="material-icons">notifications</i>
-                                    <span class="notification">5</span>
+                                    <span class="notification">1</span>
                                     <p class="hidden-lg hidden-md">Notifications</p>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="notifications.html">Mike John responded to your email</a>
-                                    </li>
-                                    <li>
-                                        <a href="notifications.html">You have 5 new tasks</a>
-                                    </li>
-                                    <li>
-                                        <a href="notifications.html">You're now friend with Andrew</a>
-                                    </li>
-                                    <li>
-                                        <a href="notifications.html">Another Notification</a>
-                                    </li>
-                                    <li>
-                                        <a href="notifications.html">Another One</a>
+                                        <a href="admin.php?c=notification">Tuấn responded to your email</a>
                                     </li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="user.html" class="dropdown-toggle" data-toggle="dropdown">
+                                <a href="admin.php?c=profile" class="dropdown-toggle" data-toggle="dropdown">
                                     <i class="material-icons">person</i>
                                     <p class="hidden-lg hidden-md">Profile</p>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="notifications.html">Logout</a>
+                                        <a href="admin.php?c=login">Logout</a>
                                     </li>
                                     <li>
-                                        <a href="notifications.html">Settings</a>
+                                        <a href="admin.php?c=setting">Settings</a>
                                     </li>
                                 </ul>
                             </li>
@@ -126,7 +121,10 @@
 							</select>
 						</div>
 						<div class="row">   
-							<button class="btn btn-primary p-2 m-2" type="submit">Apply</button>
-						</div>
-					</form>
+                            <button class="btn btn-danger p-2 m-2" type="submit">Apply</button>                          
+                            <button class="btn btn-danger p-2 m-2" type="submit" style="padding: 12px 0"><a href="admin.php?c=yeuthich" style="color: white; padding: 14px 30px;">Cancel</a></button>                          
+					    </div>
+                    </form>
+                </div>
+            </div>
 <?php require_once(PATH_PUBLIC . '/template/admin/footer.php'); ?>

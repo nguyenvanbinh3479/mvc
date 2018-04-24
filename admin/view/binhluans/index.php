@@ -72,7 +72,7 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="index.php">Logout</a>
+                                        <a href="admin.php?c=login">Logout</a>
                                     </li>
                                     <li>
                                         <a href="admin.php?c=setting">Settings</a>
@@ -116,11 +116,25 @@
                                         <?php foreach ($list_binhluan as $binhluan) { ?>    
                                           <tr>
                                             <td><?php echo increment_once($index); ?></td>
-                                            <td><?php echo $binhluan->baihat_id; ?></td>
-                                            <td><?php echo $binhluan->user_id; ?></td>
+                                            <?php 
+                                                foreach($list_baihat as $baihat){
+                                                $arr_binhluan = (array)$binhluan;
+                                                $arr_baihat = (array)$baihat;
+                                                if($arr_baihat['id'] == $arr_binhluan['baihat_id']){
+                                                ?><td><?php echo $arr_baihat['ten']; ?></td><?php
+                                                }
+                                            }?>
+                                            <?php 
+                                                foreach($list_user as $user){
+                                                $arr_binhluan = (array)$binhluan;
+                                                $arr_user = (array)$user;
+                                                if($arr_user['id'] == $arr_binhluan['user_id']){
+                                                ?><td><?php echo $arr_user['email']; ?></td><?php
+                                                }
+                                            }?>
                                             <td><?php echo $binhluan->noi_dung; ?></td>
-                                            <td><a href="admin.php?c=binhluan&a=edit&id=<?php echo $binhluan->user_id; ?>">Edit</a></td>
-                                            <td><a href="admin.php?c=binhluan&a=delete&id=<?php echo $binhluan->user_id; ?>">Delete</a></td>
+                                            <td><a href="admin.php?c=binhluan&a=edit&id=<?php echo $binhluan->id; ?>">Edit</a></td>
+                                            <td><a href="admin.php?c=binhluan&a=delete&id=<?php echo $binhluan->id; ?>">Delete</a></td>
                                           </tr>
                                         <?php } ?>
                                       </tbody>
