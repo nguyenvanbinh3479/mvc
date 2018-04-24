@@ -117,21 +117,22 @@
                                           <tr>
                                             <td><?php echo increment_once($index); ?></td>
                                             <?php 
-                                                foreach($list_baihat as $baihat){
-                                                $arr_binhluan = (array)$binhluan;
-                                                $arr_baihat = (array)$baihat;
-                                                if($arr_baihat['id'] == $arr_binhluan['baihat_id']){
-                                                ?><td><?php echo $arr_baihat['ten']; ?></td><?php
+                                                $arr = (array) $list_baihat;
+                                                foreach ($arr as $key => $value) {
+                                                    $baihat = (array) $value;
+                                                    if ($baihat['id'] == $binhluan->baihat_id)   
+                                                    echo '<td> '. $baihat['ten'] .' </td>';
                                                 }
-                                            }?>
+                                            ?>
+
                                             <?php 
-                                                foreach($list_user as $user){
-                                                $arr_binhluan = (array)$binhluan;
-                                                $arr_user = (array)$user;
-                                                if($arr_user['id'] == $arr_binhluan['user_id']){
-                                                ?><td><?php echo $arr_user['email']; ?></td><?php
+                                                $arr = (array) $list_user;
+                                                foreach ($arr as $key => $value) {
+                                                    $user = (array) $value;
+                                                    if ($user['id'] == $binhluan->user_id)   
+                                                    echo '<td> '. $user['email'] .' </td>';
                                                 }
-                                            }?>
+                                            ?>
                                             <td><?php echo $binhluan->noi_dung; ?></td>
                                             <td><a href="admin.php?c=binhluan&a=edit&id=<?php echo $binhluan->id; ?>">Edit</a></td>
                                             <td><a href="admin.php?c=binhluan&a=delete&id=<?php echo $binhluan->id; ?>">Delete</a></td>

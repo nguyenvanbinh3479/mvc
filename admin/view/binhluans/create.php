@@ -99,16 +99,16 @@
 						<input type="hidden" name="c" value="binhluan">
 						<input type="hidden" name="a" value="store">
 						<div class="row">   		
-							<h2>Create binhluan</h2>
+							<h2>Create binhluan </h2>
 						</div>
 						<div class="row">   		
-							<label>bai hat:</label>
+							<label>bai hat: </label>
 						</div>		
 						<div class="row">
 							<select class="form-control p-2 m-2" name="baihat_id">
-								<?php foreach ( $list_baihat as $key => $value) { 
-									$arr = (array) $value;?>
-									<option value="<?php print_r($arr['id']); ?> "> <?php print_r($arr['ten']) ; }?></option>
+                                <?php foreach ($list_baihat as $key => $value) {
+                                    $arr = (array) $value;?>
+                                    <option value="<?php print_r($arr['id']); ?> "> <?php print_r($arr['ten']) ; }?></option>
 							</select>
 						</div>
 						<div class="row">   			
