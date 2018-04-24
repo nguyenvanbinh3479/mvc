@@ -107,7 +107,7 @@ class LuotNghe_Controller extends Base_Controller
     public function update()
     {        
         $this->model->load('LuotNghe');
-        $luotnghe = $this->model->luotnghe->findById($_POST['id']);
+        $luotnghe = $this->model->LuotNghe->findById($_POST['id']);
         $luotnghe->baihat_id = $_POST['baihat_id'];
         $luotnghe->user_id = $_POST['user_id'];
         $luotnghe->ngay = $_POST['ngay'];        
