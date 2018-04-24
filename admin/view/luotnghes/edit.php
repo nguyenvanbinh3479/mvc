@@ -103,21 +103,51 @@
 							<h2>Edit luotnghe</h2>
 						</div>
 						<div class="row">   		
-							<label>baihat_id:</label>
+							<label>Bai Hat:</label>
 						</div>
 						<div class="row">
 							<select class="form-control p-2 m-2" name="baihat_id">
-								<option value="admin">Admin</option>
-								<option value="luotnghe">luotnghe</option>
+                            <?php
+                                foreach ($list_baihat as $value)
+                                {
+                                    $baihat = (array)$value;
+                                    $id = $baihat['id'];
+                                    $id_baihat = $luotnghe->baihat_id;
+                                    $name = $baihat['ten'];
+                                    if ($id_baihat == $id) {
+                                        echo "<option value='$id' selected>$name
+                                        </option>";
+                                    }else {
+
+                                        echo "<option value='$id'> $name
+                                        </option>";
+                                    }
+                                }            
+                                ?>
 							</select>
 						</div>
 						<div class="row">   		
-							<label>user_id:</label>
+							<label>User:</label>
 						</div>
 						<div class="row">
 							<select class="form-control p-2 m-2" name="user_id">
-								<option value="admin">Admin</option>
-								<option value="luotnghe">luotnghe</option>
+                            <?php
+                                foreach ($list_user as $value)
+                                {
+                                    $user = (array)$value;
+                                    $id = $user['id'];
+                                    $id_user = $luotnghe->user_id;
+                                    $name = $user['email'];
+                                    if ($id_user == $id) {
+                                        echo "<option value='$id' selected>$name
+                                        </option>";
+                                    }else {
+
+                                        echo "<option value='$id'> $name
+                                        </option>";
+                                    }
+                                }            
+                                ?>
 							</select>
 						</div>
 						<div class="row">   		
