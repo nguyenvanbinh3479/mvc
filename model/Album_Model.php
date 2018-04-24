@@ -1,7 +1,7 @@
 <?php
 class Album_Model{
 	public $id;
-  public $anh;
+  	public $anh;
 	public $ten;
 	public $casi_id;
 	public $theloai_id;

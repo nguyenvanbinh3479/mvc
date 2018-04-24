@@ -95,29 +95,57 @@
             </nav>
             <div class="content">
                 <div class="container-fluid">
-					<form method="post" action="admin.php">
-						<input type="hidden" name="binhluan_id" value="<?php echo $binhluan->user_id; ?>">
-						<input type="hidden" name="c" value="binhluan">
-						<input type="hidden" name="a" value="update">
+                    <form method="post" action="admin.php">
+                        <input type="hidden" name="id" value="<?php echo $binhluan->id; ?>">
+                        <input type="hidden" name="c" value="binhluan">
+                        <input type="hidden" name="a" value="update">
 						<div class="row">   		
-							<h2>Edit binhluan</h2>
+							<h2>Edit binhluan </h2>
 						</div>
 						<div class="row">   		
-							<label>bai hat:</label>
+							<label>bai hat: </label>
 						</div>
 						<div class="row">
 							<select class="form-control p-2 m-2" name="baihat_id">
-								<option value="admin">Admin</option>
-								<option value="binhluan">binhluan</option>
+                                <?php
+                                foreach ($list_baihat as $value)
+                                {
+                                    $baihat = (array) $value;
+                                    $id = $baihat['id'];
+                                    $baihat_id = $binhluan->baihat_id;
+                                    $name = $baihat['ten'];
+                                    if ($baihat_id == $id) {
+                                        echo "<option value='$id' selected>$name
+                                        </option>";
+                                    }else {
+                                        echo "<option value='$id'> $name
+                                        </option>";
+                                    }
+                                }            
+                                ?> 
 							</select>
 						</div>
 						<div class="row">   		
-							<label>binhluan:</label>
+							<label>user:</label>
 						</div>
 						<div class="row">
-							<select class="form-control p-2 m-2" name="binhluan_id">
-								<option value="admin">Admin</option>
-								<option value="binhluan">binhluan</option>
+							<select class="form-control p-2 m-2" name="user_id">
+                                <?php
+                                foreach ($list_user as $value)
+                                {
+                                    $user = (array) $value;
+                                    $id = $user['id'];
+                                    $user_id = $binhluan->user_id;
+                                    $name = $user['email'];
+                                    if ($user_id == $id) {
+                                        echo "<option value='$id' selected>$name
+                                        </option>";
+                                    }else {
+                                        echo "<option value='$id'> $name
+                                        </option>";
+                                    }
+                                }            
+                                ?> 
 							</select>
 						</div>
 						<div class="row">   		
