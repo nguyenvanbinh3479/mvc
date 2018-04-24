@@ -72,7 +72,7 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="index.php">Logout</a>
+                                        <a href="admin.php?c=login">Logout</a>
                                     </li>
                                     <li>
                                         <a href="admin.php?c=setting">Settings</a>
@@ -103,11 +103,26 @@
 							<h2>Edit baihat</h2>
 						</div>
 						<div class="row">   		
-							<label>Ca si:</label>
+							<label>Ca si: </label>
 						</div>
 						<div class="row">
-							<select class="form-control p-2 m-2" name="album_id">
-								<option value="visible"><?php echo $baihat->casi_id;?></option>
+							<select class="form-control p-2 m-2" name="casi_id">
+                                <?php
+                                foreach ($list_casi as $value)
+                                {
+                                    $casi = (array) $value;
+                                    $id = $casi['id'];
+                                    $casi_id = $baihat->casi_id;
+                                    $name = $casi['ten'];
+                                    if ($casi_id == $id) {
+                                        echo "<option value='$id' selected>$name
+                                        </option>";
+                                    }else {
+                                        echo "<option value='$id'> $name
+                                        </option>";
+                                    }
+                                }            
+                                ?>  
 							</select>
 						</div>
 						<div class="row">   		
@@ -115,7 +130,22 @@
 						</div>
 						<div class="row">   	
 							<select class="form-control p-2 m-2" name="album_id">
-								<option value="visible"><?php echo $baihat->album_id; ?></option>
+                                <?php
+                                foreach ($list_album as $value)
+                                {
+                                    $album = (array) $value;
+                                    $id = $album['id'];
+                                    $album_id = $baihat->album_id;
+                                    $name = $album['ten'];
+                                    if ($album_id == $id) {
+                                        echo "<option value='$id' selected>$name
+                                        </option>";
+                                    }else {
+                                        echo "<option value='$id'> $name
+                                        </option>";
+                                    }
+                                }            
+                                ?>  
 							</select>
 						</div>
 						<div class="row">   		
@@ -123,7 +153,22 @@
 						</div>
 						<div class="row">
 							<select class="form-control p-2 m-2" name="theloai_id">
-								<option value="admin"><?php echo $baihat->theloai_id; ?></option>
+                                <?php
+                                foreach ($list_theloai as $value)
+                                {
+                                    $theloai = (array) $value;
+                                    $id = $theloai['id'];
+                                    $theloai_id = $baihat->theloai_id;
+                                    $name = $theloai['ten'];
+                                    if ($theloai_id == $id) {
+                                        echo "<option value='$id' selected>$name
+                                        </option>";
+                                    }else {
+                                        echo "<option value='$id'> $name
+                                        </option>";
+                                    }
+                                }            
+                                ?>  
 							</select>
 						</div>
 						<div class="row">   		
@@ -131,7 +176,22 @@
 						</div>
 						<div class="row">
 							<select class="form-control p-2 m-2" name="tacgia_id">
-								<option value="admin"><?php echo $baihat->tacgia_id; ?></option>
+                                <?php
+                                foreach ($list_tacgia as $value)
+                                {
+                                    $tacgia = (array) $value;
+                                    $id = $tacgia['id'];
+                                    $tacgia_id = $baihat->tacgia_id;
+                                    $name = $tacgia['ten'];
+                                    if ($tacgia_id == $id) {
+                                        echo "<option value='$id' selected>$name
+                                        </option>";
+                                    }else {
+                                        echo "<option value='$id'> $name
+                                        </option>";
+                                    }
+                                }            
+                                ?>
 							</select>
 						</div>
 						<div class="row">   		

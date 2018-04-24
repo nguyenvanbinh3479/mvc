@@ -72,7 +72,7 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="index.php">Logout</a>
+                                        <a href="admin.php?c=login">Logout</a>
                                     </li>
                                     <li>
                                         <a href="admin.php?c=setting">Settings</a>
@@ -112,13 +112,13 @@
                       <label>anh:</label>
                     </div>
                     <div class="row">
-                      <input type="text" class="form-control p-2 m-2" name="ten" value="<?php echo $tacgia->anh; ?>">
+                      <input type="text" class="form-control p-2 m-2" name="anh" value="<?php echo $tacgia->anh; ?>">
                     </div>
                     <div class="row">
                       <label>thong tin:</label>
                     </div>
                     <div class="row">
-                      <input type="text" class="form-control p-2 m-2" name="thong_tin" value="<?php echo $thongtin->thong_tin; ?>">
+                      <input type="text" class="form-control p-2 m-2" name="thongtin" value="<?php echo $tacgia->thongtin; ?>">
                     </div>
 					<div class="row">   
                       <button class="btn btn-success p-2 m-2" type="submit">Apply</button>                          

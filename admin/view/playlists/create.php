@@ -72,7 +72,7 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="index.php">Logout</a>
+                                        <a href="admin.php?c=login">Logout</a>
                                     </li>
                                     <li>
                                         <a href="admin.php?c=setting">Settings</a>
@@ -102,12 +102,14 @@
 							<h2>Create playlist</h2>
 						</div>
 						<div class="row">   		
-							<label>user_id:</label>
+							<label>Email:</label>
 						</div>
-						<div class="row">
+						<div class="row">   	
 							<select class="form-control p-2 m-2" name="user_id">
-								<option value="visible">Visible</option>
-								<option value="disbale">Disable</option>
+								<?php foreach ($list_user as $key => $value) { 
+									$arr = (array) $value;?>
+                                    <option value="<?php print_r($arr['id']); ?> "> <?php print_r($arr['email']);
+                                 };?></option>
 							</select>
 						</div>
 						<div class="row">   		

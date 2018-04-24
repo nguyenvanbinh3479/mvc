@@ -1,7 +1,7 @@
 <?php
 class Album_Model{
 	public $id;
-  public $anh;
+  	public $anh;
 	public $ten;
 	public $casi_id;
 	public $theloai_id;
@@ -31,7 +31,7 @@ class Album_Model{
 
 	public function save(){
 		$conn = FT_Database::instance()->getConnection();
-		$stmt = $conn->prepare("INSERT INTO albums (anh, ten,casi_id, theloai_id) VALUES (?, ?, ?, ?)");
+		$stmt = $conn->prepare("INSERT INTO albums (anh, ten, casi_id, theloai_id) VALUES (?, ?, ?, ?)");
 		$stmt->bind_param("ssii", $this->anh, $this->ten, $this->casi_id, $this->theloai_id);
 		$rs = $stmt->execute();
 		$this->id = $stmt->insert_id;
@@ -53,7 +53,7 @@ class Album_Model{
         $album->anh = $row['anh'];
         $album->ten = $row['ten'];
         $album->casi_id = $row['casi_id'];
-        $album->casi_id = $row['theloai_id'];
+        $album->theloai_id = $row['theloai_id'];
         return $album;
 	}
 
@@ -68,7 +68,7 @@ class Album_Model{
 	public function update(){
 		$conn = FT_Database::instance()->getConnection();
 		$stmt = $conn->prepare("UPDATE albums SET anh=?, ten=?, casi_id=?, theloai_id=? WHERE id=?");
-		$stmt->bind_param("ssiii", $this->anh, $this->ten, $this->casi_id, $this->casi_id, $_POST['id']);
+		$stmt->bind_param("ssiii", $this->anh, $this->ten, $this->casi_id, $this->theloai_id, $_POST['id']);
 		$stmt->execute();
 		$stmt->close();
 	}

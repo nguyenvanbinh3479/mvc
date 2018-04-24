@@ -72,7 +72,7 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="index.php">Logout</a>
+                                        <a href="admin.php?c=login">Logout</a>
                                     </li>
                                     <li>
                                         <a href="admin.php?c=setting">Settings</a>
@@ -99,7 +99,7 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header" data-background-color="purple">
-                                    <h4 class="title">Danh Sách Users</h4>
+                                    <h4 class="title">Danh Sách Bài Hát</h4>
                                     <p class="category">cập nhật mới nhất</p>
                                 </div>
                                 <div class="card-content table-responsive">
@@ -121,10 +121,42 @@
                                       <?php foreach ($list_baihat as $baihat) { ?>    
                                         <tr>
                                           <td><?php echo increment_once($index); ?></td>
-                                          <td><?php echo $baihat->casi_id; ?></td>
-                                          <td><?php echo $baihat->album_id; ?></td>
-                                          <td><?php echo $baihat->theloai_id; ?></td>
-                                          <td><?php echo $baihat->tacgia_id; ?></td>
+                                            <?php 
+                                                $arr = (array) $list_casi;
+                                                foreach ($arr as $key => $value) {
+                                                    $casi = (array) $value;
+                                                    if ($casi['id'] == $baihat->casi_id)   
+                                                    echo '<td> '. $casi['ten'] .' </td>';
+                                                }
+                                            ?>
+
+                                            <?php 
+                                                $arr = (array) $list_album;
+                                                foreach ($arr as $key => $value) {
+                                                    $album = (array) $value;
+                                                    if ($album['id'] == $baihat->album_id)   
+                                                    echo '<td> '. $album['ten'] .' </td>';
+                                                }
+                                            ?>
+
+                                            <?php 
+                                                $arr = (array) $list_theloai;
+                                                foreach ($arr as $key => $value) {
+                                                    $theloai = (array) $value;
+                                                    if ($theloai['id'] == $baihat->theloai_id)   
+                                                    echo '<td> '. $theloai['ten'] .' </td>';
+                                                }
+                                            ?>
+                                            <?php 
+
+                                                $arr = (array) $list_tacgia;
+                                                foreach ($arr as $key => $value) {
+                                                    $tacgia = (array) $value;
+                                                    if ($tacgia['id'] == $baihat->tacgia_id)   
+                                                    echo '<td> '. $tacgia['ten'] .' </td>';
+                                                }
+                                            ?>
+
                                           <td><?php echo $baihat->ten; ?></td>
                                           <td><?php echo $baihat->anh; ?></td>
                                           <td><?php echo $baihat->loi_bai_hat; ?></td>

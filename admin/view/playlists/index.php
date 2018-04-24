@@ -72,7 +72,7 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="index.php">Logout</a>
+                                        <a href="admin.php?c=login">Logout</a>
                                     </li>
                                     <li>
                                         <a href="admin.php?c=setting">Settings</a>
@@ -106,7 +106,7 @@
                                     <table class="table table-hover">
                                         <thead class="">
                                           <th>STT</th>
-                                          <th>user_id</th>
+                                          <th>user</th>
                                           <th>ten</th>
                                           <th>anh</th>
                                           <th>Edit</th>
@@ -116,7 +116,14 @@
                                       <?php foreach ($list_playlist as $playlist) { ?>    
                                         <tr>
                                           <td><?php echo increment_once($index); ?></td>
-                                          <td><?php echo $playlist->user_id; ?></td>
+                                              <?php 
+                                                foreach($list_user as $user){
+                                                $arr_playlist = (array)$playlist;
+                                                $arr_user = (array)$user;
+                                                if($arr_user['id'] == $arr_playlist['user_id']){
+                                                ?><td><?php echo $arr_user['email']; ?></td><?php
+                                                }
+                                              }?>
                                           <td><?php echo $playlist->ten; ?></td>
                                           <td><?php echo $playlist->anh; ?></td>
                                           <td><a href="admin.php?c=playlist&a=edit&id=<?php echo $playlist->id; ?>">Edit</a></td>

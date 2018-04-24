@@ -72,7 +72,7 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="index.php">Logout</a>
+                                        <a href="admin.php?c=login">Logout</a>
                                     </li>
                                     <li>
                                         <a href="admin.php?c=setting">Settings</a>
@@ -107,8 +107,7 @@
 						</div>
 						<div class="row">
 							<select class="form-control p-2 m-2" name="user_id">
-								<option value="visible">Visible</option>
-								<option value="disbale">Disable</option>
+								<option value="admin"><?php echo $playlist->user_id; ?></option>
 							</select>
 						</div>
 						<div class="row">   		

@@ -6,7 +6,6 @@
         <div class="sidebar" data-color="red" data-image="public/img/sidebar-2.jpg" >
             <div class="logo">
                 <a href="admin.php?c=home" class="simple-text">
-                    M.S.C - UNIVERSE
                 </a>
             </div>
             <div class="sidebar-wrapper">
@@ -72,7 +71,7 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="index.php">Logout</a>
+                                        <a href="admin.php?c=login">Logout</a>
                                     </li>
                                     <li>
                                         <a href="admin.php?c=setting">Settings</a>
@@ -118,20 +117,53 @@
 							<label>casi:</label>
 						</div>
 						<div class="row">   	
-							<select class="form-control p-2 m-2" name="album_id">
-								<option value="visible"><?php echo $baihat->album_id; ?></option>
+							<select class="form-control p-2 m-2" name="casi_id">
+                                <?php
+                                foreach ($list_casi as $value)
+                                {
+                                    $casi = (array)$value;
+                                    $id = $casi['id'];
+                                    $id_casi = $album->casi_id;
+                                    $name = $casi['ten'];
+                                    if ($id_casi == $id) {
+                                        echo "<option value='$id' selected>$name
+                                        </option>";
+                                    }else {
+
+                                        echo "<option value='$id'> $name
+                                        </option>";
+                                    }
+                                }            
+                                ?>
 							</select>
 						</div>
 						<div class="row">   		
 							<label>theloai:</label>
 						</div>
 						<div class="row">   	
-							<select class="form-control p-2 m-2" name="album_id">
-								<option value="visible"><?php echo $baihat->album_id; ?></option>
+							<select class="form-control p-2 m-2" name="theloai_id">
+                                <?php
+                                foreach ($list_theloai as $value)
+                                {
+                                    $theloai = (array)$value;
+                                    $id = $theloai['id'];
+                                    $id_theloai = $album->theloai_id;
+                                    $name = $theloai['ten'];
+                                    if ($id_theloai == $id) {
+                                        echo "<option value='$id' selected>$name
+                                        </option>";
+                                    }else {
+
+                                        echo "<option value='$id'> $name
+                                        </option>";
+                                    }
+                                }            
+                                ?>
 							</select>
 						</div>
 						<div class="row">   
-                            <button class="btn btn-warning p-2 m-2" type="submit">Apply</button>                          
+                            <button class="btn btn-warning p-2 m-2" type="submit" style="padding: 12px 0"><a
+                            style="color: white; padding: 14px 30px;">Apply</a></button>                           
                             <button class="btn btn-warning p-2 m-2" type="submit" style="padding: 12px 0"><a href="admin.php?c=album" style="color: white; padding: 14px 30px;">Cancel</a></button>                          
 					    </div>
 					</form>

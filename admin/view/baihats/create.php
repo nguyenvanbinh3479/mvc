@@ -72,7 +72,7 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="index.php">Logout</a>
+                                        <a href="admin.php?c=login">Logout</a>
                                     </li>
                                     <li>
                                         <a href="admin.php?c=setting">Settings</a>
@@ -106,7 +106,7 @@
 						</div>
 						<div class="row">
 							<select class="form-control p-2 m-2" name="casi_id">
-								<?php foreach ( $list_casi as $key => $value) { 
+								<?php foreach ($list_casi as $key => $value) {
 									$arr = (array) $value;?>
 									<option value="<?php print_r($arr['id']); ?> "> <?php print_r($arr['ten']) ; }?></option>
 							</select>
@@ -166,7 +166,7 @@
 								<input type="text" class="form-control p-2 m-2" name="link" required>
 						</div>
 						<div class="row">   
-                            <button class="btn btn-primary p-2 m-2" onclick="demo.showNotification('top','left')">Apply</button>
+                            <button class="btn btn-primary p-2 m-2" onclick="ntf.showNotification('top','left')">Apply</button>
 							<button class="btn btn-primary p-2 m-2" type="submit" style="padding: 12px 0"><a href="admin.php?c=baihat" style="color: white; padding: 14px 30px;">Cancel</a></button>                          
 						</div>
 					</form>

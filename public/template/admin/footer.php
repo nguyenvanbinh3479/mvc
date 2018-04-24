@@ -43,6 +43,7 @@
 <script src="public/js/material-dashboard.js?v=1.2.0"></script>
 <!-- Material Dashboard DEMO methods, don't include it in your project! -->
 <script src="public/js/demo.js"></script>
+<script src="public/js/ntf.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
 

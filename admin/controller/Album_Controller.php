@@ -87,10 +87,17 @@ class Album_Controller extends Base_Controller
     public function edit()
     {        
         $this->model->load('Album');
+        $this->model->load('TheLoai');
+        $this->model->load('CaSi');
+        
         $album = $this->model->Album->findById($_GET['id']);
+        $casi = $this->model->CaSi->all();
+        $theloai = $this->model->TheLoai->all();
         $data = array(
             'title' => 'edit',
-            'album' => $album
+            'album' => $album,
+            'list_casi' => $casi,
+            'list_theloai' => $theloai
         );
 
         // Load view
@@ -103,13 +110,14 @@ class Album_Controller extends Base_Controller
     */
     public function update()
     {        
+
         $this->model->load('Album');
         $album = $this->model->Album->findById($_POST['id']);
         $album->anh = $_POST['anh'];
         $album->ten = $_POST['ten'];  
-        $album->casi_id = $_POST['casi_id'];           
+        $album->casi_id = $_POST['casi_id'];
+        $album->theloai_id = $_POST['theloai_id'];      
         $album->update();
-
         go_back();
     }
 
