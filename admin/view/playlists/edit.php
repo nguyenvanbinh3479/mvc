@@ -103,11 +103,27 @@
 							<h2>Edit playlist</h2>
 						</div>
 						<div class="row">   		
-							<label>user_id:</label>
+							<label>User:</label>
 						</div>
 						<div class="row">
 							<select class="form-control p-2 m-2" name="user_id">
-								<option value="admin"><?php echo $playlist->user_id; ?></option>
+                            <?php
+                                foreach ($list_user as $value)
+                                {
+                                    $user = (array)$value;
+                                    $id = $user['id'];
+                                    $id_user = $playlist->user_id;
+                                    $name = $user['email'];
+                                    if ($id_user == $id) {
+                                        echo "<option value='$id' selected>$name
+                                        </option>";
+                                    }else {
+
+                                        echo "<option value='$id'> $name
+                                        </option>";
+                                    }
+                                }            
+                                ?>
 							</select>
 						</div>
 						<div class="row">   		
@@ -123,7 +139,7 @@
 							<input type="text" class="form-control p-2 m-2" name="anh" value="<?php echo $playlist->anh; ?>">
 						</div>
 						<div class="row">   
-                            <button class="btn p-2 m-2" type="submit">Apply</button>                          
+                            <button class="btn p-2 m-2" type="submit"  onclick="alert('Add success !')">Apply</button>                          
                             <button class="btn p-2 m-2" type="submit" style="padding: 12px 0"><a href="admin.php?c=playlist" style="color: white; padding: 14px 30px;">Cancel</a></button>                          
 					    </div>
                     </form>
