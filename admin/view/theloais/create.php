@@ -114,7 +114,7 @@
 							<input type="text" class="form-control p-2 m-2" name="anh" required>
 						</div>
 						<div class="row">   
-                            <button class="btn btn-info p-2 m-2" onclick="demo.showNotification('top','left')">Apply</button>
+                            <button class="btn btn-info p-2 m-2" onclick="ntf.showNotification('top','left')">Apply</button>
 							<button class="btn btn-info p-2 m-2" type="submit" style="padding: 12px 0"><a href="admin.php?c=theloai" style="color: white; padding: 14px 30px;">Cancel</a></button>                          
 						</div>
 					</form>
