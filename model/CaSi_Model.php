@@ -1,6 +1,6 @@
 <?php 
 class CaSi_Model{
-	// public $id;
+	public $id;
 	public $ten;
     public $thong_tin;
     public $anh;
