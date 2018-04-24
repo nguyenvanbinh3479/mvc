@@ -15,8 +15,8 @@ class BinhLuan_Model{
 			die('Error: '.mysqli_query_error());
 
 		while ($row = mysqli_fetch_assoc($result)){
-			$binhluan = new BinhLuan_Model();
-            $binhluan->id = $row['id'];			
+            $binhluan = new BinhLuan_Model();
+            $binhluan->id = $row['id'];
             $binhluan->baihat_id = $row['baihat_id'];
             $binhluan->user_id = $row['user_id'];
             $binhluan->noi_dung = $row['noi_dung'];
@@ -46,7 +46,7 @@ class BinhLuan_Model{
 
 		$row = mysqli_fetch_assoc($result);
         $binhluan = new BinhLuan_Model();
-        $binhluan->id = $row['id'];
+        $binhluan->id = $row['id'];      
         $binhluan->baihat_id = $row['baihat_id'];
         $binhluan->user_id = $row['user_id'];
         $binhluan->noi_dung = $row['noi_dung'];

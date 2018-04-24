@@ -11,16 +11,16 @@ class BinhLuan_Controller extends Base_Controller
         $this->model->load('BinhLuan');
         $this->model->load('BaiHat');
         $this->model->load('User');
-
+        
         $list_binhluan = $this->model->BinhLuan->all();
-        $list_user = $this->model->User->all();
         $list_baihat = $this->model->BaiHat->all();
+        $list_user = $this->model->User->all();
 
         $data = array(
             'title' => 'index',
             'list_binhluan' => $list_binhluan,
-            'list_user' => $list_user,
-            'list_baihat' => $list_baihat
+            'list_baihat' => $list_baihat,
+            'list_user' => $list_user
         );
 
         // Load view
@@ -61,8 +61,7 @@ class BinhLuan_Controller extends Base_Controller
             'list_baihat' => $list_baihat,
             'list_user' => $list_user,
         );
-
-        $this->view->load('binhluans/create', $data);
+        $this->view->load('binhluans/create',$data);
     }
 
      /**
@@ -92,13 +91,13 @@ class BinhLuan_Controller extends Base_Controller
         $this->model->load('User');
 
         $binhluan = $this->model->BinhLuan->findById($_GET['id']);
-        $baihat = $this->model->BaiHat->all();
-        $user = $this->model->User->all();
+        $list_baihat = $this->model->BaiHat->all();
+        $list_user = $this->model->User->all();
         $data = array(
             'title' => 'edit',
             'binhluan' => $binhluan,
-            'list_baihat' => $baihat,
-            'list_user' => $user
+            'list_baihat' => $list_baihat,
+            'list_user' => $list_user,
         );
 
         // Load view
@@ -115,7 +114,7 @@ class BinhLuan_Controller extends Base_Controller
         $binhluan = $this->model->BinhLuan->findById($_POST['id']);
         $binhluan->baihat_id = $_POST['baihat_id'];
         $binhluan->user_id = $_POST['user_id'];
-        $binhluan->noi_dung = $_POST['noi_dung'];        
+        $binhluan->noi_dung = $_POST['noi_dung'];  
         $binhluan->update();
         go_back();
     }
