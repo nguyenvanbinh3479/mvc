@@ -103,7 +103,7 @@
 							<h2>Edit chitietplaylist</h2>
 						</div>
 						<div class="row">   		
-							<label>playlist: <?php print_r($chitietplaylist);?></label>
+							<label>playlist:</label>
 						</div>
 						<div class="row">
 							<select class="form-control p-2 m-2" name="playlist_id">
