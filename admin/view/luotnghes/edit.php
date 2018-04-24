@@ -124,7 +124,7 @@
 							<label>ngay:</label>
 						</div>
 						<div class="row">   	
-							<input type="text" class="form-control p-2 m-2" name="ngay" value="<?php echo $luotnghe->password; ?>">
+							<input type="text" class="form-control p-2 m-2" name="ngay" value="<?php echo $luotnghe->ngay; ?>">
 						</div>
 						<div class="row">   
                         <button class="btn btn-warning p-2 m-2" type="submit">Apply</button>                          

@@ -1,7 +1,8 @@
 <?php
 class LuotNghe_Model{
+	public $id;
 	public $baihat_id;
-	public $luotnghe_id;
+	public $user_id;
 	public $ngay;
 
 	public function all(){
@@ -15,6 +16,7 @@ class LuotNghe_Model{
 
 		while ($row = mysqli_fetch_assoc($result)){
             $luotnghe = new LuotNghe_Model();
+            $luotnghe->id = $row['id'];
             $luotnghe->baihat_id = $row['baihat_id'];
             $luotnghe->user_id = $row['user_id'];
             $luotnghe->ngay = $row['ngay'];
@@ -44,6 +46,7 @@ class LuotNghe_Model{
 
 		$row = mysqli_fetch_assoc($result);
         $luotnghe = new LuotNghe_Model();
+        $luotnghe->id = $row['id'];
         $luotnghe->baihat_id = $row['baihat_id'];
         $luotnghe->user_id = $row['user_id'];
         $luotnghe->ngay = $row['ngay'];
@@ -65,5 +68,24 @@ class LuotNghe_Model{
 		$stmt->bind_param("iisi", $this->baihat_id, $this->user_id, $this->ngay, $_POST['id']);
 		$stmt->execute();
 		$stmt->close();
+	}
+
+	public function login($baihat_id, $user_id)
+	{
+		$conn = FT_Database::instance()->getConnection();
+		$sql = "SELECT * FROM luotnghes WHERE baihat_id = '" . $baihat_id . "' and user_id = '" . $user_id . "'";
+		$result = mysqli_query($conn, $sql);
+
+		if(!$result)
+			die('Error: ');
+
+		$row = mysqli_fetch_assoc($result);
+        $luotnghe = new LuotNghe_Model();
+        $luotnghe->id = $row['id'];
+        $luotnghe->baihat_id = $row['baihat_id'];
+        $luotnghe->user_id = $row['user_id'];
+        $luotnghe->ngay = $row['ngay'];
+
+        return $luotnghe;
 	}
 }
