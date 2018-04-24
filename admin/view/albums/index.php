@@ -126,7 +126,6 @@
                                                 if ($casi['id'] == $album->casi_id)   
                                                 echo '<td> '. $casi['ten'] .' </td>';
                                             }
-                                        
                                             ?>
                                             <?php 
                                             $arr = (array) $list_theloai;

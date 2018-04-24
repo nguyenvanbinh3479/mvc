@@ -115,12 +115,20 @@
 							<input type="password" class="form-control p-2 m-2" name="password" value="<?php echo $user->password; ?>">
 						</div>
 						<div class="row">   		
-							<label>Role:</label>
+							<label>Role: </label>
 						</div>
 						<div class="row">
 							<select class="form-control p-2 m-2" name="role">
-								<option value="admin">Admin</option>
-								<option value="user">User</option>
+                                <?php 
+                                $role = $user->role;
+                                    if ($role == "admin") {
+                                       echo "<option value='$role' selected>admin</option>";
+                                       echo "<option value='user'>user</option>";
+                                    }else {
+                                       echo "<option value='$role' selected>user</option>";
+                                       echo "<option value='admin'>admin</option>";
+                                    }
+                                ?>
 							</select>
 						</div>
 						<div class="row">   		
@@ -128,8 +136,17 @@
 						</div>
 						<div class="row">
 							<select class="form-control p-2 m-2" name="status">
-								<option value="visible">Visible</option>
-								<option value="disbale">Disable</option>
+                                <?php 
+                                    $status = $user->status;
+                                    $visible = "visible";
+                                    if ($status == "visible") {
+                                       echo "<option value='$status' selected>visible</option>";
+                                       echo "<option value='disable'>disable</option>";
+                                    }else {
+                                       echo "<option value='$status' selected>disable</option>";
+                                       echo "<option value='$visible'>visible</option>";
+                                    }
+                                ?>
 							</select>
 						</div>
 						<div class="row">   
