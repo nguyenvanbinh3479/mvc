@@ -133,8 +133,8 @@
                                                         }
                                                     }?>
                                                     <td><?php echo $luotnghe->ngay; ?></td>
-                                                    <td><a href="admin.php?c=luotnghe&a=edit&baihat_id=<?php echo $luotnghe->baihat_id; ?>&user_id=<?php echo $luotnghe->user_id; ?>">Edit</a></td>
-                                                    <td><a href="admin.php?c=luotnghe&a=delete&baihat_id=<?php echo $luotnghe->baihat_id; ?>&user_id=<?php echo $luotnghe->user_id; ?>">Delete</a></td>
+                                                    <td><a href="admin.php?c=luotnghe&a=edit&id=<?php echo $luotnghe->id; ?>">Edit</a></td>
+                                                    <td><a href="admin.php?c=luotnghe&a=delete&id=<?php echo $luotnghe->id; ?>">Delete</a></td>
                                                 </tr>
                                             <?php } ?>
                                         </tbody>

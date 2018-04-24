@@ -144,7 +144,7 @@
                                         echo "<option value='$id'> $name
                                         </option>";
                                     }
-                                }            
+                                }      
                                 ?> 
 							</select>
 						</div>
