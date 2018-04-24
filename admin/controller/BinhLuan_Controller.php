@@ -74,6 +74,7 @@ class BinhLuan_Controller extends Base_Controller
         $this->model->BinhLuan->baihat_id = $_POST['baihat_id'];
         $this->model->BinhLuan->user_id = $_POST['user_id'];
         $this->model->BinhLuan->noi_dung = $_POST['noi_dung'];
+        
         $this->model->BinhLuan->save();
 
         go_back();
@@ -113,8 +114,7 @@ class BinhLuan_Controller extends Base_Controller
         $binhluan = $this->model->BinhLuan->findById($_POST['id']);
         $binhluan->baihat_id = $_POST['baihat_id'];
         $binhluan->user_id = $_POST['user_id'];
-        $binhluan->noi_dung = $_POST['noi_dung'];        
-
+        $binhluan->noi_dung = $_POST['noi_dung'];  
         $binhluan->update();
         go_back();
     }

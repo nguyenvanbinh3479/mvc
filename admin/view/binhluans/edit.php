@@ -121,7 +121,7 @@
                                         echo "<option value='$id'> $name
                                         </option>";
                                     }
-                                }            
+                                }       
                                 ?> 
 							</select>
 						</div>
@@ -155,8 +155,8 @@
 							<input type="text" class="form-control p-2 m-2" name="noi_dung" value="<?php echo $binhluan->noi_dung; ?>">
 						</div>
 						<div class="row">   
-                            <button class="btn btn-success p-2 m-2" type="submit">Apply</button>                          
-                            <button class="btn btn-success p-2 m-2" type="submit" style="padding: 12px 0"><a href="admin.php?c=binhluan" style="color: white; padding: 14px 30px;">Cancel</a></button>                          
+                            <button class="btn btn-danger p-2 m-2" type="submit" onclick="alert('Add success !')">Apply</button>                          
+                            <button class="btn btn-danger p-2 m-2" type="submit" style="padding: 12px 0"><a href="admin.php?c=binhluan" style="color: white; padding: 14px 30px;">Cancel</a></button>                          
 					    </div>
 					</form>
 				</div>

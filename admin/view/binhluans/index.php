@@ -116,7 +116,6 @@
                                         <?php foreach ($list_binhluan as $binhluan) { ?>    
                                           <tr>
                                             <td><?php echo increment_once($index); ?></td>
-                                            
                                             <?php 
                                                 $arr = (array) $list_baihat;
                                                 foreach ($arr as $key => $value) {
