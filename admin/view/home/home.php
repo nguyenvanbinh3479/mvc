@@ -21,7 +21,7 @@
                     <li>
                         <a href="admin.php?c=notification">
                             <i class="material-icons">notifications</i>
-                            <p>Notifications</p>
+                            <p>Missions</p>
                         </a>
                     </li>
                     <li>
@@ -57,12 +57,18 @@
                             <li class="dropdown">
                                 <a href="admin.php?c=notification" class="dropdown-toggle" data-toggle="dropdown">
                                     <i class="material-icons">notifications</i>
-                                    <span class="notification">1</span>
-                                    <p class="hidden-lg hidden-md">Notifications</p>
+                                    <span class="notification">3</span>
+                                    <p class="hidden-lg hidden-md">Missions</p>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="admin.php?c=notification">Tuấn responded to your email</a>
+                                        <a href="admin.php?c=notification">Bình you have new mission</a>
+                                    </li>
+                                    <li>
+                                        <a href="admin.php?c=notification">Tuấn, are you done your missions?</a>
+                                    </li>
+                                    <li>
+                                        <a href="admin.php?c=notification">Tùng checkout your missions</a>
                                     </li>
                                 </ul>
                             </li>
