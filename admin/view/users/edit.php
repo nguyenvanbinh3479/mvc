@@ -74,9 +74,6 @@
                                     <li>
                                         <a href="admin.php?c=login">Logout</a>
                                     </li>
-                                    <li>
-                                        <a href="admin.php?c=setting">Settings</a>
-                                    </li>
                                 </ul>
                             </li>
                         </ul>
