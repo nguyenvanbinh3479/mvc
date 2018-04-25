@@ -37,7 +37,8 @@ class User_Model{
 		$rs = $stmt->execute();
 		$this->id = $stmt->insert_id;		
 		$stmt->close();
-		return $rs;
+
+		return $this->id;
 	}
 
 	public function findById($id){
@@ -69,8 +70,20 @@ class User_Model{
 
 	public function update(){
 		$conn = FT_Database::instance()->getConnection();
+
 		$stmt = $conn->prepare("UPDATE users SET email=?, password=?, role=?, status=? WHERE id=?");
-		$stmt->bind_param("ssssi", $this->email, $this->password, $this->role, $this->status, $_POST['id']);
+
+		if (isset($this->id)) {
+			$stmt->bind_param("ssssi", $this->email, $this->password, $this->role, $this->status, $this->id);
+		}else{
+			$stmt->bind_param("ssssi", $this->email, $this->password, $this->role, $this->status, $_POST['id']);
+		}
+
+		echo $this->email;
+		echo $this->password;
+		echo $this->role;
+		echo $this->status;
+
 		$stmt->execute();
 		$stmt->close();
 	}
@@ -79,6 +92,26 @@ class User_Model{
 	{
 		$conn = FT_Database::instance()->getConnection();
 		$sql = "SELECT * FROM users WHERE email = '" . $email . "' and password = '" . $password . "'";
+		$result = mysqli_query($conn, $sql);
+
+		if(!$result)
+			die('Error: ');
+
+		$row = mysqli_fetch_assoc($result);
+        $user = new User_Model();
+        $user->id = $row['id'];
+        $user->email = $row['email'];
+        $user->password = $row['password'];
+        $user->role = $row['role'];
+        $user->status = $row['status'];
+
+        return $user;
+	}
+
+	public function findByEmail($email)
+	{
+		$conn = FT_Database::instance()->getConnection();
+		$sql = "SELECT * FROM users WHERE email = '" .$email. "'";
 		$result = mysqli_query($conn, $sql);
 
 		if(!$result)
