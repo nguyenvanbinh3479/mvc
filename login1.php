@@ -6,7 +6,7 @@
         $email = addslashes($_POST['email']);
         $password = addslashes($_POST['password']);
         //kiem tra co ton tai khong
-        $query = mysqli_query($conn,"SELECT email, password, role FROM users WHERE email='$email'");
+        $query = mysqli_query($conn,"SELECT email, password, role, status FROM users WHERE email='$email'");
 
         if(mysqli_num_rows($query) == 0){
             echo  "Tên đăng nhập này không tồn tại. Vui lòng kiểm tra lại. <a href='javascript: history.go(-1)'>Trở lại</a>";
@@ -21,7 +21,12 @@
         }
 
         if($row['role'] != 'admin'){
-            echo "<p>bạn không có quyên truy cập. Vui lòng nhập lại. <a href='javascript: history.go(-1)'>Trở lại</a>";
+            echo "<p>bạn không có quyền truy cập. Vui lòng quay lại. <a href='javascript: history.go(-1)'>Trở lại</a>";
+            exit;
+        }
+
+        if($row['status'] != 'visible'){
+            echo "<p>Tài khoản của bạn đã bị chặn. Vui lòng quay lại. <a href='javascript: history.go(-1)'>Trở lại</a>";
             exit;
         }
 
