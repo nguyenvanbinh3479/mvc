@@ -18,12 +18,6 @@
                             <p>Login</p>
                         </a>
                     </li>
-                    <li>
-                        <a href="admin.php?c=setting">
-                            <i class="material-icons">settings</i>
-                            <p>Settings</p>
-                        </a>
-                    </li>
                 </ul>
             </div>
         </div>
@@ -49,7 +43,7 @@
                             <div class="card">
                                 <div class="card-header" data-background-color="red">
                                     <h4 class="title">Login</h4>
-                                    <p class="category">you have to login</p>
+                                    <p class="category">you have to do this men</p>
                                 </div>
                                 <div class="card-content">
                                     <form>
@@ -57,7 +51,7 @@
                                             <div class="col-md-12">
                                                 <div class="form-group label-floating">
                                                     <label class="control-label">Username</label>
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" class="form-control" name="email" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -65,7 +59,7 @@
                                             <div class="col-md-12">
                                                 <div class="form-group label-floating">
                                                     <label class="control-label">Password</label>
-                                                    <input type="password" class="form-control">
+                                                    <input type="password" class="form-control" name="password" required>
                                                 </div>
                                             </div>
                                         </div>
