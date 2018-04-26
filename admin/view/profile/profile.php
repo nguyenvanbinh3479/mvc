@@ -102,7 +102,7 @@
                                     </a>
                                 </div>
                                 <div class="content">
-                                    <h6 class="category text-gray">CIO / Android Developerr</h6>
+                                    <h6 class="category text-gray">CIO / Android Developer</h6>
                                     <h4 class="card-title">Tuấn Nguyễn</h4>
                                     <p class="card-content text-info">
                                         I have a simple philosophy: Fill what’s empty. <br>Empty what full. Scratch where it itches <br>~ Alice Roosevelt ~
