@@ -113,7 +113,7 @@
                                         <tr>
                                           <td><?php echo increment_once($index); ?></td>
                                           <td><?php echo $theloai->ten; ?></td>
-                                          <td><?php echo $theloai->anh; ?></td>
+                                          <td><img src="<?php echo $theloai->anh; ?>" style="width: 50px; height: 50px;"></img></td>      
                                           <td><a href="admin.php?c=theloai&a=edit&id=<?php echo $theloai->id; ?>">Edit</a></td>
                                           <td><a href="admin.php?c=theloai&a=delete&id=<?php echo $theloai->id; ?>">Delete</a></td>
                                         </tr>
