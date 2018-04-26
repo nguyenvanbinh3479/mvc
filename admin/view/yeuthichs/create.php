@@ -122,7 +122,7 @@
 							<label>Ngay:</label>
 						</div>
 						<div class="row">   		
-							<input type="text" class="form-control p-2 m-2" name="ngay" placeholder="2018-05-10" required>
+							<input type="text" class="form-control p-2 m-2" name="ngay" placeholder="12/24/2018" required>
 						</div>
 						<div class="row">   
                             <button class="btn btn-danger p-2 m-2"  onclick="ntf.showNotification('top','left')">Apply</button>                            
