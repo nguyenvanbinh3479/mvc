@@ -114,7 +114,7 @@
                                         <?php foreach ($list_album as $album) { ?>    
                                         <tr>
                                             <td><?php echo increment_once($index); ?></td>
-                                            <td><?php echo $album->anh; ?></td>
+                                          <td><img src="<?php echo $album->anh; ?>" style="width: 50px; height: 50px;"></img></td>                                            
                                             <td><?php echo $album->ten; ?></td>
                                             <?php 
                                             $arr = (array) $list_casi;

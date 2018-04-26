@@ -122,7 +122,7 @@
                                                 }
                                               }?>
                                           <td><?php echo $playlist->ten; ?></td>
-                                          <td><?php echo $playlist->anh; ?></td>
+                                          <td><img src="<?php echo $playlist->anh; ?>" style="width: 50px; height: 50px;"></img></td>      
                                           <td><a href="admin.php?c=playlist&a=edit&id=<?php echo $playlist->id; ?>">Edit</a></td>
                                           <td><a href="admin.php?c=playlist&a=delete&id=<?php echo $playlist->id; ?>">Delete</a></td>
                                         </tr>
