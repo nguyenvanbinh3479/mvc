@@ -160,4 +160,5 @@ class BaiHat_Controller extends Base_Controller
 
         go_back();
     }
+
 }
