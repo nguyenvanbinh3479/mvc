@@ -120,14 +120,6 @@
                                         <button type="button" aria-hidden="true" class="close" ></button>
                                         <span>Create the form login</span>
                                     </div>
-                                    <div class="alert alert-danger">
-                                        <button type="button" aria-hidden="true" class="close" ></button>
-                                        <span>Edit the admin interface</span>
-                                    </div>
-                                    <div class="alert alert-danger">
-                                        <button type="button" aria-hidden="true" class="close" ></button>
-                                        <span>Revised settings interface</span>
-                                    </div>
                                 </div>
                                 <div class="col-md-4">
                                     <h5>Tuấn Missions</h5>
@@ -137,7 +129,11 @@
                                     </div>
                                     <div class="alert alert-success">
                                         <button type="button" aria-hidden="true" class="close" ></button>
-                                        <span>Edit the view and controller for all tables</span>
+                                        <span>Edit the view and controller</span>
+                                    </div>
+                                    <div class="alert alert-info">
+                                        <button type="button" aria-hidden="true" class="close" ></button>
+                                        <span>Edit api</span>
                                     </div>
                                     <div class="alert alert-warning">
                                         <button type="button" aria-hidden="true" class="close" ></button>
@@ -146,11 +142,18 @@
                                 </div>
                                 <div class="col-md-4">
                                     <h5>Tùng Missions</h5>
-                                    <div class="alert alert-info">
+                                    <div class="alert alert-success">
                                         <button type="button" aria-hidden="true" class="close" ></button>
                                         <span>Add view, controller, model for authors</span>
                                     </div>
-                                    
+                                    <div class="alert alert-info">
+                                        <button type="button" aria-hidden="true" class="close" ></button>
+                                        <span>Create api</span>
+                                    </div>
+                                    <div class="alert alert-success">
+                                        <button type="button" aria-hidden="true" class="close" ></button>
+                                        <span>Edit api</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
