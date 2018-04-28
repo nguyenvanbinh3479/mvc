@@ -17,7 +17,7 @@ class TheLoai_Model{
             $theloai = new TheLoai_Model();
             $theloai->id = $row['id'];
             $theloai->ten = $row['ten'];
-            $theloai->anh = $row['anh'];
+            $theloai->anh = 'public/img/types/'.$row['anh'];
             $list_theloai[] = $theloai;            
         }
 
@@ -46,7 +46,7 @@ class TheLoai_Model{
         $theloai = new TheLoai_Model();
         $theloai->id = $row['id'];
         $theloai->ten = $row['ten'];
-        $theloai->anh = $row['anh'];
+        $theloai->anh = 'public/img/types/'.$row['anh'];
 
         return $theloai;
 	}
