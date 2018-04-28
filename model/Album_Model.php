@@ -19,7 +19,7 @@ class Album_Model{
 		while ($row = mysqli_fetch_assoc($result)){
             $album = new Album_Model();
             $album->id = $row['id'];
-            $album->anh = $row['anh'];
+            $album->anh = 'public/img/albums/'.$row['anh'];
             $album->ten = $row['ten'];
             $album->casi_id = $row['casi_id'];
             $album->theloai_id = $row['theloai_id'];
@@ -50,7 +50,7 @@ class Album_Model{
 		$row = mysqli_fetch_assoc($result);
         $album = new Album_Model();
         $album->id = $row['id'];
-        $album->anh = $row['anh'];
+        $album->anh = 'public/img/albums/'.$row['anh'];
         $album->ten = $row['ten'];
         $album->casi_id = $row['casi_id'];
         $album->theloai_id = $row['theloai_id'];
