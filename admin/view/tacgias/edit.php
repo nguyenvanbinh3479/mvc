@@ -109,7 +109,16 @@
                       <label>anh:</label>
                     </div>
                     <div class="row">
-                      <input type="text" class="form-control p-2 m-2" name="anh" value="<?php echo $tacgia->anh; ?>">
+                        <label class="btn btn-default btn-file">
+                            Browse <input type="file" accept="image/*" name="anh" style="display: none;" onchange="loadFile(event)">
+                            <script>
+                            var loadFile = function(event) {
+                                var output = document.getElementById('output');
+                                output.src = URL.createObjectURL(event.target.files[0]);
+                            };
+                            </script>
+                        </label>
+                        <img id="output" style="width: 300px; height: 200px;" src="<?php echo $tacgia->anh; ?>"/>
                     </div>
                     <div class="row">
                       <label>thong tin:</label>
