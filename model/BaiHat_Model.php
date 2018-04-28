@@ -61,7 +61,7 @@ class BaiHat_Model{
 		$baihat->theloai_id = $row['theloai_id'];
 		$baihat->tacgia_id = $row['tacgia_id'];
         $baihat->ten = $row['ten'];
-		$baihat->anh = $row['anh'];
+		$baihat->anh = 'public/img/songs/'.$row['anh'];
 		$baihat->loi_bai_hat = $row['loi_bai_hat'];
 		$baihat->link = $row['link'];
 
