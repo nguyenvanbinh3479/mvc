@@ -200,9 +200,6 @@
 						<div class="row">   		
 							<label>Anh:</label>
 						</div>
-						<!-- <div class="row">
-								<input type="text" class="form-control p-2 m-2" name="anh" value="<?php echo $baihat->anh; ?>">
-						</div> -->
                         <div class="row">
                             <label class="btn btn-default btn-file">
                                 Browse <input type="file" accept="image/*" name="anh" style="display: none;" onchange="loadFile(event)">
@@ -213,7 +210,7 @@
                                 };
                                 </script>
                             </label>
-                            <img id="output" style="width: 300px; height: 200px;" src="public/img/songs/<?php echo $baihat->anh; ?>"/>
+                            <img id="output" style="width: 300px; height: 200px;" src="<?php echo $baihat->anh; ?>"/>
 						</div>
 						<div class="row">   		
 							<label>Loi Bai Hat:</label>
