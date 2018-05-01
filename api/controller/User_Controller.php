@@ -35,14 +35,13 @@ class User_Controller extends Base_Controller {
 						'password' => $result->password
 						),
 					'role' => $result->role,
-					'status' => $result->status
+					'status' => $result->status,
+					'token' => $result->token
 					)
 				);
 				echo json_encode($json);
 
 				echo '}';
-			}else {
-				echo '{null}';
 			}
 			
 		}
