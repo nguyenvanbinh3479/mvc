@@ -164,8 +164,7 @@
                                     </div>
                                     <div class="card-content">
                                         <p class="category">Songs</p>
-                                        <h3 class="title">2000
-                                        </h3>
+                                        <h3 class="title"><?php echo count($list_baihat)?></h3>
                                     </div>
                                     <div class="card-footer">
                                         <div class="stats">
