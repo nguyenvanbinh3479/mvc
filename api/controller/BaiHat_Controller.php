@@ -17,7 +17,6 @@ class BaiHat_Controller extends Base_Controller {
 	public function topFiveMusic()
 	{
 		$list_baihat = array();
-		$json = [];
 		$this->model->load('BaiHat');
 		$list_baihat = $this->model->BaiHat->topFiveMusic();
 
@@ -27,6 +26,10 @@ class BaiHat_Controller extends Base_Controller {
 			echo 'khong';
 		}
 
+	}
+
+	public function newMusic(){
+		$list_baihat = array();
 	}
 }
  ?>
