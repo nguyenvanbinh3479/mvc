@@ -88,7 +88,7 @@ class BaiHat_Model{
     public function topFiveMusic(){
     	$list_baihat = array();
      	$conn = FT_Database::instance()->getConnection(); 
-     	$sql = "SELECT baihats.id, baihats.casi_id, baihats.album_id, baihats.theloai_id, baihats.tacgia_id, baihats.ten, baihats.anh, baihats.loi_bai_hat, baihats.link from baihats, luotnghes WHERE baihats.id = luotnghes.baihat_id GROUP BY luotnghes.baihat_id ORDER BY COUNT(baihats.id) DESC limit 5";
+     	$sql = "SELECT baihats.id,baihats.ten as 'tenbaihat',  casis.ten as 'tencasi', baihats.anh, baihats.link from baihats, luotnghes, casis, tacgias WHERE baihats.id = luotnghes.baihat_id && baihats.casi_id = casis.id && tacgias.id = baihats.tacgia_id GROUP BY luotnghes.baihat_id ORDER BY COUNT(baihats.id) DESC limit 5";
 
      	$result = mysqli_query($conn, $sql);
      	if(!$result)
@@ -97,13 +97,9 @@ class BaiHat_Model{
 		while ($row = mysqli_fetch_assoc($result)){
 			$baihat = new BaiHat_Model();
 	        $baihat->id = $row['id'];
-			$baihat->casi_id = $row['casi_id'];
-	        $baihat->album_id = $row['album_id'];
-			$baihat->theloai_id = $row['theloai_id'];
-			$baihat->tacgia_id = $row['tacgia_id'];
-	        $baihat->ten = $row['ten'];
+	        $baihat->ten = $row['tenbaihat'];
+			$baihat->casi_id = $row['tencasi'];
 			$baihat->anh = $row['anh'];
-			$baihat->loi_bai_hat = $row['loi_bai_hat'];
 			$baihat->link = $row['link'];
 			array_push($list_baihat, $baihat); 
         }
