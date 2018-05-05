@@ -9,6 +9,7 @@ class BaiHat_Model{
 	public $anh;
 	public $loi_bai_hat;
 	public $link;
+	public $ngay;
 
     public function all(){
 		$conn = FT_Database::instance()->getConnection();
@@ -30,6 +31,7 @@ class BaiHat_Model{
 			$baihat->anh = 'public/img/songs/'.$row['anh'];
 			$baihat->loi_bai_hat = $row['loi_bai_hat'];
 			$baihat->link = $row['link'];
+			$baihat->ngay = $row['ngay'];
 			$list_baihat[] = $baihat;  
         }
         return $list_baihat;
@@ -37,8 +39,8 @@ class BaiHat_Model{
 
 	public function save(){
 		$conn = FT_Database::instance()->getConnection();
-		$stmt = $conn->prepare("INSERT INTO baihats (casi_id, album_id, theloai_id, tacgia_id, ten, anh, loi_bai_hat, link) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-		$stmt->bind_param("iiiissss", $this->casi_id, $this->album_id, $this->theloai_id, $this->tacgia_id, $this->ten, $this->anh, $this->loi_bai_hat, $this->link);
+		$stmt = $conn->prepare("INSERT INTO baihats (casi_id, album_id, theloai_id, tacgia_id, ten, anh, loi_bai_hat, link, ngay) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+		$stmt->bind_param("iiiisssss", $this->casi_id, $this->album_id, $this->theloai_id, $this->tacgia_id, $this->ten, $this->anh, $this->loi_bai_hat, $this->link, $this->ngay);
 		$rs = $stmt->execute();
 		$this->id = $stmt->insert_id;		
 		$stmt->close();
@@ -64,6 +66,7 @@ class BaiHat_Model{
 		$baihat->anh = 'public/img/songs/'.$row['anh'];
 		$baihat->loi_bai_hat = $row['loi_bai_hat'];
 		$baihat->link = $row['link'];
+		$baihat->ngay = $row['ngay'];
 
         return $baihat;
 	}
@@ -78,8 +81,8 @@ class BaiHat_Model{
 
 	public function update(){
 		$conn = FT_Database::instance()->getConnection();
-		$stmt = $conn->prepare("UPDATE baihats SET casi_id=?, album_id=?, theloai_id=?, tacgia_id=?, ten=?, anh=?, loi_bai_hat=?, link=? WHERE id=?");
-		$stmt->bind_param("iiiissssi", $this->casi_id, $this->album_id, $this->theloai_id, $this->tacgia_id, $this->ten, $this->anh, $this->loi_bai_hat, $this->link, $_POST['id']);
+		$stmt = $conn->prepare("UPDATE baihats SET casi_id=?, album_id=?, theloai_id=?, tacgia_id=?, ten=?, anh=?, loi_bai_hat=?, link=?, ngay=? WHERE id=?");
+		$stmt->bind_param("iiiisssssi", $this->casi_id, $this->album_id, $this->theloai_id, $this->tacgia_id, $this->ten, $this->anh, $this->loi_bai_hat, $this->link, $this->ngay, $_POST['id']);
 		$stmt->execute();
 		$stmt->close();
 	}
@@ -122,6 +125,7 @@ class BaiHat_Model{
 			$baihat->casi_id = $row['tencasi'];
 			$baihat->anh = $row['anh'];
 			$baihat->link = $row['link'];
+			$baihat->ngay = $row['ngay'];
 			array_push($list_baihat, $baihat); 
         }
         return $list_baihat;
