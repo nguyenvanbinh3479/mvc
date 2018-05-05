@@ -104,7 +104,27 @@ class BaiHat_Model{
 			array_push($list_baihat, $baihat); 
         }
         return $list_baihat;
+    }
 
+    public function newMusic(){
+    	$list_baihat = array();
+    	$conn = FT_Database::instance()->getConnection(); 
+    	$sql = "";
+    	
+    	$result = mysqli_query($conn, $sql);
+     	if(!$result)
+			die('Error: '.mysqli_query_error());
+
+		while ($row = mysqli_fetch_assoc($result)){
+			$baihat = new BaiHat_Model();
+	        $baihat->id = $row['id'];
+	        $baihat->ten = $row['tenbaihat'];
+			$baihat->casi_id = $row['tencasi'];
+			$baihat->anh = $row['anh'];
+			$baihat->link = $row['link'];
+			array_push($list_baihat, $baihat); 
+        }
+        return $list_baihat;
     }
 
 }
