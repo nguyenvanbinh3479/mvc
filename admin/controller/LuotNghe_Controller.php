@@ -11,18 +11,14 @@ class LuotNghe_Controller extends Base_Controller
         $this->model->load('LuotNghe');
         $this->model->load('BaiHat');
         $this->model->load('User');
-
         $list_luotnghe = $this->model->LuotNghe->all();
         $list_baihat = $this->model->BaiHat->all();
-        $list_user = $this->model->User->all();
-
+        $list_user= $this->model->User->all();
         $data = array(
             'title' => 'index',
             'list_luotnghe' => $list_luotnghe,
             'list_baihat' => $list_baihat,
             'list_user' => $list_user
-
-            
         );
 
         // Load view
@@ -52,18 +48,16 @@ class LuotNghe_Controller extends Base_Controller
     */
     public function create()
     {        
-        $this->model->load('BaiHat');      
-        $this->model->load('User');      
-
+        $this->model->load('BaiHat');
+        $this->model->load('User');
         $list_baihat = $this->model->BaiHat->all();
         $list_user = $this->model->User->all();
-
         $data = array(
             'title' => 'index',
             'list_baihat' => $list_baihat,
             'list_user' => $list_user
         );
-
+        
         $this->view->load('luotnghes/create', $data);
     }
 
@@ -89,12 +83,19 @@ class LuotNghe_Controller extends Base_Controller
     public function edit()
     {        
         $this->model->load('LuotNghe');
+        $this->model->load('BaiHat');
+        $this->model->load('User');
         $luotnghe = $this->model->LuotNghe->findById($_GET['id']);
+        $baihat = $this->model->BaiHat->all();
+        $user = $this->model->User->all();
+        
         $data = array(
             'title' => 'edit',
-            'luotnghe' => $luotnghe
+            'luotnghe' => $luotnghe,
+            'list_baihat' => $baihat,
+            'list_user' => $user
         );
-
+        
         // Load view
         $this->view->load('luotnghes/edit', $data);
     }
@@ -108,8 +109,8 @@ class LuotNghe_Controller extends Base_Controller
         $this->model->load('LuotNghe');
         $luotnghe = $this->model->LuotNghe->findById($_POST['id']);
         $luotnghe->baihat_id = $_POST['baihat_id'];
-        $luotnghe->user_id = $_POST['user_id'];         
-        $luotnghe->ngay = $_POST['ngay'];         
+        $luotnghe->user_id = $_POST['user_id'];
+        $luotnghe->ngay = $_POST['ngay'];        
         $luotnghe->update();
 
         go_back();

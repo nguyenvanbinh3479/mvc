@@ -80,16 +80,16 @@ class Playlist_Controller extends Base_Controller
     */
     public function edit()
     {        
-        $this->model->load('User');
         $this->model->load('Playlist');
+        $this->model->load('User');      
 
         $playlist = $this->model->Playlist->findById($_GET['id']);
-        $user = $this->model->User->findById($_GET['id']);
+        $user = $this->model->User->all();
         
         $data = array(
             'title' => 'edit',
             'playlist' => $playlist,
-            'user' => $user
+            'list_user' => $user
         );
 
         // Load view

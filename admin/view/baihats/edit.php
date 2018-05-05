@@ -18,21 +18,15 @@
                         </a>
                     </li>
                     <li>
-                        <a href="admin.php?c=notification">
+                        <a href="admin.php?c=mission">
                             <i class="material-icons">notifications</i>
-                            <p>Notifications</p>
+                            <p>Mission</p>
                         </a>
                     </li>
                     <li>
                         <a href="admin.php?c=profile">
                             <i class="material-icons">account_box</i>
                             <p>Admin Profile</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="admin.php?c=setting">
-                            <i class="material-icons">settings</i>
-                            <p>Settings</p>
                         </a>
                     </li>
                 </ul>
@@ -54,14 +48,20 @@
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown">
-                                <a href="admin.php?c=notification" class="dropdown-toggle" data-toggle="dropdown">
+                                <a href="admin.php?c=mission" class="dropdown-toggle" data-toggle="dropdown">
                                     <i class="material-icons">notifications</i>
-                                    <span class="notification">1</span>
-                                    <p class="hidden-lg hidden-md">Notifications</p>
+                                    <span class="notification">3</span>
+                                    <p class="hidden-lg hidden-md">Mission</p>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="admin.php?c=notification">Tuấn responded to your email</a>
+                                        <a href="admin.php?c=mission">Bình you have new mission</a>
+                                    </li>
+                                    <li>
+                                        <a href="admin.php?c=mission">Tuấn, are you done your mission?</a>
+                                    </li>
+                                    <li>
+                                        <a href="admin.php?c=mission">Tùng checkout your mission</a>
                                     </li>
                                 </ul>
                             </li>
@@ -73,9 +73,6 @@
                                 <ul class="dropdown-menu">
                                     <li>
                                         <a href="admin.php?c=login">Logout</a>
-                                    </li>
-                                    <li>
-                                        <a href="admin.php?c=setting">Settings</a>
                                     </li>
                                 </ul>
                             </li>
@@ -103,11 +100,26 @@
 							<h2>Edit baihat</h2>
 						</div>
 						<div class="row">   		
-							<label>Ca si:</label>
+							<label>Ca si: </label>
 						</div>
 						<div class="row">
-							<select class="form-control p-2 m-2" name="album_id">
-								<option value="visible"><?php echo $baihat->casi_id;?></option>
+							<select class="form-control p-2 m-2" name="casi_id">
+                                <?php
+                                foreach ($list_casi as $value)
+                                {
+                                    $casi = (array) $value;
+                                    $id = $casi['id'];
+                                    $casi_id = $baihat->casi_id;
+                                    $name = $casi['ten'];
+                                    if ($casi_id == $id) {
+                                        echo "<option value='$id' selected>$name
+                                        </option>";
+                                    }else {
+                                        echo "<option value='$id'> $name
+                                        </option>";
+                                    }
+                                }            
+                                ?>  
 							</select>
 						</div>
 						<div class="row">   		
@@ -115,7 +127,22 @@
 						</div>
 						<div class="row">   	
 							<select class="form-control p-2 m-2" name="album_id">
-								<option value="visible"><?php echo $baihat->album_id; ?></option>
+                                <?php
+                                foreach ($list_album as $value)
+                                {
+                                    $album = (array) $value;
+                                    $id = $album['id'];
+                                    $album_id = $baihat->album_id;
+                                    $name = $album['ten'];
+                                    if ($album_id == $id) {
+                                        echo "<option value='$id' selected>$name
+                                        </option>";
+                                    }else {
+                                        echo "<option value='$id'> $name
+                                        </option>";
+                                    }
+                                }            
+                                ?>  
 							</select>
 						</div>
 						<div class="row">   		
@@ -123,7 +150,22 @@
 						</div>
 						<div class="row">
 							<select class="form-control p-2 m-2" name="theloai_id">
-								<option value="admin"><?php echo $baihat->theloai_id; ?></option>
+                                <?php
+                                foreach ($list_theloai as $value)
+                                {
+                                    $theloai = (array) $value;
+                                    $id = $theloai['id'];
+                                    $theloai_id = $baihat->theloai_id;
+                                    $name = $theloai['ten'];
+                                    if ($theloai_id == $id) {
+                                        echo "<option value='$id' selected>$name
+                                        </option>";
+                                    }else {
+                                        echo "<option value='$id'> $name
+                                        </option>";
+                                    }
+                                }            
+                                ?>  
 							</select>
 						</div>
 						<div class="row">   		
@@ -131,7 +173,22 @@
 						</div>
 						<div class="row">
 							<select class="form-control p-2 m-2" name="tacgia_id">
-								<option value="admin"><?php echo $baihat->tacgia_id; ?></option>
+                                <?php
+                                foreach ($list_tacgia as $value)
+                                {
+                                    $tacgia = (array) $value;
+                                    $id = $tacgia['id'];
+                                    $tacgia_id = $baihat->tacgia_id;
+                                    $name = $tacgia['ten'];
+                                    if ($tacgia_id == $id) {
+                                        echo "<option value='$id' selected>$name
+                                        </option>";
+                                    }else {
+                                        echo "<option value='$id'> $name
+                                        </option>";
+                                    }
+                                }            
+                                ?>
 							</select>
 						</div>
 						<div class="row">   		
@@ -143,8 +200,17 @@
 						<div class="row">   		
 							<label>Anh:</label>
 						</div>
-						<div class="row">
-								<input type="text" class="form-control p-2 m-2" name="anh" value="<?php echo $baihat->anh; ?>">
+                        <div class="row">
+                            <label class="btn btn-default btn-file">
+                                Browse <input type="file" accept="image/*" name="anh" style="display: none;" onchange="loadFile(event)">
+                                <script>
+                                var loadFile = function(event) {
+                                    var output = document.getElementById('output');
+                                    output.src = URL.createObjectURL(event.target.files[0]);
+                                };
+                                </script>
+                            </label>
+                            <img id="output" style="width: 300px; height: 200px;" src="<?php echo $baihat->anh; ?>"/>
 						</div>
 						<div class="row">   		
 							<label>Loi Bai Hat:</label>
@@ -159,7 +225,7 @@
 								<input type="text" class="form-control p-2 m-2" name="link" value="<?php echo $baihat->link; ?>">
 						</div>
 						<div class="row">   
-                            <button class="btn btn-primary p-2 m-2" type="submit">Apply</button>                          
+                            <button class="btn btn-primary p-2 m-2" type="submit" onclick="alert('Add success !')">Apply</button>                          
                             <button class="btn btn-primary p-2 m-2" type="submit" style="padding: 12px 0"><a href="admin.php?c=baihat" style="color: white; padding: 14px 30px;">Cancel</a></button>                          
 					    </div>
 					</form>

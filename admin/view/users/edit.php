@@ -18,21 +18,15 @@
                         </a>
                     </li>
                     <li>
-                        <a href="admin.php?c=notification">
+                        <a href="admin.php?c=mission">
                             <i class="material-icons">notifications</i>
-                            <p>Notifications</p>
+                            <p>Mission</p>
                         </a>
                     </li>
                     <li>
                         <a href="admin.php?c=profile">
                             <i class="material-icons">account_box</i>
                             <p>Admin Profile</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="admin.php?c=setting">
-                            <i class="material-icons">settings</i>
-                            <p>Settings</p>
                         </a>
                     </li>
                 </ul>
@@ -54,14 +48,20 @@
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown">
-                                <a href="admin.php?c=notification" class="dropdown-toggle" data-toggle="dropdown">
+                                <a href="admin.php?c=mission" class="dropdown-toggle" data-toggle="dropdown">
                                     <i class="material-icons">notifications</i>
-                                    <span class="notification">1</span>
-                                    <p class="hidden-lg hidden-md">Notifications</p>
+                                    <span class="notification">3</span>
+                                    <p class="hidden-lg hidden-md">Mission</p>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="admin.php?c=notification">Tuấn responded to your email</a>
+                                        <a href="admin.php?c=mission">Bình you have new mission</a>
+                                    </li>
+                                    <li>
+                                        <a href="admin.php?c=mission">Tuấn, are you done your mission?</a>
+                                    </li>
+                                    <li>
+                                        <a href="admin.php?c=mission">Tùng checkout your mission</a>
                                     </li>
                                 </ul>
                             </li>
@@ -73,9 +73,6 @@
                                 <ul class="dropdown-menu">
                                     <li>
                                         <a href="admin.php?c=login">Logout</a>
-                                    </li>
-                                    <li>
-                                        <a href="admin.php?c=setting">Settings</a>
                                     </li>
                                 </ul>
                             </li>
@@ -115,12 +112,20 @@
 							<input type="password" class="form-control p-2 m-2" name="password" value="<?php echo $user->password; ?>">
 						</div>
 						<div class="row">   		
-							<label>Role:</label>
+							<label>Role: </label>
 						</div>
 						<div class="row">
 							<select class="form-control p-2 m-2" name="role">
-								<option value="admin">Admin</option>
-								<option value="user">User</option>
+                                <?php 
+                                $role = $user->role;
+                                    if ($role == "admin") {
+                                       echo "<option value='$role' selected>admin</option>";
+                                       echo "<option value='user'>user</option>";
+                                    }else {
+                                       echo "<option value='$role' selected>user</option>";
+                                       echo "<option value='admin'>admin</option>";
+                                    }
+                                ?>
 							</select>
 						</div>
 						<div class="row">   		
@@ -128,12 +133,21 @@
 						</div>
 						<div class="row">
 							<select class="form-control p-2 m-2" name="status">
-								<option value="visible">Visible</option>
-								<option value="disbale">Disable</option>
+                                <?php 
+                                    $status = $user->status;
+                                    $visible = "visible";
+                                    if ($status == "visible") {
+                                       echo "<option value='$status' selected>visible</option>";
+                                       echo "<option value='disable'>disable</option>";
+                                    }else {
+                                       echo "<option value='$status' selected>disable</option>";
+                                       echo "<option value='$visible'>visible</option>";
+                                    }
+                                ?>
 							</select>
 						</div>
 						<div class="row">   
-                            <button class="btn btn-success p-2 m-2" type="submit">Apply</button>                          
+                            <button class="btn btn-success p-2 m-2" type="submit" onclick="alert('Add success !')">Apply</button>                          
                             <button class="btn btn-success p-2 m-2" type="submit" style="padding: 12px 0"><a href="admin.php?c=user" style="color: white; padding: 14px 30px;">Cancel</a></button>                          
 					    </div>
                     </form>

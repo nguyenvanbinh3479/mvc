@@ -89,6 +89,7 @@ class Album_Controller extends Base_Controller
         $this->model->load('Album');
         $this->model->load('TheLoai');
         $this->model->load('CaSi');
+        
         $album = $this->model->Album->findById($_GET['id']);
         $casi = $this->model->CaSi->all();
         $theloai = $this->model->TheLoai->all();

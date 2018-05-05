@@ -18,21 +18,15 @@
                         </a>
                     </li>
                     <li>
-                        <a href="admin.php?c=notification">
+                        <a href="admin.php?c=mission">
                             <i class="material-icons">notifications</i>
-                            <p>Notifications</p>
+                            <p>Mission</p>
                         </a>
                     </li>
                     <li>
                         <a href="admin.php?c=profile">
                             <i class="material-icons">account_box</i>
                             <p>Admin Profile</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="admin.php?c=setting">
-                            <i class="material-icons">settings</i>
-                            <p>Settings</p>
                         </a>
                     </li>
                 </ul>
@@ -54,14 +48,20 @@
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown">
-                                <a href="admin.php?c=notification" class="dropdown-toggle" data-toggle="dropdown">
+                                <a href="admin.php?c=mission" class="dropdown-toggle" data-toggle="dropdown">
                                     <i class="material-icons">notifications</i>
-                                    <span class="notification">1</span>
-                                    <p class="hidden-lg hidden-md">Notifications</p>
+                                    <span class="notification">3</span>
+                                    <p class="hidden-lg hidden-md">Mission</p>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="admin.php?c=notification">Tuấn responded to your email</a>
+                                        <a href="admin.php?c=mission">Bình you have new mission</a>
+                                    </li>
+                                    <li>
+                                        <a href="admin.php?c=mission">Tuấn, are you done your mission?</a>
+                                    </li>
+                                    <li>
+                                        <a href="admin.php?c=mission">Tùng checkout your mission</a>
                                     </li>
                                 </ul>
                             </li>
@@ -73,9 +73,6 @@
                                 <ul class="dropdown-menu">
                                     <li>
                                         <a href="admin.php?c=login">Logout</a>
-                                    </li>
-                                    <li>
-                                        <a href="admin.php?c=setting">Settings</a>
                                     </li>
                                 </ul>
                             </li>
@@ -116,7 +113,7 @@
                                         <tr>
                                           <td><?php echo increment_once($index); ?></td>
                                           <td><?php echo $theloai->ten; ?></td>
-                                          <td><?php echo $theloai->anh; ?></td>
+                                          <td><img src="<?php echo $theloai->anh; ?>" style="width: 50px; height: 50px;"></img></td>      
                                           <td><a href="admin.php?c=theloai&a=edit&id=<?php echo $theloai->id; ?>">Edit</a></td>
                                           <td><a href="admin.php?c=theloai&a=delete&id=<?php echo $theloai->id; ?>">Delete</a></td>
                                         </tr>

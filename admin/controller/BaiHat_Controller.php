@@ -9,10 +9,23 @@ class BaiHat_Controller extends Base_Controller
     public function index()
     {        
         $this->model->load('BaiHat');
+        $this->model->load('CaSi');
+        $this->model->load('Album');
+        $this->model->load('TheLoai');
+        $this->model->load('TacGia');
         $list_baihat = $this->model->BaiHat->all();
+        $list_casi = $this->model->CaSi->all();
+        $list_album = $this->model->Album->all();
+        $list_theloai = $this->model->TheLoai->all();
+        $list_tacgia= $this->model->TacGia->all();
+
         $data = array(
             'title' => 'index',
-            'list_baihat' => $list_baihat
+            'list_baihat' => $list_baihat,
+            'list_casi' => $list_casi,
+            'list_album' => $list_album,
+            'list_theloai' => $list_theloai,
+            'list_tacgia' => $list_tacgia
         );
        
         $this->view->load('baihats/index', $data);
@@ -92,16 +105,22 @@ class BaiHat_Controller extends Base_Controller
     {        
         $this->model->load('BaiHat');
         $this->model->load('CaSi');
+        $this->model->load('Album');
         $this->model->load('TheLoai');
         $this->model->load('TacGia');
 
         $baihat = $this->model->BaiHat->findById($_GET['id']);
-        $casi = $this->model->CaSi->findById($_GET['id']);
-        $theloai = $this->model->TheLoai->findById($_GET['id']);
-        $tacgia = $this->model->TacGia->findById($_GET['id']);
+        $list_album = $this->model->Album->all();
+        $list_casi = $this->model->CaSi->all();
+        $list_theloai = $this->model->TheLoai->all();
+        $list_tacgia= $this->model->TacGia->all();
         $data = array(
             'title' => 'edit',
-            'baihat' => $baihat
+            'baihat' => $baihat,
+            'list_casi' => $list_casi,
+            'list_album' => $list_album,
+            'list_theloai' => $list_theloai,
+            'list_tacgia' => $list_tacgia
         );
 
         // Load view
@@ -141,4 +160,5 @@ class BaiHat_Controller extends Base_Controller
 
         go_back();
     }
+
 }

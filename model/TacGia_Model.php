@@ -17,7 +17,7 @@ class TacGia_Model{
     while ($row = mysqli_fetch_assoc($result)){
             $tacgia = new TacGia_Model();
             $tacgia->id = $row['id'];
-            $tacgia->anh = $row['anh'];
+            $tacgia->anh = 'public/img/authors/'.$row['anh'];
             $tacgia->ten = $row['ten'];
             $tacgia->thongtin = $row['thongtin'];
             $list_tacgia[] = $tacgia;
@@ -47,7 +47,7 @@ class TacGia_Model{
         $row = mysqli_fetch_assoc($result);
         $tacgia = new TacGia_Model();
         $tacgia->id = $row['id'];
-        $tacgia->anh = $row['anh'];
+        $tacgia->anh = 'public/img/authors/'.$row['anh'];
         $tacgia->ten = $row['ten'];
         $tacgia->thongtin = $row['thongtin'];
 

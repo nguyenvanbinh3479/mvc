@@ -18,21 +18,15 @@
                         </a>
                     </li>
                     <li>
-                        <a href="admin.php?c=notification">
+                        <a href="admin.php?c=mission">
                             <i class="material-icons">notifications</i>
-                            <p>Notifications</p>
+                            <p>Mission</p>
                         </a>
                     </li>
                     <li>
                         <a href="admin.php?c=profile">
                             <i class="material-icons">account_box</i>
                             <p>Admin Profile</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="admin.php?c=setting">
-                            <i class="material-icons">settings</i>
-                            <p>Settings</p>
                         </a>
                     </li>
                 </ul>
@@ -54,14 +48,20 @@
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown">
-                                <a href="admin.php?c=notification" class="dropdown-toggle" data-toggle="dropdown">
+                                <a href="admin.php?c=mission" class="dropdown-toggle" data-toggle="dropdown">
                                     <i class="material-icons">notifications</i>
-                                    <span class="notification">1</span>
-                                    <p class="hidden-lg hidden-md">Notifications</p>
+                                    <span class="notification">3</span>
+                                    <p class="hidden-lg hidden-md">Mission</p>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="admin.php?c=notification">Tuấn responded to your email</a>
+                                        <a href="admin.php?c=mission">Bình you have new mission</a>
+                                    </li>
+                                    <li>
+                                        <a href="admin.php?c=mission">Tuấn, are you done your mission?</a>
+                                    </li>
+                                    <li>
+                                        <a href="admin.php?c=mission">Tùng checkout your mission</a>
                                     </li>
                                 </ul>
                             </li>
@@ -73,9 +73,6 @@
                                 <ul class="dropdown-menu">
                                     <li>
                                         <a href="admin.php?c=login">Logout</a>
-                                    </li>
-                                    <li>
-                                        <a href="admin.php?c=setting">Settings</a>
                                     </li>
                                 </ul>
                             </li>
@@ -116,11 +113,26 @@
                                         <?php foreach ($list_binhluan as $binhluan) { ?>    
                                           <tr>
                                             <td><?php echo increment_once($index); ?></td>
-                                            <td><?php echo $binhluan->baihat_id; ?></td>
-                                            <td><?php echo $binhluan->user_id; ?></td>
+                                            <?php 
+                                                $arr = (array) $list_baihat;
+                                                foreach ($arr as $key => $value) {
+                                                    $baihat = (array) $value;
+                                                    if ($baihat['id'] == $binhluan->baihat_id)   
+                                                    echo '<td> '. $baihat['ten'] .' </td>';
+                                                }
+                                            ?>
+
+                                            <?php 
+                                                $arr = (array) $list_user;
+                                                foreach ($arr as $key => $value) {
+                                                    $user = (array) $value;
+                                                    if ($user['id'] == $binhluan->user_id)   
+                                                    echo '<td> '. $user['email'] .' </td>';
+                                                }
+                                            ?>
                                             <td><?php echo $binhluan->noi_dung; ?></td>
-                                            <td><a href="admin.php?c=binhluan&a=edit&id=<?php echo $binhluan->user_id; ?>">Edit</a></td>
-                                            <td><a href="admin.php?c=binhluan&a=delete&id=<?php echo $binhluan->user_id; ?>">Delete</a></td>
+                                            <td><a href="admin.php?c=binhluan&a=edit&id=<?php echo $binhluan->id; ?>">Edit</a></td>
+                                            <td><a href="admin.php?c=binhluan&a=delete&id=<?php echo $binhluan->id; ?>">Delete</a></td>
                                           </tr>
                                         <?php } ?>
                                       </tbody>

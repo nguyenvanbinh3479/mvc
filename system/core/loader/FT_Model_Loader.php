@@ -11,7 +11,6 @@ class FT_Model_Loader
 {
     /**
      * Load helper
-     *
      * @param   string
      * @desc    hàm load model, tham số truyền vào là tên của model
      */

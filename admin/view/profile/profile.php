@@ -19,21 +19,15 @@
                         </a>
                     </li>
                     <li>
-                        <a href="admin.php?c=notification">
+                        <a href="admin.php?c=mission">
                             <i class="material-icons">notifications</i>
-                            <p>Notifications</p>
+                            <p>Mission</p>
                         </a>
                     </li>
                     <li class="active">
                         <a href="admin.php?c=profile">
                             <i class="material-icons">account_box</i>
                             <p>Admin Profile</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="admin.php?c=setting">
-                            <i class="material-icons">settings</i>
-                            <p>Settings</p>
                         </a>
                     </li>
                 </ul>
@@ -55,14 +49,20 @@
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown">
-                                <a href="admin.php?c=notification" class="dropdown-toggle" data-toggle="dropdown">
+                                <a href="admin.php?c=mission" class="dropdown-toggle" data-toggle="dropdown">
                                     <i class="material-icons">notifications</i>
-                                    <span class="notification">1</span>
-                                    <p class="hidden-lg hidden-md">Notifications</p>
+                                    <span class="notification">3</span>
+                                    <p class="hidden-lg hidden-md">Missions</p>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="admin.php?c=notification">Tuấn responded to your email</a>
+                                        <a href="admin.php?c=mission">Bình you have new mission</a>
+                                    </li>
+                                    <li>
+                                        <a href="admin.php?c=mission">Tuấn, are you done your missions?</a>
+                                    </li>
+                                    <li>
+                                        <a href="admin.php?c=mission">Tùng checkout your missions</a>
                                     </li>
                                 </ul>
                             </li>
@@ -74,9 +74,6 @@
                                 <ul class="dropdown-menu">
                                     <li>
                                         <a href="admin.php?c=login">Logout</a>
-                                    </li>
-                                    <li>
-                                        <a href="admin.php?c=setting">Settings</a>
                                     </li>
                                 </ul>
                             </li>
@@ -97,107 +94,114 @@
             <div class="content">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-md-8">
-                            <div class="card">
-                                <div class="card-header" data-background-color="purple">
-                                    <h4 class="title">Edit Profile</h4>
-                                    <p class="category">Complete your profile</p>
+                        <div class="col-md-4">
+                            <div class="card card-profile">
+                                <div class="card-avatar">
+                                    <a href="https://www.facebook.com/QuocTuan.AndroidDevloper">
+                                        <img class="img" src="public/img/faces/tuan.jpg" />
+                                    </a>
                                 </div>
-                                <div class="card-content">
-                                    <form>
-                                        <div class="row">
-                                            <div class="col-md-5">
-                                                <div class="form-group label-floating">
-                                                    <label class="control-label">Company (disabled)</label>
-                                                    <input type="text" class="form-control" disabled>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group label-floating">
-                                                    <label class="control-label">Username</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group label-floating">
-                                                    <label class="control-label">Email address</label>
-                                                    <input type="email" class="form-control">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group label-floating">
-                                                    <label class="control-label">Fist Name</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group label-floating">
-                                                    <label class="control-label">Last Name</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="form-group label-floating">
-                                                    <label class="control-label">Adress</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <div class="form-group label-floating">
-                                                    <label class="control-label">City</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group label-floating">
-                                                    <label class="control-label">Country</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group label-floating">
-                                                    <label class="control-label">Postal Code</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label>About Me</label>
-                                                    <div class="form-group label-floating">
-                                                        <label class="control-label"> Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</label>
-                                                        <textarea class="form-control" rows="5"></textarea>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <button type="submit" class="btn btn-primary pull-right">Update Profile</button>
-                                        <div class="clearfix"></div>
-                                    </form>
+                                <div class="content">
+                                    <h6 class="category text-gray">CIO / Android Developer</h6>
+                                    <h4 class="card-title">Tuấn Nguyễn</h4>
+                                    <p class="card-content text-info">
+                                        I have a simple philosophy: Fill what’s empty. <br>Empty what full. Scratch where it itches <br>~ Alice Roosevelt ~
+                                    </p>
+                                    <div class="alert">
+                                        <button type="button" aria-hidden="true" class="close" ></button>
+                                        <span>From: Quảng Trị</span>
+                                    </div>
+                                    <div class="alert">
+                                        <button type="button" aria-hidden="true" class="close" ></button>
+                                        <span>Birthday: 20/03/1998</span>
+                                    </div>
+                                    <div class="alert">
+                                        <button type="button" aria-hidden="true" class="close" ></button>
+                                        <span>Phone: 01659906611</span>
+                                    </div>
+                                    <div class="alert">
+                                        <button type="button" aria-hidden="true" class="close" ></button>
+                                        <span>Email: tuan.nguyenquoc01@students.hueic.edu.vn</span>
+                                    </div>
+                                    <div class="alert">
+                                        <button type="button" aria-hidden="true" class="close" ></button>
+                                        <span>Github:<a href="https://github.com/QuocTuan1998"><p class="text-danger">https://github.com/QuocTuan1998</p></a></span>
+                                    </div>
+                                    <a href="https://www.facebook.com/QuocTuan.AndroidDevloper" class="btn btn-success btn-round">Follow</a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="card card-profile">
                                 <div class="card-avatar">
-                                    <a href="#pablo">
-                                        <img class="img" src="public/img/faces/marc.jpg" />
+                                    <a href="https://www.facebook.com/profile.php?id=100004294174844">
+                                        <img class="img" src="public/img/faces/bk.jpg" />
                                     </a>
                                 </div>
                                 <div class="content">
-                                    <h6 class="category text-gray">CEO / Co-Founder</h6>
-                                    <h4 class="card-title">Alec Thompson</h4>
-                                    <p class="card-content">
-                                        Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                                    <h6 class="category text-gray">CEO / Website Developer</h6>
+                                    <h4 class="card-title">Bình Nguyễn</h4>
+                                    <p class="card-content text-warning">
+                                        Study while others are sleeping, work while others are loafing, <br>prepare while others are playing, and dream while others are wishing. <br>~ William Arthur Ward ~
                                     </p>
-                                    <a href="#pablo" class="btn btn-primary btn-round">Follow</a>
+                                    <div class="alert">
+                                        <button type="button" aria-hidden="true" class="close" ></button>
+                                        <span>From: Quảng Trị</span>
+                                    </div>
+                                    <div class="alert">
+                                        <button type="button" aria-hidden="true" class="close" ></button>
+                                        <span>Birthday: 27/10/1997</span>
+                                    </div>
+                                    <div class="alert">
+                                        <button type="button" aria-hidden="true" class="close" ></button>
+                                        <span>Phone: 01633985817</span>
+                                    </div>
+                                    <div class="alert">
+                                        <button type="button" aria-hidden="true" class="close" ></button>
+                                        <span>Email: binh.nguyenvan01@students.hueic.edu.vn</span>
+                                    </div>
+                                    <div class="alert">
+                                        <button type="button" aria-hidden="true" class="close" ></button>
+                                        <span>Github:<a href="https://github.com/nguyenvanbinh3479"><p class="text-danger">https://github.com/nguyenvanbinh3479</p></a></span>
+                                    </div>
+                                    <a href="https://www.facebook.com/profile.php?id=100004294174844" class="btn btn-danger btn-round">Follow</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card card-profile">
+                                <div class="card-avatar">
+                                    <a href="https://www.facebook.com/VanTungCoder">
+                                        <img class="img" src="public/img/faces/tung.jpg" />
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h6 class="category text-gray">CCO / Android Developer</h6>
+                                    <h4 class="card-title">Tùng Nguyễn</h4>
+                                    <p class="card-content text-success">
+                                        What we think determines what happens to us, <br>so if we want to change our lives, we need to stretch our minds  <br>~ Wayne Dyer ~
+                                    </p>
+                                    <div class="alert">
+                                        <button type="button" aria-hidden="true" class="close" ></button>
+                                        <span>From: Huế</span>
+                                    </div>
+                                    <div class="alert">
+                                        <button type="button" aria-hidden="true" class="close" ></button>
+                                        <span>Birthday: 01/10/1998</span>
+                                    </div>
+                                    <div class="alert">
+                                        <button type="button" aria-hidden="true" class="close" ></button>
+                                        <span>Phone: 01893987597</span>
+                                    </div>
+                                    <div class="alert">
+                                        <button type="button" aria-hidden="true" class="close" ></button>
+                                        <span>Email: tung.nguyenvan@students.hueic.edu.vn</span>
+                                    </div>
+                                    <div class="alert">
+                                        <button type="button" aria-hidden="true" class="close" ></button>
+                                        <span>Github:<a href="https://github.com/tungnguyenvan"><p class="text-danger">https://github.com/tungnguyenvan</p></a></span>
+                                    </div>
+                                    <a href="https://www.facebook.com/VanTungCoder" class="btn btn-info btn-round">Follow</a>
                                 </div>
                             </div>
                         </div>

@@ -18,21 +18,15 @@
                         </a>
                     </li>
                     <li>
-                        <a href="admin.php?c=notification">
+                        <a href="admin.php?c=mission">
                             <i class="material-icons">notifications</i>
-                            <p>Notifications</p>
+                            <p>Mission</p>
                         </a>
                     </li>
                     <li>
                         <a href="admin.php?c=profile">
                             <i class="material-icons">account_box</i>
                             <p>Admin Profile</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="admin.php?c=setting">
-                            <i class="material-icons">settings</i>
-                            <p>Settings</p>
                         </a>
                     </li>
                 </ul>
@@ -54,14 +48,20 @@
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown">
-                                <a href="admin.php?c=notification" class="dropdown-toggle" data-toggle="dropdown">
+                                <a href="admin.php?c=mission" class="dropdown-toggle" data-toggle="dropdown">
                                     <i class="material-icons">notifications</i>
-                                    <span class="notification">1</span>
-                                    <p class="hidden-lg hidden-md">Notifications</p>
+                                    <span class="notification">3</span>
+                                    <p class="hidden-lg hidden-md">Mission</p>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="admin.php?c=notification">Tuấn responded to your email</a>
+                                        <a href="admin.php?c=mission">Bình you have new mission</a>
+                                    </li>
+                                    <li>
+                                        <a href="admin.php?c=mission">Tuấn, are you done your mission?</a>
+                                    </li>
+                                    <li>
+                                        <a href="admin.php?c=mission">Tùng checkout your mission</a>
                                     </li>
                                 </ul>
                             </li>
@@ -73,9 +73,6 @@
                                 <ul class="dropdown-menu">
                                     <li>
                                         <a href="admin.php?c=login">Logout</a>
-                                    </li>
-                                    <li>
-                                        <a href="admin.php?c=setting">Settings</a>
                                     </li>
                                 </ul>
                             </li>
@@ -110,11 +107,20 @@
 						<div class="row">   		
 							<label>anh:</label>
 						</div>
-						<div class="row">   	
-							<input type="text" class="form-control p-2 m-2" name="anh" required>
+						<div class="row">
+                            <label class="btn btn-default btn-file">
+                                Browse <input type="file" accept="image/*" name="anh" style="display: none;" onchange="loadFile(event)">
+                                <script>
+                                var loadFile = function(event) {
+                                    var output = document.getElementById('output');
+                                    output.src = URL.createObjectURL(event.target.files[0]);
+                                };
+                                </script>
+                            </label>
+                            <img id="output" style="width: 300px; height: 200px;"/>
 						</div>
 						<div class="row">   
-                            <button class="btn btn-info p-2 m-2" onclick="demo.showNotification('top','left')">Apply</button>
+                            <button class="btn btn-info p-2 m-2" onclick="ntf.showNotification('top','left')">Apply</button>
 							<button class="btn btn-info p-2 m-2" type="submit" style="padding: 12px 0"><a href="admin.php?c=theloai" style="color: white; padding: 14px 30px;">Cancel</a></button>                          
 						</div>
 					</form>

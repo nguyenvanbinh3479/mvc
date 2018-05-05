@@ -1,28 +1,26 @@
 
 
 
-type = ['', 'info', 'success', 'warning', 'danger'];
+type = ['', 'danger', 'info', 'warning', 'success'];
 
 
 ntf = {
 
 
 
-    showNotification: function(from, align, URL) {
-    color = Math.floor((Math.random() * 4) + 1);
+showNotification: function(from, align) {
+    color = Math.floor((Math.random() * 1) + 1);
     $.notify({
         icon: "notifications",
-        message: "Welcome to <b>M.S.C</b> - You have not entered your username or password"
+        message: "Please Enter <b>Valid</b> or your valid <b>Wrong</b>"
 
     }, {
         type: type[color],
-        timer: 100000,
+        time: 1000000,
         placement: {
             from: from,
             align: align
         }
     });
-    
-    setTimeout( function() { window.location = URL }, 1000 );
     }
 }
