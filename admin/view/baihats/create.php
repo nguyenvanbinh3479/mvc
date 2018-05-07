@@ -171,6 +171,12 @@
 						<div class="row">
                             <input type="text" class="form-control p-2 m-2" name="link" value="public/songs/">
 						</div>
+                        <div class="row">   		
+							<label>ngay:</label>
+						</div>
+						<div class="row">
+							<input type="date" class="form-control p-2 m-2" name="ngay" required>      
+						</div>
 						<div class="row">   
                             <button class="btn btn-primary p-2 m-2" onclick="ntf.showNotification('top','left')">Apply</button>
 							<button class="btn btn-primary p-2 m-2" type="submit" style="padding: 12px 0"><a href="admin.php?c=baihat" style="color: white; padding: 14px 30px;">Cancel</a></button>                          
