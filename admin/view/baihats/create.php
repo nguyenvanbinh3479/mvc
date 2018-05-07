@@ -163,7 +163,7 @@
 							<label>Loi Bai Hat:</label>
 						</div>
 						<div class="row">
-                            <input type="text" class="form-control p-2 m-2" name="loi_bai_hat" required>
+                            <textarea class="form-control p-2 m-2" name="loi_bai_hat" required></textarea>
 						</div>
 						<div class="row">   		
 							<label>Link:</label>
