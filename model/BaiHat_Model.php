@@ -28,7 +28,7 @@ class BaiHat_Model{
 			$baihat->theloai_id = $row['theloai_id'];
 			$baihat->tacgia_id = $row['tacgia_id'];
             $baihat->ten = $row['ten'];
-			$baihat->anh = 'public/img/songs/'.$row['anh'];
+			$baihat->anh = 'public/img/Songs/'.$row['anh'];
 			$baihat->loi_bai_hat = $row['loi_bai_hat'];
 			$baihat->link = $row['link'];
 			$baihat->ngay = $row['ngay'];
@@ -63,7 +63,7 @@ class BaiHat_Model{
 		$baihat->theloai_id = $row['theloai_id'];
 		$baihat->tacgia_id = $row['tacgia_id'];
         $baihat->ten = $row['ten'];
-		$baihat->anh = 'public/img/songs/'.$row['anh'];
+		$baihat->anh = 'public/img/Songs/'.$row['anh'];
 		$baihat->loi_bai_hat = $row['loi_bai_hat'];
 		$baihat->link = $row['link'];
 		$baihat->ngay = $row['ngay'];
