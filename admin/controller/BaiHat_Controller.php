@@ -92,6 +92,7 @@ class BaiHat_Controller extends Base_Controller
         $this->model->BaiHat->anh = $_POST['anh'];
         $this->model->BaiHat->loi_bai_hat = $_POST['loi_bai_hat'];
         $this->model->BaiHat->link = $_POST['link'];
+        $this->model->BaiHat->ngay = $_POST['ngay'];
         $this->model->BaiHat->save();
 
         go_back();
@@ -143,6 +144,7 @@ class BaiHat_Controller extends Base_Controller
         $baihat->anh = $_POST['anh'];
         $baihat->loi_bai_hat = $_POST['loi_bai_hat'];
         $baihat->link = $_POST['link'];
+        $baihat->ngay = $_POST['ngay'];
         $baihat->update();
 
         go_back();

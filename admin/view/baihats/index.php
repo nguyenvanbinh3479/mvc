@@ -111,6 +111,7 @@
                                           <th>Anh</th>
                                           <th>Loi Bai Hat</th>
                                           <th>Link</th>
+                                          <th>Ngay</th>
                                           <th>Edit</th>
                                           <th>Delete</th>
                                       </thead>
@@ -158,6 +159,7 @@
                                           <td><img src="<?php echo $baihat->anh; ?>" style="width: 50px; height: 50px;"></img></td>
                                           <td><?php echo $baihat->loi_bai_hat; ?></td>
                                           <td><?php echo $baihat->link; ?></td>
+                                          <td><?php echo $baihat->ngay; ?></td>
                                           <td><a href="admin.php?c=baihat&a=edit&id=<?php echo $baihat->id; ?>">Edit</a></td>
                                           <td><a href="admin.php?c=baihat&a=delete&id=<?php echo $baihat->id; ?>">Delete</a</td>
                                         </tr>
