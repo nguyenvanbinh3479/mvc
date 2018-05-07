@@ -103,7 +103,7 @@
                                     <div class="card-content">
                                         <h4 class="title">Users</h4>
                                         <p class="category">
-                                            <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> increase in today.
+                                            <span class="text-success"> <?php echo count($list_user)?> </span> 
                                         </p>
                                     </div>
                                     <div class="card-footer">
@@ -123,7 +123,7 @@
                                     <div class="card-content">
                                         <h4 class="title">Listenings</h4>
                                         <p class="category">
-                                            <span class="text-success"><i class="fa fa-long-arrow-up"></i> 90% </span> increase in today.
+                                            <span class="text-success"> <?php echo count($list_luotnghe)?> </span> 
                                         </p>
                                     </div>
                                     <div class="card-footer">
@@ -143,7 +143,7 @@
                                     <div class="card-content">
                                         <h4 class="title">Comments</h4>
                                         <p class="category">
-                                            <span class="text-success"><i class="fa fa-long-arrow-up"></i> 25% </span> increase in today.
+                                            <span class="text-success"> <?php echo count($list_binhluan)?></span> 
                                         </p>
                                     </div>
                                     <div class="card-footer">
@@ -183,7 +183,7 @@
                                     </div>
                                     <div class="card-content">
                                         <p class="category">Album</p>
-                                        <h3 class="title">245</h3>
+                                        <h3 class="title"><?php echo count($list_album)?></h3>
                                     </div>
                                     <div class="card-footer">
                                         <div class="stats">
@@ -202,7 +202,7 @@
                                     </div>
                                     <div class="card-content">
                                         <p class="category">Authors</p>
-                                        <h3 class="title">200
+                                        <h3 class="title"><?php echo count($list_tacgia)?>
                                         </h3>
                                     </div>
                                     <div class="card-footer">
@@ -222,7 +222,7 @@
                                     </div>
                                     <div class="card-content">
                                         <p class="category">Singers</p>
-                                        <h3 class="title">945</h3>
+                                        <h3 class="title"><?php echo count($list_casi)?></h3>
                                     </div>
                                     <div class="card-footer">
                                         <div class="stats">
@@ -241,7 +241,7 @@
                                     </div>
                                     <div class="card-content">
                                         <p class="category">Types</p>
-                                        <h3 class="title">75</h3>
+                                        <h3 class="title"><?php echo count($list_theloai)?></h3>
                                     </div>
                                     <div class="card-footer">
                                         <div class="stats">
@@ -260,7 +260,7 @@
                                     </div>
                                     <div class="card-content">
                                         <p class="category">Favorites</p>
-                                        <h3 class="title">1678</h3>
+                                        <h3 class="title"><?php echo count($list_yeuthich)?></h3>
                                     </div>
                                     <div class="card-footer">
                                         <div class="stats">
@@ -279,7 +279,7 @@
                                     </div>
                                     <div class="card-content">
                                         <p class="category">Playlists</p>
-                                        <h3 class="title">275</h3>
+                                        <h3 class="title"><?php echo count($list_playlist)?></h3>
                                     </div>
                                     <div class="card-footer">
                                         <div class="stats">
@@ -298,7 +298,7 @@
                                     </div>
                                     <div class="card-content">
                                         <p class="category">Playlist Details</p>
-                                        <h3 class="title">1045</h3>
+                                        <h3 class="title"><?php echo count($list_chitietplaylist)?></h3>
                                     </div>
                                     <div class="card-footer">
                                         <div class="stats">
