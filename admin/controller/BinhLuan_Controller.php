@@ -88,7 +88,7 @@ class BinhLuan_Controller extends Base_Controller
         $this->model->load('BinhLuan');
         $this->model->load('BaiHat');
         $this->model->load('User');
-
+        
         $binhluan = $this->model->BinhLuan->findById($_GET['id']);
         $list_baihat = $this->model->BaiHat->all();
         $list_user = $this->model->User->all();
@@ -114,6 +114,7 @@ class BinhLuan_Controller extends Base_Controller
         $binhluan->baihat_id = $_POST['baihat_id'];
         $binhluan->user_id = $_POST['user_id'];
         $binhluan->noi_dung = $_POST['noi_dung'];  
+        $binhluan->ngay = $_POST['ngay'];  
         $binhluan->update();
         go_back();
     }
