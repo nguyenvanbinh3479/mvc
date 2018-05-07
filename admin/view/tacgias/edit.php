@@ -124,7 +124,7 @@
                       <label>thong tin:</label>
                     </div>
                     <div class="row">
-                      <input type="text" class="form-control p-2 m-2" name="thongtin" value="<?php echo $tacgia->thongtin; ?>">
+                        <textarea class="form-control" rows="30" cols="50" class="form-control p-2 m-2" name="thongtin"><?php echo $tacgia->thongtin; ?></textarea>
                     </div>
 					<div class="row">   
                       <button class="btn btn-success p-2 m-2" type="submit" onclick="alert('Add success !')">Apply</button>                          

@@ -123,7 +123,7 @@
 							</select>
 						</div>
 						<div class="row">   		
-							<label>user:</label>
+							<label>user: <?php print_r($binhluan->ngay)?></label>
 						</div>
 						<div class="row">
 							<select class="form-control p-2 m-2" name="user_id">
@@ -151,6 +151,16 @@
 						<div class="row">   	
                         <textarea class="form-control" rows="30" cols="50" class="form-control p-2 m-2" name="noi_dung"><?php echo $binhluan->noi_dung; ?></textarea>
 						</div>
+                        
+						<div class="row">   		
+							<label>ngay:</label>
+						</div>
+						<div class="row">   	
+							<input type="date" class="form-control p-2 m-2" name="ngay" value="<?php echo $binhluan->ngay; ?>">
+                            <td></td>
+                          
+						</div>
+
 						<div class="row">   
                             <button class="btn btn-danger p-2 m-2" type="submit" onclick="alert('Add success !')">Apply</button>                          
                             <button class="btn btn-danger p-2 m-2" type="submit" style="padding: 12px 0"><a href="admin.php?c=binhluan" style="color: white; padding: 14px 30px;">Cancel</a></button>                          
