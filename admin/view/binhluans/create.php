@@ -122,7 +122,7 @@
 							<label>noi dung:</label>
 						</div>
 						<div class="row">   		
-							<input type="text" class="form-control p-2 m-2" name="noi_dung" required>
+							<textarea class="form-control p-2 m-2" name="noi_dung" required></textarea>
 						</div>
 						<div class="row">   
                             <button class="btn btn-danger p-2 m-2"  onclick="ntf.showNotification('top','left')">Apply</button>

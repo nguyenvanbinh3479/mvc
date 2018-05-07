@@ -149,7 +149,7 @@
 							<label>noi dung:</label>
 						</div>
 						<div class="row">   	
-							<input type="text" class="form-control p-2 m-2" name="noi_dung" value="<?php echo $binhluan->noi_dung; ?>">
+                        <textarea class="form-control" rows="30" cols="50" class="form-control p-2 m-2" name="noi_dung"><?php echo $binhluan->noi_dung; ?></textarea>
 						</div>
 						<div class="row">   
                             <button class="btn btn-danger p-2 m-2" type="submit" onclick="alert('Add success !')">Apply</button>                          
