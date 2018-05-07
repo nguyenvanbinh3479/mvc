@@ -157,8 +157,6 @@
 						</div>
 						<div class="row">   	
 							<input type="date" class="form-control p-2 m-2" name="ngay" value="<?php echo $binhluan->ngay; ?>">
-                            <td></td>
-                          
 						</div>
 
 						<div class="row">   
