@@ -151,7 +151,9 @@
 							<label>ngay:</label>
 						</div>
 						<div class="row">   	
-							<input type="text" class="form-control p-2 m-2" name="ngay" value="<?php echo $luotnghe->ngay; ?>">
+							<input type="date" class="form-control p-2 m-2" name="ngay" value="<?php echo $luotnghe->ngay; ?>">
+                            <td></td>
+                          
 						</div>
 						<div class="row">   
                         <button class="btn btn-warning p-2 m-2" type="submit" onclick="alert('Add success !')">Apply</button>                          
