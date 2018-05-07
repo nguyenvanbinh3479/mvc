@@ -122,7 +122,7 @@
 							<label>noi dung:</label>
 						</div>
 						<div class="row">   		
-							<textarea class="form-control p-2 m-2" name="noi_dung" required></textarea>
+							<textarea class="form-control" name="noi_dung" required></textarea>
 						</div>
 						<div class="row">   		
 							<label>Ngay:</label>

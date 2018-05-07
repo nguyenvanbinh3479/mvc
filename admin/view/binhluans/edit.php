@@ -149,7 +149,7 @@
 							<label>noi dung:</label>
 						</div>
 						<div class="row">   	
-                        <textarea class="form-control" rows="30" cols="50" class="form-control p-2 m-2" name="noi_dung"><?php echo $binhluan->noi_dung; ?></textarea>
+                        <textarea class="form-control" rows="10" cols="10" class="form-control p-2 m-2" name="noi_dung"><?php echo $binhluan->noi_dung; ?></textarea>
 						</div>
                         
 						<div class="row">   		
