@@ -73,6 +73,7 @@ class BinhLuan_Controller extends Base_Controller
         $this->model->BinhLuan->baihat_id = $_POST['baihat_id'];
         $this->model->BinhLuan->user_id = $_POST['user_id'];
         $this->model->BinhLuan->noi_dung = $_POST['noi_dung'];
+        $this->model->BinhLuan->ngay = $_POST['ngay'];
         
         $this->model->BinhLuan->save();
 

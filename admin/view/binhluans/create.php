@@ -124,6 +124,12 @@
 						<div class="row">   		
 							<textarea class="form-control p-2 m-2" name="noi_dung" required></textarea>
 						</div>
+						<div class="row">   		
+							<label>Ngay:</label>
+						</div>
+						<div class="row">   		
+							<input type="date" class="form-control p-2 m-2" name="ngay" required>                            
+						</div>
 						<div class="row">   
                             <button class="btn btn-danger p-2 m-2"  onclick="ntf.showNotification('top','left')">Apply</button>
 							<button class="btn btn-danger p-2 m-2" type="submit" style="padding: 12px 0"><a href="admin.php?c=binhluan" style="color: white; padding: 14px 30px;">Cancel</a></button>                          
