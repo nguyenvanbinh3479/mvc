@@ -53,7 +53,7 @@ class BinhLuan_Model{
         $binhluan->user_id = $row['user_id'];
         $binhluan->noi_dung = $row['noi_dung'];
         $binhluan->ngay = $row['ngay'];
-
+	
         return $binhluan;
 	}
 
@@ -68,7 +68,7 @@ class BinhLuan_Model{
 	public function update(){
 		$conn = FT_Database::instance()->getConnection();
 		$stmt = $conn->prepare("UPDATE binhluans SET baihat_id=?, user_id=?, noi_dung=?, ngay=? WHERE id=?");
-		$stmt->bind_param("iissi", $this->baihat_id, $this->user_id, $this->noi_dung, $_POST['id']);
+		$stmt->bind_param("iissi", $this->baihat_id, $this->user_id, $this->noi_dung, $this->ngay, $_POST['id']);
 		$stmt->execute();
 		$stmt->close();
 	}

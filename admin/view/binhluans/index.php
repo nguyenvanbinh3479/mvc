@@ -106,6 +106,7 @@
                                           <th>bai hat</th>
                                           <th>user</th>
                                           <th>noi_dung</th>
+                                          <th>ngay</th>
                                           <th>Edit</th>
                                           <th>Delete</th>
                                       </thead>
@@ -131,6 +132,7 @@
                                                 }
                                             ?>
                                             <td><textarea class="form-control" rows="3" cols="30" disabled> <?php echo $binhluan->noi_dung; ?></textarea></td>
+                                            <td><?php $date = date_create($binhluan->ngay); echo date_format($date, "d/m/Y"); ?></td>
                                             <td><a href="admin.php?c=binhluan&a=edit&id=<?php echo $binhluan->id; ?>">Edit</a></td>
                                             <td><a href="admin.php?c=binhluan&a=delete&id=<?php echo $binhluan->id; ?>">Delete</a></td>
                                           </tr>
