@@ -129,7 +129,7 @@
                                                         ?><td><?php echo $arr_user['email']; ?></td><?php
                                                         }
                                                     }?>
-                                                    <td><?php echo $luotnghe->ngay; ?></td>
+                                                    <td><?php $date = date_create($luotnghe->ngay); echo date_format($date, "d/m/Y"); ?></td>
                                                     <td><a href="admin.php?c=luotnghe&a=edit&id=<?php echo $luotnghe->id; ?>">Edit</a></td>
                                                     <td><a href="admin.php?c=luotnghe&a=delete&id=<?php echo $luotnghe->id; ?>">Delete</a></td>
                                                 </tr>
