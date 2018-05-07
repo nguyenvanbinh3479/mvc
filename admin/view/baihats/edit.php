@@ -224,6 +224,12 @@
 						<div class="row">
 								<input type="text" class="form-control p-2 m-2" name="link" value="<?php echo $baihat->link; ?>">
 						</div>
+						<div class="row">   		
+							<label>Ngay:</label>
+						</div>
+						<div class="row">
+							<input type="date" class="form-control p-2 m-2" name="ngay" value="<?php echo $baihat->ngay; ?>">
+                        </div>
 						<div class="row">   
                             <button class="btn btn-primary p-2 m-2" type="submit" onclick="alert('Add success !')">Apply</button>                          
                             <button class="btn btn-primary p-2 m-2" type="submit" style="padding: 12px 0"><a href="admin.php?c=baihat" style="color: white; padding: 14px 30px;">Cancel</a></button>                          
