@@ -216,7 +216,7 @@
 							<label>Loi Bai Hat:</label>
 						</div>
 						<div class="row">
-								<input type="text" class="form-control p-2 m-2" name="loi_bai_hat" value="<?php echo $baihat->loi_bai_hat; ?>">
+                            <textarea class="form-control" rows="10" cols="50" class="form-control p-2 m-2" name="loi_bai_hat"><?php echo $baihat->loi_bai_hat; ?></textarea>
 						</div>
 						<div class="row">   		
 							<label>Link:</label>
