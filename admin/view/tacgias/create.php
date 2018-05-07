@@ -123,7 +123,7 @@
                       <label>thong tin:</label>
                     </div>
                     <div class="row">
-                      <input type="text" class="form-control p-2 m-2" name="thongtin" required>
+                      <textarea class="form-control p-2 m-2" name="thongtin" required></textarea>
                     </div>
                     <div class="row">   
                       <button class="btn btn-success p-2 m-2" onclick="ntf.showNotification('top','left')">Apply</button>
