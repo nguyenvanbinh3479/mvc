@@ -130,7 +130,7 @@
                                                     echo '<td> '. $user['email'] .' </td>';
                                                 }
                                             ?>
-                                            <td><?php echo $binhluan->noi_dung; ?></td>
+                                            <td><textarea class="form-control" rows="3" cols="30" disabled> <?php echo $binhluan->noi_dung; ?></textarea></td>
                                             <td><a href="admin.php?c=binhluan&a=edit&id=<?php echo $binhluan->id; ?>">Edit</a></td>
                                             <td><a href="admin.php?c=binhluan&a=delete&id=<?php echo $binhluan->id; ?>">Delete</a></td>
                                           </tr>
