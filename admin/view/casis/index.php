@@ -114,7 +114,7 @@
                                           <tr>
                                             <td><?php echo increment_once($index); ?></td>
                                             <td><?php echo $casi->ten; ?></td>
-                                            <td><?php echo $casi->thong_tin; ?></td>
+                                            <td><textarea class="form-control" rows="3" cols="30" disabled> <?php echo $casi->thong_tin; ?></textarea></td>                                            
                                             <td><img src="<?php echo $casi->anh; ?>" style="width: 50px; height: 50px;"></img></td>
                                             <td><a href="admin.php?c=casi&a=edit&id=<?php echo $casi->id; ?>">Edit</a></td>
                                             <td><a href="admin.php?c=casi&a=delete&id=<?php echo $casi->id; ?>">Delete</a></td>

@@ -108,8 +108,8 @@
 						<div class="row">   		
 							<label>thong tin:</label>
 						</div>
-						<div class="row">   	
-							<input type="text" class="form-control p-2 m-2" name="thong_tin" value="<?php echo $casi->thong_tin; ?>">
+						<div class="row">   
+                        <textarea class="form-control" rows="30" cols="50" class="form-control p-2 m-2" name="thong_tin"><?php echo $casi->thong_tin; ?></textarea>  
 						</div>
 						<div class="row">   		
 							<label>anh:</label>
