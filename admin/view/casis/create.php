@@ -107,8 +107,8 @@
 						<div class="row">   		
 							<label>thong_tin:</label>
 						</div>
-						<div class="row">   	
-							<textarea class="form-control p-2 m-2" name="thong_tin" required></textarea>                            
+						<div class="row">   		
+							<textarea class="form-control" name="thong_tin" required></textarea>
 						</div>
 						<div class="row">   		
 							<label>anh:</label>
