@@ -65,7 +65,7 @@ class YeuThich_Model{
 	public function update(){
 		$conn = FT_Database::instance()->getConnection();
 		$stmt = $conn->prepare("UPDATE yeuthichs SET baihat_id=?, user_id=?, ngay=? WHERE id=?");
-		$stmt->bind_param("iii", $this->baihat_id, $this->user_id, $this->ngay, $_POST['id']);
+		$stmt->bind_param("iisi", $this->baihat_id, $this->user_id, $this->ngay, $_POST['id']);
 		$stmt->execute();
 		$stmt->close();
 	}

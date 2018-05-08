@@ -149,7 +149,7 @@
 							<label>Ngay:</label>
 						</div>
 						<div class="row">   	
-							<input type="text" class="form-control p-2 m-2" name="ngay" value="<?php echo $yeuthich->ngay; ?>">
+							<input type="date" class="form-control p-2 m-2" name="ngay" value="<?php echo $yeuthich->ngay; ?>">
 						</div>
 						<div class="row">   
                             <button class="btn btn-danger p-2 m-2" type="submit" onclick="alert('Add success !')">Apply</button>                          

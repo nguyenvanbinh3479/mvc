@@ -121,8 +121,8 @@
                         <div class="row">   		
 							<label>Ngay:</label>
 						</div>
-						<div class="row">   		
-							<input type="text" class="form-control p-2 m-2" name="ngay" placeholder="24/12/2018" required>
+						<div class="row">   	
+							<input type="date" class="form-control p-2 m-2" name="ngay" required>
 						</div>
 						<div class="row">   
                             <button class="btn btn-danger p-2 m-2"  onclick="ntf.showNotification('top','left')">Apply</button>                            

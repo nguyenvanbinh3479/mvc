@@ -129,7 +129,7 @@
                                                     echo '<td> '. $user['email'] .' </td>';
                                                 }
                                             ?>
-                                            <td><?php echo $yeuthich->ngay; ?></td>                                            
+                                                <td><?php $date = date_create($yeuthich->ngay); echo date_format($date, "d/m/Y"); ?></td>                                                                                     
                                             <td><a href="admin.php?c=yeuthich&a=edit&id=<?php echo $yeuthich->id; ?>">Edit</a></td>
                                             <td><a href="admin.php?c=yeuthich&a=delete&id=<?php echo $yeuthich->id; ?>">Delete</a></td>
                                             </tr>
