@@ -115,7 +115,7 @@
                                           <td><?php echo increment_once($index); ?></td>
                                           <td><?php echo $tacgia->ten; ?></td>
                                           <td><img src="<?php echo $tacgia->anh; ?>" style="width: 50px; height: 50px;"></img></td>
-                                          <td><textarea class="form-control" rows="3" cols="30" disabled> <?php echo $tacgia->thongtin; ?></textarea></td>                                          
+                                          <td><textarea class="form-control" rows="3" cols="30" disabled> <?php echo $tacgia->thongtin; ?></textarea></td>                                                                                    
                                           <td><a href="admin.php?c=tacgia&a=edit&id=<?php echo $tacgia->id; ?>">Edit</a></td>
                                           <td><a href="admin.php?c=tacgia&a=delete&id=<?php echo $tacgia->id; ?>">Delete</a></td>
                                         </tr>

@@ -123,9 +123,9 @@
                     <div class="row">
                       <label>thong tin:</label>
                     </div>
-                    <div class="row">
-                        <textarea class="form-control" rows="30" cols="50" class="form-control p-2 m-2" name="thongtin"><?php echo $tacgia->thongtin; ?></textarea>
-                    </div>
+						<div class="row">   	
+                            <textarea class="form-control" rows="10" cols="10" class="form-control p-2 m-2" name="thongtin"><?php echo $tacgia->thongtin; ?></textarea>
+						</div>
 					<div class="row">   
                       <button class="btn btn-success p-2 m-2" type="submit" onclick="alert('Add success !')">Apply</button>                          
                       <button class="btn btn-success p-2 m-2" type="submit" style="padding: 12px 0"><a href="admin.php?c=tacgia" style="color: white; padding: 14px 30px;">Cancel</a></button>                          
