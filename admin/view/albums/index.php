@@ -107,6 +107,7 @@
                                             <th>ten</th>
                                             <th>casi</th>
                                             <th>theloai</th>
+                                            <th>Ngay</th>                                            
                                             <th>Edit</th>
                                             <th>Delete</th>
                                         </thead>
@@ -133,7 +134,7 @@
                                             }
                                         
                                             ?>
-
+                                            <td><?php $date = date_create($album->ngay); echo date_format($date, "d/m/Y"); ?></td>
                                             <td><a href="admin.php?c=album&a=edit&id=<?php echo $album->id; ?>">Edit</a></td>
                                             <td><a href="admin.php?c=album&a=delete&id=<?php echo $album->id; ?>">Delete</a</td>
                                         </tr>

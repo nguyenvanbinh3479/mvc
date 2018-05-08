@@ -74,6 +74,7 @@ class Album_Controller extends Base_Controller
         $this->model->Album->ten = $_POST['ten'];
         $this->model->Album->casi_id = $_POST['casi_id'];
         $this->model->Album->theloai_id = $_POST['theloai_id'];
+        $this->model->Album->ngay = $_POST['ngay'];        
         
         $this->model->Album->save();
 
@@ -117,6 +118,7 @@ class Album_Controller extends Base_Controller
         $album->ten = $_POST['ten'];  
         $album->casi_id = $_POST['casi_id'];
         $album->theloai_id = $_POST['theloai_id'];      
+        $album->ngay = $_POST['ngay'];      
         $album->update();
         go_back();
     }
