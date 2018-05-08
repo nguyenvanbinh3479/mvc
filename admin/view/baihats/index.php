@@ -157,7 +157,7 @@
 
                                           <td><?php echo $baihat->ten; ?></td>
                                           <td><img src="<?php echo $baihat->anh; ?>" style="width: 50px; height: 50px;"></img></td>
-                                          <td><textarea class="form-control" rows="3" cols="30" disabled> <?php echo $baihat->loi_bai_hat; ?></textarea></td>
+                                          <td><textarea class="form-control" rows="2" cols="30" disabled> <?php echo $baihat->loi_bai_hat; ?></textarea></td>                                          
                                           <td><?php echo $baihat->link; ?></td>
                                           <td><?php $date = date_create($baihat->ngay); echo date_format($date, "d/m/Y"); ?></td>                                          
                                           <td><a href="admin.php?c=baihat&a=edit&id=<?php echo $baihat->id; ?>">Edit</a></td>
