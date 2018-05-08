@@ -136,6 +136,12 @@
                                     <option value="<?php print_r($arr['id']); ?> "> <?php print_r($arr['ten']) ; }?></option>
                             </select>
                         </div>
+						<div class="row">   		
+							<label>ngay:</label>
+						</div>
+						<div class="row">   	
+							<input type="date" class="form-control p-2 m-2" name="ngay" required>
+						</div>
 						<div class="row">   
                             <button class="btn btn-warning p-2 m-2" onclick="ntf.showNotification('top','left')">Apply</button>
 							<button class="btn btn-warning p-2 m-2" type="submit" style="padding: 12px 0"><a href="admin.php?c=album" style="color: white; padding: 14px 30px;">Cancel</a></button>                          
