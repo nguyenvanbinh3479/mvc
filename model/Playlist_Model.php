@@ -8,7 +8,7 @@ class Playlist_Model{
 
     public function all(){
 		$conn = FT_Database::instance()->getConnection();
-		$sql = 'select * from playlists';
+		$sql = 'select * from playlist';
 		$result = mysqli_query($conn, $sql);
 		$list_playlist = array();
 
@@ -22,6 +22,9 @@ class Playlist_Model{
             $playlist->ten = $row['ten'];
 			$playlist->anh = 'public/img/playlists/'.$row['anh'];
 			$playlist->ngay = $row['ngay'];
+            $playlist->ten = $row['name'];
+			$playlist->anh = $row['anh'];
+			
             $list_playlist[] = $playlist;            
         }
 

@@ -25,6 +25,18 @@ if ( ! defined('PATH_SYSTEM')) die ('Bad requested!');
 			}
 		}
 
+		public function findSongsFromPlaylist(){
+			$id = $_POST['id'];
+			$baihats = array();
+			$this->model->load('BaiHat');
+			$baihats = $this->model->BaiHat->findSongsFromPlaylist($id);
+			if (count($baihats) > 0) {
+				echo json_encode($baihats, JSON_UNESCAPED_UNICODE);
+			}else {
+				echo 'khong';
+			}
+		}
+
 	}
 
  ?>

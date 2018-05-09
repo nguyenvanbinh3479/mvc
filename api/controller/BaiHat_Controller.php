@@ -28,13 +28,12 @@ class BaiHat_Controller extends Base_Controller {
 
 	}
 
-	public function newMusic(){
-		$list_baihat = array();
+	public function InfoMusic(){
+		$id = $_POST['id'];
 		$this->model->load('BaiHat');
-		$list_baihat = $this->model->BaiHat->newMusic();
-
-		if (isset($list_baihat[0]->id)) {
-			echo json_encode($list_baihat, JSON_UNESCAPED_UNICODE);
+		$BaiHat = $this->model->BaiHat->InfoMusic($id);
+		if ($BaiHat != null) {
+			echo json_encode($BaiHat, JSON_UNESCAPED_UNICODE);
 		}else {
 			echo 'khong';
 		}
