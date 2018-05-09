@@ -19,7 +19,7 @@ class CaSi_Model{
             $ca_si->id = $row['id'];
             $ca_si->ten = $row['ten'];
             $ca_si->thong_tin = $row['thong_tin'];
-            $ca_si->anh = $row['anh'];
+            $ca_si->anh = 'public/img/singers/'.$row['anh'];
             $list_ca_si[] = $ca_si;            
         }
 
@@ -49,7 +49,7 @@ class CaSi_Model{
         $ca_si->id = $row['id'];
         $ca_si->ten = $row['ten'];
         $ca_si->thong_tin = $row['thong_tin'];
-        $ca_si->anh = $row['anh'];
+        $ca_si->anh = 'public/img/singers/'.$row['anh'];
 
         return $ca_si;
 	}

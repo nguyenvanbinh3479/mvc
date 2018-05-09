@@ -4,6 +4,7 @@ class Playlist_Model{
 	public $user_id;
     public $ten;
 	public $anh;
+	public $ngay;
 
     public function all(){
 		$conn = FT_Database::instance()->getConnection();
@@ -19,7 +20,10 @@ class Playlist_Model{
             $playlist->id = $row['id'];
             $playlist->ten = $row['name'];
 			$playlist->anh = $row['anh'];
-			
+			$playlist->user_id = $row['user_id'];
+            $playlist->ten = $row['ten'];
+			$playlist->anh = $row['anh'];
+			$playlist->ngay = $row['ngay'];
             $list_playlist[] = $playlist;            
         }
 
@@ -28,8 +32,8 @@ class Playlist_Model{
 
 	public function save(){
 		$conn = FT_Database::instance()->getConnection();
-		$stmt = $conn->prepare("INSERT INTO playlists (user_id, ten, anh) VALUES (?, ?, ?)");
-		$stmt->bind_param("iss", $this->user_id, $this->ten, $this->anh);
+		$stmt = $conn->prepare("INSERT INTO playlists (user_id, ten, anh, ngay) VALUES (?, ?, ?, ?)");
+		$stmt->bind_param("isss", $this->user_id, $this->ten, $this->anh, $this->ngay);
 		$rs = $stmt->execute();
 		$this->id = $stmt->insert_id;		
 		$stmt->close();
@@ -49,8 +53,8 @@ class Playlist_Model{
         $playlist->id = $row['id'];
         $playlist->user_id = $row['user_id'];
         $playlist->ten = $row['ten'];
-        $playlist->anh = $row['anh'];
-
+        $playlist->anh = 'public/img/playlists/'.$row['anh'];
+        $playlist->ngay = $row['ngay'];
         return $playlist;
 	}
 
@@ -64,8 +68,8 @@ class Playlist_Model{
 
 	public function update(){
 		$conn = FT_Database::instance()->getConnection();
-		$stmt = $conn->prepare("UPDATE playlists SET user_id=?, ten=?, anh=? WHERE id=?");
-		$stmt->bind_param("issi", $this->user_id, $this->ten, $this->anh, $_POST['id']);
+		$stmt = $conn->prepare("UPDATE playlists SET user_id=?, ten=?, anh=?, ngay=? WHERE id=?");
+		$stmt->bind_param("isssi", $this->user_id, $this->ten, $this->anh, $this->ngay, $_POST['id']);
 		$stmt->execute();
 		$stmt->close();
 	}

@@ -4,6 +4,7 @@ class BinhLuan_Model{
     public $baihat_id;
     public $user_id;
     public $noi_dung;
+    public $ngay;
 
     public function all(){
 		$conn = FT_Database::instance()->getConnection();
@@ -20,6 +21,7 @@ class BinhLuan_Model{
             $binhluan->baihat_id = $row['baihat_id'];
             $binhluan->user_id = $row['user_id'];
             $binhluan->noi_dung = $row['noi_dung'];
+            $binhluan->ngay = $row['ngay'];
             $list_binhluan[] = $binhluan;            
         }
 
@@ -28,8 +30,8 @@ class BinhLuan_Model{
 
 	public function save(){
 		$conn = FT_Database::instance()->getConnection();
-		$stmt = $conn->prepare("INSERT INTO binhluans (baihat_id, user_id, noi_dung) VALUES (?, ?, ?)");
-		$stmt->bind_param("iis", $this->baihat_id, $this->user_id, $this->noi_dung);
+		$stmt = $conn->prepare("INSERT INTO binhluans (baihat_id, user_id, noi_dung, ngay) VALUES (?, ?, ?, ?)");
+		$stmt->bind_param("iiss", $this->baihat_id, $this->user_id, $this->noi_dung, $this->ngay);
 		$rs = $stmt->execute();
 		$this->id = $stmt->insert_id;		
 		$stmt->close();
@@ -50,7 +52,8 @@ class BinhLuan_Model{
         $binhluan->baihat_id = $row['baihat_id'];
         $binhluan->user_id = $row['user_id'];
         $binhluan->noi_dung = $row['noi_dung'];
-
+        $binhluan->ngay = $row['ngay'];
+	
         return $binhluan;
 	}
 
@@ -64,8 +67,8 @@ class BinhLuan_Model{
 
 	public function update(){
 		$conn = FT_Database::instance()->getConnection();
-		$stmt = $conn->prepare("UPDATE binhluans SET baihat_id=?, user_id=?, noi_dung=? WHERE id=?");
-		$stmt->bind_param("iisi", $this->baihat_id, $this->user_id, $this->noi_dung, $_POST['id']);
+		$stmt = $conn->prepare("UPDATE binhluans SET baihat_id=?, user_id=?, noi_dung=?, ngay=? WHERE id=?");
+		$stmt->bind_param("iissi", $this->baihat_id, $this->user_id, $this->noi_dung, $this->ngay, $_POST['id']);
 		$stmt->execute();
 		$stmt->close();
 	}

@@ -1,7 +1,22 @@
-<?php if ( ! defined('PATH_PUBLIC')) die ('Bad requested!');
-    require_once(PATH_PUBLIC . '/template/admin/header.php');
-?>
+<!doctype html>
+<html lang="en">
 
+<head>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="public/img/msc-icon.png" />
+    <link rel="icon" type="image/png" href="public/img/msc-icon.png" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>M.S.C Universe</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    <!-- Bootstrap core CSS     -->
+    <link href="public/css/bootstrap.min.css" rel="stylesheet" />
+    <!--  Material Dashboard CSS    -->
+    <link href="public/css/material-dashboard.css?v=1.2.0" rel="stylesheet" />
+    <!--     Fonts and icons     -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons" rel='stylesheet'>
+</head>
 <body>
     <div class="wrapper">
         <div class="sidebar" data-color="red" data-image="public/img/sidebar-2.jpg" >
@@ -103,12 +118,13 @@
                                     <div class="card-content">
                                         <h4 class="title">Users</h4>
                                         <p class="category">
-                                            <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> increase in today.
+                                            <span class="text-success"> <?php echo count($list_user)?> </span> 
                                         </p>
                                     </div>
                                     <div class="card-footer">
                                         <div class="stats">
-                                            <i class="material-icons">access_time</i> updated 4 minutes ago
+                                            <i class="material-icons text-success">add</i>
+                                            Create More Songs
                                         </div>
                                     </div>
                                 </div>
@@ -123,12 +139,13 @@
                                     <div class="card-content">
                                         <h4 class="title">Listenings</h4>
                                         <p class="category">
-                                            <span class="text-success"><i class="fa fa-long-arrow-up"></i> 90% </span> increase in today.
+                                            <span class="text-success"> <?php echo count($list_luotnghe)?> </span> 
                                         </p>
                                     </div>
                                     <div class="card-footer">
                                         <div class="stats">
-                                            <i class="material-icons">access_time</i> updated 1 minutes ago
+                                            <i class="material-icons text-success">add</i>
+                                            Create More Songs
                                         </div>
                                     </div>
                                 </div>
@@ -143,12 +160,13 @@
                                     <div class="card-content">
                                         <h4 class="title">Comments</h4>
                                         <p class="category">
-                                            <span class="text-success"><i class="fa fa-long-arrow-up"></i> 25% </span> increase in today.
+                                            <span class="text-success"> <?php echo count($list_binhluan)?></span> 
                                         </p>
                                     </div>
                                     <div class="card-footer">
                                         <div class="stats">
-                                            <i class="material-icons">access_time</i> updated 2 minutes ago
+                                            <i class="material-icons text-success">add</i>
+                                            Create More Songs
                                         </div>
                                     </div>
                                 </div>
@@ -164,8 +182,7 @@
                                     </div>
                                     <div class="card-content">
                                         <p class="category">Songs</p>
-                                        <h3 class="title">2000
-                                        </h3>
+                                        <h3 class="title"><?php echo count($list_baihat)?></h3>
                                     </div>
                                     <div class="card-footer">
                                         <div class="stats">
@@ -184,7 +201,7 @@
                                     </div>
                                     <div class="card-content">
                                         <p class="category">Album</p>
-                                        <h3 class="title">245</h3>
+                                        <h3 class="title"><?php echo count($list_album)?></h3>
                                     </div>
                                     <div class="card-footer">
                                         <div class="stats">
@@ -203,7 +220,7 @@
                                     </div>
                                     <div class="card-content">
                                         <p class="category">Authors</p>
-                                        <h3 class="title">200
+                                        <h3 class="title"><?php echo count($list_tacgia)?>
                                         </h3>
                                     </div>
                                     <div class="card-footer">
@@ -223,7 +240,7 @@
                                     </div>
                                     <div class="card-content">
                                         <p class="category">Singers</p>
-                                        <h3 class="title">945</h3>
+                                        <h3 class="title"><?php echo count($list_casi)?></h3>
                                     </div>
                                     <div class="card-footer">
                                         <div class="stats">
@@ -242,7 +259,7 @@
                                     </div>
                                     <div class="card-content">
                                         <p class="category">Types</p>
-                                        <h3 class="title">75</h3>
+                                        <h3 class="title"><?php echo count($list_theloai)?></h3>
                                     </div>
                                     <div class="card-footer">
                                         <div class="stats">
@@ -261,7 +278,7 @@
                                     </div>
                                     <div class="card-content">
                                         <p class="category">Favorites</p>
-                                        <h3 class="title">1678</h3>
+                                        <h3 class="title"><?php echo count($list_yeuthich)?></h3>
                                     </div>
                                     <div class="card-footer">
                                         <div class="stats">
@@ -280,7 +297,7 @@
                                     </div>
                                     <div class="card-content">
                                         <p class="category">Playlists</p>
-                                        <h3 class="title">275</h3>
+                                        <h3 class="title"><?php echo count($list_playlist)?></h3>
                                     </div>
                                     <div class="card-footer">
                                         <div class="stats">
@@ -299,7 +316,7 @@
                                     </div>
                                     <div class="card-content">
                                         <p class="category">Playlist Details</p>
-                                        <h3 class="title">1045</h3>
+                                        <h3 class="title"><?php echo count($list_chitietplaylist)?></h3>
                                     </div>
                                     <div class="card-footer">
                                         <div class="stats">
