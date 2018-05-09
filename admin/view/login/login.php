@@ -46,8 +46,9 @@
                                     <p class="category">you have to do this men</p>
                                 </div>
                                 <div class="card-content">
-                                    <form method="post" action="admin.php">
+                                    <form method="post" action="">
                                         <input type="hidden" name="c" value="login">
+                                        <input type="hidden" name="a" value="index">
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group label-floating">
