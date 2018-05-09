@@ -28,8 +28,15 @@ class BaiHat_Controller extends Base_Controller {
 
 	}
 
-	public function newMusic(){
-		$list_baihat = array();
+	public function InfoMusic(){
+		$id = $_POST['id'];
+		$this->model->load('BaiHat');
+		$BaiHat = $this->model->BaiHat->InfoMusic($id);
+		if ($BaiHat != null) {
+			echo json_encode($BaiHat, JSON_UNESCAPED_UNICODE);
+		}else {
+			echo 'khong';
+		}
 	}
 }
  ?>
