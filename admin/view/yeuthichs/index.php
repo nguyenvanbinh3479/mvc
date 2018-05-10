@@ -1,6 +1,7 @@
 <?php if ( ! defined('PATH_PUBLIC')) die ('Bad requested!');
     require_once(PATH_PUBLIC . '/template/admin/header.php');
 ?>
+            
             <div class="content">
                 <div class="container-fluid">
                     <div class="row">
@@ -17,7 +18,6 @@
                                             <th>baihat</th>
                                             <th>user</th>
                                             <th>Ngay</th>
-                                            <th>Edit</th>
                                             <th>Delete</th>
                                         </thead>
                                         <tbody>
@@ -32,7 +32,7 @@
                                                     echo '<td> '. $baihat['ten'] .' </td>';
                                                 }
                                             ?>
-                                             <?php 
+                                            <?php 
                                                 $arr = (array) $list_user;
                                                 foreach ($arr as $key => $value) {
                                                     $user = (array) $value;
@@ -40,9 +40,8 @@
                                                     echo '<td> '. $user['email'] .' </td>';
                                                 }
                                             ?>
-                                                <td><?php $date = date_create($yeuthich->ngay); echo date_format($date, "d/m/Y"); ?></td>                                                                                     
-                                            <td><a href="admin.php?c=yeuthich&a=edit&id=<?php echo $yeuthich->id; ?>">Edit</a></td>
-                                            <td><a href="admin.php?c=yeuthich&a=delete&id=<?php echo $yeuthich->id; ?>">Delete</a></td>
+                                                <td><?php $date = date_create($yeuthich->ngay); echo date_format($date, "d/m/Y"); ?></td>                                                                               
+                                            <td><a href="admin.php?c=yeuthich&a=delete&baihat_id=<?php echo $yeuthich->baihat_id; ?>&user_id=<?php echo $yeuthich->user_id?>">Delete</a></td>
                                             </tr>
                                         <?php } ?>
                                         </tbody>
