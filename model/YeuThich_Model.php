@@ -28,8 +28,8 @@ class YeuThich_Model{
 	public function save(){
 	   $conn = FT_Database::instance()->getConnection();
 	    if ($this->check_yeuthich_exists($this->baihat_id, $this->user_id) == 0) {
-	      $stmt = $conn->prepare("INSERT INTO yeuthichs (baihat_id, user_id) VALUES (?, ?)");
-	      $stmt->bind_param("ii", $this->baihat_id, $this->user_id);
+	      $stmt = $conn->prepare("INSERT INTO yeuthichs (baihat_id, user_id, ngay) VALUES (?, ?, ?)");
+	      $stmt->bind_param("iis", $this->baihat_id, $this->user_id, $this->ngay);
 	      $rs = $stmt->execute();
 	      $stmt->close();
 	      return true;
