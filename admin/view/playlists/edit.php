@@ -142,7 +142,7 @@
                                 };
                                 </script>
                             </label>
-                            <img id="output" style="width: 300px; height: 200px;" src="<?php echo $playlist->anh; ?>"/>
+                            <img id="output" style="width: 300px; height: 200px;" src="public/img/playlists/<?php echo $playlist->anh; ?>"/>
 						</div>
 						<div class="row">   
                             <button class="btn p-2 m-2" type="submit"  onclick="alert('Add success !')">Apply</button>                          

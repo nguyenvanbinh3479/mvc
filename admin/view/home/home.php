@@ -6,7 +6,7 @@
     <div class="wrapper">
         <div class="sidebar" data-color="red" data-image="public/img/sidebar-2.jpg" >
             <div class="logo">
-                <a href="admin.php?c=home" class="simple-text">
+                <a href="https://quoctuan1998.github.io/" class="simple-text">
                     M.S.C - UNIVERSE
                 </a>
             </div>
@@ -44,7 +44,7 @@
                             <span class="icon-bar"></span>
                         </button>
                         <a class="navbar-brand" href="https://goo.gl/CYpD4c">Channel</a>
-                        <a class="navbar-brand" href="https://nguyenvanbinh3479.github.io/">Blog</a>
+                        <a class="navbar-brand" href="https://quoctuan1998.github.io/">Website</a>
                     </div>
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
@@ -315,6 +315,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
+                        <a href="admin.php?c=profile">                        
                             <div class="card">
                                 <div class="card-header" data-background-color="green">
                                     <h4 class="title">Team Member</h4>
@@ -351,6 +352,7 @@
                                     </table>
                                 </div>
                             </div>
+                        </a>
                         </div>
                     </div>
                 </div>

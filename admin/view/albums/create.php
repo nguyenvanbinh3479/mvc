@@ -129,6 +129,9 @@
                                     <option value="<?php print_r($arr['id']); ?> "> <?php print_r($arr['ten']) ; }?></option>
                             </select>
                         </div>
+                        <div class="row">   		
+                            <label>The Loai:</label>
+                        </div>
                         <div class="row">
                             <select class="form-control p-2 m-2" name="theloai_id">
                                 <?php foreach ( $list_theloai as $key => $value) { 

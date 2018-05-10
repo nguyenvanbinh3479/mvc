@@ -22,6 +22,7 @@ class Playlist_Model{
             $playlist->ten = $row['ten'];
 			$playlist->anh = 'public/img/playlists/'.$row['anh'];
 			$playlist->ngay = $row['ngay'];
+			
             $list_playlist[] = $playlist;            
         }
 
@@ -51,7 +52,7 @@ class Playlist_Model{
         $playlist->id = $row['id'];
         $playlist->user_id = $row['user_id'];
         $playlist->ten = $row['ten'];
-        $playlist->anh = 'public/img/playlists/'.$row['anh'];
+        $playlist->anh = $row['anh'];
         $playlist->ngay = $row['ngay'];
         return $playlist;
 	}
