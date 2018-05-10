@@ -18,6 +18,8 @@ class Playlist_Model{
 		while ($row = mysqli_fetch_assoc($result)){
             $playlist = new Playlist_Model();
             $playlist->id = $row['id'];
+            $playlist->ten = $row['name'];
+			$playlist->anh = $row['anh'];
 			$playlist->user_id = $row['user_id'];
             $playlist->ten = $row['ten'];
 			$playlist->anh = $row['anh'];
