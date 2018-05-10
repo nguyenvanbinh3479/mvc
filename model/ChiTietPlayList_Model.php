@@ -1,6 +1,5 @@
 <?php 
 class ChiTietPlayList_Model{
-	public $id;
     public $playlist_id;
     public $baihat_id;
 
@@ -33,26 +32,9 @@ class ChiTietPlayList_Model{
 		return $rs;
 	}
 
-	public function findById($id){
+	public function delete($playlist_id, $baihat_id){
 		$conn = FT_Database::instance()->getConnection();
-		$sql = 'select * from chitietplaylists where id='.$id;
-		$result = mysqli_query($conn, $sql);
-
-		if(!$result)
-			die('Error: ');
-
-		$row = mysqli_fetch_assoc($result);
-        $chi_tiet_playlist = new ChiTietPlayList_Model();
-        $chi_tiet_playlist->id = $row['id'];
-        $chi_tiet_playlist->playlist_id = $row['playlist_id'];
-        $chi_tiet_playlist->baihat_id = $row['baihat_id'];
-
-        return $chi_tiet_playlist;
-	}
-
-	public function delete(){
-		$conn = FT_Database::instance()->getConnection();
-		$sql = 'delete from chitietplaylists where id='.$this->id;
+		$sql = 'delete from chitietplaylists where playlist_id ='.$playlist_id . ' AND baihat_id = ' . $baihat_id;
 		$result = mysqli_query($conn, $sql);
 
 		return $result;

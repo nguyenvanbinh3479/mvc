@@ -108,6 +108,7 @@ class ChiTietPlayList_Controller extends Base_Controller
     */
     public function update()
     {        
+
         $this->model->load('ChiTietPlayList');
         $chitietplaylist = $this->model->ChiTietPlayList->findById($_POST['id']);
         $chitietplaylist->playlist_id = $_POST['playlist_id'];
@@ -117,15 +118,34 @@ class ChiTietPlayList_Controller extends Base_Controller
         go_back();
     }
 
+    public function check_exist() {
+        $conn = FT_Database::instance()->getConnection();
+        $stmt = $conn->prepare("SELECT * FROM playlists WHERE playlist_id = ? AND baihat_id = ?");
+
+        $stmt->bind_param("ii", $playlist_id, $baihat_id);
+
+        $stmt->execute();
+        $stmt->bind_result($id);
+        $stmt->store_result();
+        /*Fetch the value*/
+        $stmt->fetch();
+
+        if ($stmt->num_rows > 0) {
+        return $stmt->num_rows;
+        } else {
+        return 0;
+        }
+    }   
+
+
     /**
     * action delete: show form edit a ChiTietPlayList
     * method: GET
     */
-    public function delete()
-    {        
+    public function delete() {        
         $this->model->load('ChiTietPlayList');
-        $chitietplaylist = $this->model->ChiTietPlayList->findById($_GET['id']);
-        $chitietplaylist->delete();
+        // die($_GET['playlist_id']);
+        $this->model->ChiTietPlayList->delete($_GET['playlist_id'], $_GET['baihat_id']);
 
         go_back();
     }

@@ -16,7 +16,6 @@
                                           <th>STT</th>
                                           <th>playlist</th>
                                           <th>baihat</th>
-                                          <th>Edit</th>
                                           <th>Delete</th>
                                       </thead>
                                       <tbody>
@@ -40,8 +39,7 @@
                                                     echo '<td> '. $baihat['ten'] .' </td>';
                                                 }
                                             ?>  
-                                          <td><a href="admin.php?c=chitietplaylist&a=edit&id=<?php echo $chitietplaylist->id; ?>">Edit</a></td>
-                                          <td><a href="admin.php?c=chitietplaylist&a=delete&id=<?php echo $chitietplaylist->id; ?>">Delete</a></td>
+                                          <td><a href="admin.php?c=chitietplaylist&a=delete&playlist_id=<?php echo $chitietplaylist->playlist_id; ?>&baihat_id=<?php echo $chitietplaylist->baihat_id; ?>">Delete</a></td>
                                         </tr>
                                       <?php } ?>
                                       </tbody>
