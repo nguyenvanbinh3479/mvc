@@ -3,6 +3,7 @@ class YeuThich_Model{
     public $baihat_id;
     public $user_id;
 	public $ngay;
+	public $show = "";
 
     public function all(){
 		$conn = FT_Database::instance()->getConnection();
@@ -67,7 +68,7 @@ class YeuThich_Model{
 
 	public function delete($baihat_id, $user_id){
 		$conn = FT_Database::instance()->getConnection();
-		$sql = 'delete from yeuthichs where baihat_id = '.$baihat_id.' AND user_id = '.$user_id;;
+		$sql = 'delete from yeuthichs where baihat_id = '.$baihat_id.' AND user_id = '.$user_id;
 		$result = mysqli_query($conn, $sql);
 
 		return $result;
