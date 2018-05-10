@@ -121,7 +121,7 @@
                                 };
                                 </script>
                             </label>
-                            <img id="output" style="width: 300px; height: 200px;" src="<?php echo $baihat->anh; ?>"/>
+                            <img id="output" style="width: 300px; height: 200px;" src="public/img/songs/<?php echo $baihat->anh; ?>"/>
 						</div>
 						<div class="row">   		
 							<label>Loi Bai Hat:</label>
