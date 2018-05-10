@@ -1,9 +1,9 @@
 <?php 
 class YeuThich_Model{
-	public $id;
     public $baihat_id;
     public $user_id;
 	public $ngay;
+	public $show = "";
 
     public function all(){
 		$conn = FT_Database::instance()->getConnection();
@@ -16,7 +16,6 @@ class YeuThich_Model{
 
 		while ($row = mysqli_fetch_assoc($result)){
             $yeuthich = new YeuThich_Model();
-            $yeuthich->id = $row['id'];
             $yeuthich->baihat_id = $row['baihat_id'];
             $yeuthich->user_id = $row['user_id'];
             $yeuthich->ngay = $row['ngay'];
@@ -27,46 +26,52 @@ class YeuThich_Model{
 	}
 
 	public function save(){
-		$conn = FT_Database::instance()->getConnection();
-		$stmt = $conn->prepare("INSERT INTO yeuthichs (baihat_id, user_id, ngay) VALUES (?, ?, ?)");
-		$stmt->bind_param("iis", $this->baihat_id, $this->user_id, $this->ngay);
-		$rs = $stmt->execute();
-		$this->id = $stmt->insert_id;		
-		$stmt->close();
-		return $rs;
+	   $conn = FT_Database::instance()->getConnection();
+	    if ($this->check_yeuthich_exists($this->baihat_id, $this->user_id) == 0) {
+	      $stmt = $conn->prepare("INSERT INTO yeuthichs (baihat_id, user_id) VALUES (?, ?)");
+	      $stmt->bind_param("ii", $this->baihat_id, $this->user_id);
+	      $rs = $stmt->execute();
+	      $stmt->close();
+	      return true;
+	    } else {
+	      $this->delete();
+	      return false;
+	    }
 	}
 
-	public function findById($id){
+
+	public function check_yeuthich_exists($baihat_id, $user_id) {
+	    $conn = FT_Database::instance()->getConnection();
+	    $stmt = $conn->prepare("SELECT * FROM yeuthichs WHERE baihat_id = ? AND user_id = ?");
+	    $stmt->bind_param("ii", $baihat_id, $user_id);
+	    $stmt->execute();
+	    $stmt->store_result();
+	    $stmt->fetch();
+
+	    if ($stmt->num_rows > 0) {
+	        return $stmt->num_rows;
+	     } else {
+	        return 0;
+	     }
+  	}
+
+    public function num_likes($baihat_id) {
+	    $conn = FT_Database::instance()->getConnection();
+	    $sql = "SELECT COUNT($baihat_id) as luot_like FROM yeuthichs WHERE baihat_id = $baihat_id";
+	    $result = mysqli_query($conn, $sql);
+	    if(!$result)
+	      die('Error: ');
+	    $row = mysqli_fetch_assoc($result);
+	    $luot_like = $row['luot_like'];
+	    return $luot_like;
+  	}
+
+	public function delete($baihat_id, $user_id){
 		$conn = FT_Database::instance()->getConnection();
-		$sql = 'select * from yeuthichs where id='.$id;
-		$result = mysqli_query($conn, $sql);
-
-		if(!$result)
-			die('Error: ');
-
-		$row = mysqli_fetch_assoc($result);
-        $yeuthich = new YeuThich_Model();
-        $yeuthich->id = $row['id'];
-        $yeuthich->baihat_id = $row['baihat_id'];	
-        $yeuthich->user_id = $row['user_id'];
-        $yeuthich->ngay = $row['ngay'];
-
-        return $yeuthich;
-	}
-
-	public function delete(){
-		$conn = FT_Database::instance()->getConnection();
-		$sql = 'delete from yeuthichs where id='.$this->id;
+		$sql = 'delete from yeuthichs where baihat_id = '.$baihat_id.' AND user_id = '.$user_id;
 		$result = mysqli_query($conn, $sql);
 
 		return $result;
 	}
 
-	public function update(){
-		$conn = FT_Database::instance()->getConnection();
-		$stmt = $conn->prepare("UPDATE yeuthichs SET baihat_id=?, user_id=?, ngay=? WHERE id=?");
-		$stmt->bind_param("iisi", $this->baihat_id, $this->user_id, $this->ngay, $_POST['id']);
-		$stmt->execute();
-		$stmt->close();
-	}
 }

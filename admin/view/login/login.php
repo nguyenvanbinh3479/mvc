@@ -48,11 +48,13 @@
                                 <div class="card-content">
                                     <form method="post" action="admin.php">
                                         <input type="hidden" name="c" value="login">
+                                        <input type="hidden" name="a" value="index">
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group label-floating">
                                                     <label class="control-label">Username</label>
                                                     <input type="email" class="form-control" name="email" required>
+                                                    <!-- <p><?php //echo $show;?></p> -->
                                                 </div>
                                             </div>
                                         </div>
@@ -74,7 +76,14 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <button type="submit" class="btn btn-danger pull-right">Login</button>
+                                        <button  class="btn btn-danger pull-right" onclick=alert(
+                                            "<?php
+                                            if($status == 4) {                                           
+                                                    header('location: admin.php?c=home');   
+                                            }else {
+                                                echo $show;
+                                            }
+                                        ?>")>Login</button>
                                         <div class="clearfix"></div>
                                     </form>
                                 </div>
