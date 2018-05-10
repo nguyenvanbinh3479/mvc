@@ -28,9 +28,9 @@ class BaiHat_Model{
 			$baihat->theloai_id = $row['theloai_id'];
 			$baihat->tacgia_id = $row['tacgia_id'];
             $baihat->ten = $row['ten'];
-			$baihat->anh = $row['anh'];
+			$baihat->anh = 'public/img/Songs/'.$row['anh'];
 			$baihat->loi_bai_hat = $row['loi_bai_hat'];
-			$baihat->link = $row['link'];
+			$baihat->link = 'public/music/'.$row['link'];
 			$baihat->ngay = $row['ngay'];
 			$list_baihat[] = $baihat;  
         }
@@ -63,9 +63,9 @@ class BaiHat_Model{
 		$baihat->theloai_id = $row['theloai_id'];
 		$baihat->tacgia_id = $row['tacgia_id'];
         $baihat->ten = $row['ten'];
-		$baihat->anh = $row['anh'];
+		$baihat->anh = 'public/img/Songs/'.$row['anh'];
 		$baihat->loi_bai_hat = $row['loi_bai_hat'];
-		$baihat->link = $row['link'];
+		$baihat->link = 'public/music/'.$row['link'];
 		$baihat->ngay = $row['ngay'];
 
         return $baihat;
@@ -131,77 +131,4 @@ class BaiHat_Model{
         return $list_baihat;
     }
 
-    public function findSongsFromPlaylist($id){
-		$conn = FT_Database::instance()->getConnection();
-
-		$sql ="SELECT baihats.id, baihats.ten, baihats.anh, casis.ten as 'ten_casi', baihats.link FROM baihats, chitietplaylist, casis WHERE chitietplaylist.id_baihat = baihats.id && baihats.casi_id = casis.id && chitietplaylist.id_playlist = " . $id;
-		
-		$result = mysqli_query($conn, $sql);
-		$baihats = array();
-
-		if(!$result)
-			die('Error: ');
-
-		while ($row = mysqli_fetch_assoc($result)) {
-		    $baihat = new BaiHat_Model();
-		    $baihat->id = $row['id'];
-		    $baihat->ten = $row['ten'];
-		    $baihat->casi_id = $row['ten_casi'];
-		    $baihat->anh = $row['anh'];
-		    $baihat->link = $row['link'];
-
-		    array_push($baihats, $baihat);
-		}
-		return $baihats;
-	}
-
-	public function InfoMusic($id){
-		$conn = FT_Database::instance()->getConnection();
-		$sql = "SELECT baihats.id, baihats.ten as 'ten_bai_hat', casis.ten as 'ten_ca_si', theloais.ten as 'ten_the_loai', tacgias.ten as 'ten_tac_gia', baihats.anh, baihats.loi_bai_hat, baihats.link, baihats.ngay FROM baihats, theloais, tacgias, casis WHERE baihats.casi_id = casis.id && baihats.tacgia_id = tacgias.id && baihats.theloai_id = theloais.id && baihats.id = " . $id;
-
-		$result = mysqli_query($conn, $sql);
-		$baihat = new BaiHat_Model();
-
-		if(!$result)
-			die('Error: ');
-
-		$row = mysqli_fetch_assoc($result);
-		$baihat->id = $row['id'];
-		$baihat->casi_id = $row['ten_ca_si'];
-		$baihat->theloai_id = $row['ten_the_loai'];
-		$baihat->tacgia_id = $row['ten_tac_gia'];
-		$baihat->ten = $row['ten_bai_hat'];
-		$baihat->anh = $row['anh'];
-		$baihat->loi_bai_hat = $row['loi_bai_hat'];
-		$baihat->link = $row['link'];
-		$baihat->ngay = $row['ngay'];
-
-		return $baihat;
-	}
-
-	public function showBaiHatYeuThichFromID($id){
-		$conn = FT_Database::instance()->getConnection();
-		$sql = "SELECT baihats.id, baihats.ten, casis.ten as 'ten_ca_si', baihats.anh, baihats.link FROM baihats, casis, yeuthichs WHERE baihats.casi_id = casis.id && baihats.id = yeuthichs.baihat_id && yeuthichs.user_id = " . $id;
-
-		$result = mysqli_query($conn, $sql);
-		$baihats = array();
-
-		if(!$result)
-			die('Error: ');
-
-		while ($row = mysqli_fetch_assoc($result)) {
-		    $baihat = new BaiHat_Model();
-		    $baihat->id = $row['id'];
-		    $baihat->ten = $row['ten'];
-		    $baihat->casi_id = $row['ten_ca_si'];
-		    $baihat->anh = $row['anh'];
-		    $baihat->link = $row['link'];
-
-		    array_push($baihats, $baihat);
-		}
-
-		return $baihats;
-	}
-
 }
- ?>

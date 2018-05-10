@@ -5,6 +5,7 @@ class Login_Controller extends Base_Controller
     
     public function index()
 
+
     {        
         if(isset($_POST['email']) && isset($_POST['password'])){
             $email = addslashes($_POST['email']);
