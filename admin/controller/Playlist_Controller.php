@@ -69,6 +69,7 @@ class Playlist_Controller extends Base_Controller
         $this->model->Playlist->user_id = $_POST['user_id'];
         $this->model->Playlist->ten = $_POST['ten'];
         $this->model->Playlist->anh = $_POST['anh'];
+        $this->model->Playlist->ngay = $_POST['ngay'];
         $this->model->Playlist->save();
 
         go_back();
@@ -107,6 +108,7 @@ class Playlist_Controller extends Base_Controller
         $playlist->user_id = $_POST['user_id'];
         $playlist->ten = $_POST['ten'];
         $playlist->anh = $_POST['anh'];      
+        $playlist->ngay = $_POST['ngay'];      
         $playlist->update();
 
         go_back();
