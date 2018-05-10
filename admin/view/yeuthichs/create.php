@@ -92,7 +92,7 @@
             </nav>
             <div class="content">
                 <div class="container-fluid">
-					<form method="post" action="">
+					<form method="post" action="admin.php">
 						<input type="hidden" name="c" value="yeuthich">
 						<input type="hidden" name="a" value="store">
 						<div class="row">   		

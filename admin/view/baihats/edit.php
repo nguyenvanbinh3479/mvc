@@ -222,7 +222,7 @@
 							<label>Link:</label>
 						</div>
 						<div class="row">
-                            <input type="file" accept="audio/*" name="link"><?php echo $baihat->link?>
+								<input type="text" class="form-control p-2 m-2" name="link" value="<?php echo $baihat->link; ?>">
 						</div>
 						<div class="row">   		
 							<label>Ngay:</label>

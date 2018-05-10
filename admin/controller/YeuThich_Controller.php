@@ -6,7 +6,6 @@ class YeuThich_Controller extends Base_Controller
     * action index: show all yeuthichs
     * method: GET
     */
-
     public function index()
     {        
         $this->model->load('YeuThich');
@@ -26,6 +25,22 @@ class YeuThich_Controller extends Base_Controller
         $this->view->load('yeuthichs/index', $data);
     }
 
+    /**
+    * action show: show a YeuThich
+    * method: GET
+    */
+    public function show()
+    {        
+        $this->model->load('YeuThich');
+        $yeuthich = $this->model->YeuThich->findById($_GET['id']);
+        $data = array(
+            'title' => 'show',
+            'yeuthich' => $yeuthich
+        );
+
+        // Load view
+        $this->view->load('yeuthichs/show', $data);
+    }
 
     /**
     * action create: create a YeuThich
@@ -35,13 +50,12 @@ class YeuThich_Controller extends Base_Controller
     {        
         $this->model->load('BaiHat');
         $this->model->load('User');
-        $this->model->load('YeuThich');
-        $yeuthich = new YeuThich_Model();
+
         $list_baihat = $this->model->BaiHat->all();
         $list_user = $this->model->User->all();
 
         $data = array(
-            'show' => $yeuthich->show,
+            'title' => 'index',
             'list_baihat' => $list_baihat,
             'list_user' => $list_user,
         );
@@ -56,18 +70,13 @@ class YeuThich_Controller extends Base_Controller
     */
     public function store()
     {        
-       
         $this->model->load('YeuThich');
-        if ($this->model->YeuThich->check_yeuthich_exists($_POST['baihat_id'], $_POST['user_id']) == 0) {
-            $this->model->YeuThich->baihat_id = $_POST['baihat_id'];
-            $this->model->YeuThich->user_id = $_POST['user_id'];
-            $this->model->YeuThich->ngay = $_POST['ngay'];
-            $this->model->YeuThich->save();
-            go_back();
-        }else {
-           
-        }
+        $this->model->YeuThich->baihat_id = $_POST['baihat_id'];
+        $this->model->YeuThich->user_id = $_POST['user_id'];
+        $this->model->YeuThich->ngay = $_POST['ngay'];
+        $this->model->YeuThich->save();
 
+        go_back();
     }
 
     /**
@@ -79,7 +88,7 @@ class YeuThich_Controller extends Base_Controller
         $this->model->load('YeuThich');
         $this->model->load('BaiHat');
         $this->model->load('User');
-        $yeuthich = $this->model->YeuThich->find($_GET['baihat_id'], $_GET['user_id']);
+        $yeuthich = $this->model->YeuThich->findById($_GET['id']);
         $list_baihat = $this->model->BaiHat->all();
         $list_user = $this->model->User->all();
         $data = array(
@@ -100,7 +109,7 @@ class YeuThich_Controller extends Base_Controller
     public function update()
     {        
         $this->model->load('YeuThich');
-        $yeuthich = $this->model->YeuThich->find($_POST['baihat_id'], $_POST['user_id']);
+        $yeuthich = $this->model->YeuThich->findById($_POST['id']);
         $yeuthich->baihat_id = $_POST['baihat_id'];
         $yeuthich->user_id = $_POST['user_id'];          
         $yeuthich->ngay = $_POST['ngay'];          
@@ -116,7 +125,9 @@ class YeuThich_Controller extends Base_Controller
     public function delete()
     {        
         $this->model->load('YeuThich');
-        $this->model->YeuThich->delete($_GET['baihat_id'], $_GET['user_id']);
+        $yeuthich = $this->model->YeuThich->findById($_GET['id']);
+        $yeuthich->delete();
+
         go_back();
     }
 }

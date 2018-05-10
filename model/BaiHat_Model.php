@@ -30,7 +30,7 @@ class BaiHat_Model{
             $baihat->ten = $row['ten'];
 			$baihat->anh = 'public/img/Songs/'.$row['anh'];
 			$baihat->loi_bai_hat = $row['loi_bai_hat'];
-			$baihat->link = 'public/music/'.$row['link'];
+			$baihat->link = $row['link'];
 			$baihat->ngay = $row['ngay'];
 			$list_baihat[] = $baihat;  
         }
@@ -65,7 +65,7 @@ class BaiHat_Model{
         $baihat->ten = $row['ten'];
 		$baihat->anh = 'public/img/Songs/'.$row['anh'];
 		$baihat->loi_bai_hat = $row['loi_bai_hat'];
-		$baihat->link = 'public/music/'.$row['link'];
+		$baihat->link = $row['link'];
 		$baihat->ngay = $row['ngay'];
 
         return $baihat;

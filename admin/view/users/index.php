@@ -104,17 +104,16 @@
                                         <thead class="text-success">
                                             <th>STT</th>
                                             <th>Email</th>
-                                            <th>Password</th>
                                             <th>Role</th>
                                             <th>Status</th>
                                             <th>Edit</th>
                                             <th>Delete</th>
+                                        </thead>
                                         <tbody>
                                             <?php foreach ($list_user as $user) { ?>    
                                                 <tr>
                                                     <td><?php echo increment_once($index); ?></td>
                                                     <td><?php echo $user->email; ?></td>
-                                                    <td><?php echo $user->password; ?></td>
                                                     <td><?php echo $user->role; ?></td>
                                                     <td><?php echo $user->status; ?></td>
                                                     <td><a href="admin.php?c=user&a=edit&id=<?php echo $user->id; ?>">Edit</a></td>

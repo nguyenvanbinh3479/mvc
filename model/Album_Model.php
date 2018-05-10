@@ -33,7 +33,7 @@ class Album_Model{
 	public function save(){
 		$conn = FT_Database::instance()->getConnection();
 		$stmt = $conn->prepare("INSERT INTO albums (anh, ten, casi_id, theloai_id, ngay) VALUES (?, ?, ?, ?, ?)");
-		$stmt->bind_param("ssiis", $this->anh, $this->ten, $this->casi_id, $this->theloai_id, $this->ngay);
+		$stmt->bind_param("ssii", $this->anh, $this->ten, $this->casi_id, $this->theloai_id, $this->ngay);
 		$rs = $stmt->execute();
 		$this->id = $stmt->insert_id;
 		$stmt->close();

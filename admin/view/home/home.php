@@ -108,8 +108,7 @@
                                     </div>
                                     <div class="card-footer">
                                         <div class="stats">
-                                            <i class="material-icons text-success">add</i>
-                                            Create More Songs
+                                            <i class="material-icons">access_time</i> updated 4 minutes ago
                                         </div>
                                     </div>
                                 </div>
@@ -129,8 +128,7 @@
                                     </div>
                                     <div class="card-footer">
                                         <div class="stats">
-                                            <i class="material-icons text-success">add</i>
-                                            Create More Songs
+                                            <i class="material-icons">access_time</i> updated 1 minutes ago
                                         </div>
                                     </div>
                                 </div>
@@ -150,8 +148,7 @@
                                     </div>
                                     <div class="card-footer">
                                         <div class="stats">
-                                            <i class="material-icons text-success">add</i>
-                                            Create More Songs
+                                            <i class="material-icons">access_time</i> updated 2 minutes ago
                                         </div>
                                     </div>
                                 </div>

@@ -93,8 +93,7 @@
             <div class="content">
                 <div class="container-fluid">
 					<form method="post" action="admin.php">
-                        <input type="hidden" name="baihat_id" value="<?php echo $yeuthich->baihat_id; ?>">
-						<input type="hidden" name="user_id" value="<?php echo $yeuthich->user_id; ?>">
+						<input type="hidden" name="id" value="<?php echo $yeuthich->id; ?>">
 						<input type="hidden" name="c" value="yeuthich">
 						<input type="hidden" name="a" value="update">
 						<div class="row">   		
