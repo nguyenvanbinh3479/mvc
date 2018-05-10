@@ -1,7 +1,6 @@
 <?php if ( ! defined('PATH_PUBLIC')) die ('Bad requested!');
     require_once(PATH_PUBLIC . '/template/admin/header.php');
 ?>
-            
             <div class="content">
                 <div class="container-fluid">
 					<form method="post" action="">
