@@ -32,7 +32,7 @@
 <script src="public/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="public/js/material.min.js" type="text/javascript"></script>
 <!--  Charts Plugin -->
-<script src="public/js/chartist.min.1.js"></script>
+<script src="public/js/chartist.min.js"></script>
 <!--  Dynamic Elements plugin -->
 <script src="public/js/arrive.min.js"></script>
 <!--  PerfectScrollbar Library -->
