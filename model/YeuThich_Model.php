@@ -16,7 +16,6 @@ class YeuThich_Model{
 
 		while ($row = mysqli_fetch_assoc($result)){
             $yeuthich = new YeuThich_Model();
-            $yeuthich->id = $row['id'];
             $yeuthich->baihat_id = $row['baihat_id'];
             $yeuthich->user_id = $row['user_id'];
             $yeuthich->ngay = $row['ngay'];
@@ -46,7 +45,6 @@ class YeuThich_Model{
 
 		$row = mysqli_fetch_assoc($result);
         $yeuthich = new YeuThich_Model();
-        $yeuthich->id = $row['id'];
         $yeuthich->baihat_id = $row['baihat_id'];	
         $yeuthich->user_id = $row['user_id'];
         $yeuthich->ngay = $row['ngay'];

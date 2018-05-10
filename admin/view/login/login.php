@@ -21,7 +21,7 @@
     <div class="wrapper">
         <div class="sidebar" data-color="red" data-image="public/img/sidebar-2.jpg" >
             <div class="logo">
-                <a href="admin.php?c=login" class="simple-text">
+                <a href="https://quoctuan1998.github.io/" class="simple-text">
                     M.S.C - UNIVERSE
                 </a>
             </div>
@@ -47,7 +47,7 @@
                             <span class="icon-bar"></span>
                         </button>
                         <a class="navbar-brand" href="https://goo.gl/CYpD4c">Channel</a>
-                        <a class="navbar-brand" href="https://nguyenvanbinh3479.github.io/">Blog</a>
+                        <a class="navbar-brand" href="https://quoctuan1998.github.io/">Website</a>
                     </div>
                 </div>
             </nav>
@@ -83,7 +83,6 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <label><a href="admin.php?c=repass">Fogot password</a></label>
                                                     <div class="form-group label-floating">
                                                         <label class="control-label"> M.S.C Welcome to you</label>
                                                     </div>
@@ -109,8 +108,8 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="https://nguyenvanbinh3479.github.io/">
-                                    Blog
+                                <a href="https://quoctuan1998.github.io/">
+                                    Website
                                 </a>
                             </li>
                         </ul>
@@ -120,7 +119,7 @@
                         <script>
                             document.write(new Date().getFullYear())
                         </script>
-                        <a href="admin.php?c=login">M.S.C Universe</a>, made with love for all songs
+                        <a href="https://quoctuan1998.github.io/">M.S.C Universe</a>, made with love for all songs
                     </p>
                 </div>
             </footer>
