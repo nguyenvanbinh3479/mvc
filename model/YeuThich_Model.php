@@ -56,7 +56,7 @@ class YeuThich_Model{
 
 	public function delete(){
 		$conn = FT_Database::instance()->getConnection();
-		$sql = 'delete from yeuthichs where id='.$this->id;
+		$sql = 'delete from yeuthichs where baihat_id ='.$this->baihat_id . ' && user_id = ' . $this->user_id;
 		$result = mysqli_query($conn, $sql);
 
 		return $result;

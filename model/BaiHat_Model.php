@@ -179,5 +179,29 @@ class BaiHat_Model{
 		return $baihat;
 	}
 
+	public function showBaiHatYeuThichFromID($id){
+		$conn = FT_Database::instance()->getConnection();
+		$sql = "SELECT baihats.id, baihats.ten, casis.ten as 'ten_ca_si', baihats.anh, baihats.link FROM baihats, casis, yeuthichs WHERE baihats.casi_id = casis.id && baihats.id = yeuthichs.baihat_id && yeuthichs.user_id = " . $id;
+
+		$result = mysqli_query($conn, $sql);
+		$baihats = array();
+
+		if(!$result)
+			die('Error: ');
+
+		while ($row = mysqli_fetch_assoc($result)) {
+		    $baihat = new BaiHat_Model();
+		    $baihat->id = $row['id'];
+		    $baihat->ten = $row['ten'];
+		    $baihat->casi_id = $row['ten_ca_si'];
+		    $baihat->anh = $row['anh'];
+		    $baihat->link = $row['link'];
+
+		    array_push($baihats, $baihat);
+		}
+
+		return $baihats;
+	}
+
 }
  ?>
