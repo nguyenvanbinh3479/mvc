@@ -24,6 +24,9 @@ class Playlist_Model{
             $playlist->ten = $row['ten'];
 			$playlist->anh = $row['anh'];
 			$playlist->ngay = $row['ngay'];
+            $playlist->ten = $row['name'];
+			$playlist->anh = $row['anh'];
+			
             $list_playlist[] = $playlist;            
         }
 
