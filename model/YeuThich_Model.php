@@ -34,7 +34,7 @@ class YeuThich_Model{
 	      $stmt->close();
 	      return true;
 	    } else {
-	      $this->delete();
+	      //$this->delete();
 	      return false;
 	    }
 	}
@@ -55,6 +55,7 @@ class YeuThich_Model{
 	     }
   	}
 
+
     public function num_likes($baihat_id) {
 	    $conn = FT_Database::instance()->getConnection();
 	    $sql = "SELECT COUNT($baihat_id) as luot_like FROM yeuthichs WHERE baihat_id = $baihat_id";
@@ -68,10 +69,14 @@ class YeuThich_Model{
 
 	public function delete($baihat_id, $user_id){
 		$conn = FT_Database::instance()->getConnection();
-		$sql = 'delete from yeuthichs where baihat_id = '.$baihat_id.' AND user_id = '.$user_id;
-		$result = mysqli_query($conn, $sql);
+		if ($this->check_yeuthich_exists($this->baihat_id, $this->user_id) > 0){
+			$sql = 'delete from yeuthichs where baihat_id = '.$baihat_id.' AND user_id = '.$user_id;
+			mysqli_query($conn, $sql);
 
-		return $result;
+			return true;
+		}else {
+			return false;	
+		}
 	}
 
 }
