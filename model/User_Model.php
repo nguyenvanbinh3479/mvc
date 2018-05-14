@@ -127,4 +127,21 @@ class User_Model{
 
         return $user;
 	}
+
+	public function newPassword($id, $newpassword){
+		$conn = FT_Database::instance()->getConnection();
+		$checkID = $this->findById($id);
+
+		if ($checkID->id != 0) {
+			$sql = "UPDATE users set password = '" . $newpassword . "' WHERE users.id = " . $id;
+			$result = mysqli_query($conn, $sql);
+
+			if(!$result)
+			die('Error: ');
+
+			return 1;
+		}else {
+			return 0;
+		}
+	}
 }

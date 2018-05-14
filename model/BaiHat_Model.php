@@ -97,7 +97,8 @@ class BaiHat_Model{
      	if(!$result)
 			die('Error: '.mysqli_query_error());
 
-		while ($row = mysqli_fetch_assoc($result)){
+		if ($result->num_rows > 0) {
+			while ($row = mysqli_fetch_assoc($result)){
 			$baihat = new BaiHat_Model();
 	        $baihat->id = $row['id'];
 	        $baihat->ten = $row['tenbaihat'];
@@ -105,8 +106,12 @@ class BaiHat_Model{
 			$baihat->anh = $row['anh'];
 			$baihat->link = $row['link'];
 			array_push($list_baihat, $baihat); 
-        }
-        return $list_baihat;
+	        }
+	        return $list_baihat;
+		}else {
+			return 0;
+		}
+		
     }
 
     public function newMusic(){
@@ -134,7 +139,7 @@ class BaiHat_Model{
     public function findSongsFromPlaylist($id){
 		$conn = FT_Database::instance()->getConnection();
 
-		$sql ="SELECT baihats.id, baihats.ten, baihats.anh, casis.ten as 'ten_casi', baihats.link FROM baihats, chitietplaylist, casis WHERE chitietplaylist.id_baihat = baihats.id && baihats.casi_id = casis.id && chitietplaylist.id_playlist = " . $id;
+		$sql ="SELECT baihats.id, baihats.ten, baihats.anh, casis.ten as 'ten_casi', baihats.link FROM baihats, chitietplaylists, casis WHERE chitietplaylists.baihat_id = baihats.id && baihats.casi_id = casis.id && chitietplaylists.playlist_id = " . $id;
 		
 		$result = mysqli_query($conn, $sql);
 		$baihats = array();
@@ -142,7 +147,8 @@ class BaiHat_Model{
 		if(!$result)
 			die('Error: ');
 
-		while ($row = mysqli_fetch_assoc($result)) {
+		if ($result->num_rows > 0) {
+			while ($row = mysqli_fetch_assoc($result)) {
 		    $baihat = new BaiHat_Model();
 		    $baihat->id = $row['id'];
 		    $baihat->ten = $row['ten'];
@@ -151,6 +157,10 @@ class BaiHat_Model{
 		    $baihat->link = $row['link'];
 
 		    array_push($baihats, $baihat);
+		}
+		
+		}else {
+			return 0;
 		}
 		return $baihats;
 	}
@@ -165,18 +175,23 @@ class BaiHat_Model{
 		if(!$result)
 			die('Error: ');
 
-		$row = mysqli_fetch_assoc($result);
-		$baihat->id = $row['id'];
-		$baihat->casi_id = $row['ten_ca_si'];
-		$baihat->theloai_id = $row['ten_the_loai'];
-		$baihat->tacgia_id = $row['ten_tac_gia'];
-		$baihat->ten = $row['ten_bai_hat'];
-		$baihat->anh = $row['anh'];
-		$baihat->loi_bai_hat = $row['loi_bai_hat'];
-		$baihat->link = $row['link'];
-		$baihat->ngay = $row['ngay'];
+		if ($result->num_rows > 0) {
+			$row = mysqli_fetch_assoc($result);
+			$baihat->id = $row['id'];
+			$baihat->casi_id = $row['ten_ca_si'];
+			$baihat->theloai_id = $row['ten_the_loai'];
+			$baihat->tacgia_id = $row['ten_tac_gia'];
+			$baihat->ten = $row['ten_bai_hat'];
+			$baihat->anh = $row['anh'];
+			$baihat->loi_bai_hat = $row['loi_bai_hat'];
+			$baihat->link = $row['link'];
+			$baihat->ngay = $row['ngay'];
 
-		return $baihat;
+			return $baihat;
+		}else {
+			return 0;
+		}
+		
 	}
 
 	public function showBaiHatYeuThichFromID($id){
@@ -188,8 +203,8 @@ class BaiHat_Model{
 
 		if(!$result)
 			die('Error: ');
-
-		while ($row = mysqli_fetch_assoc($result)) {
+		if ($result->num_rows > 0) {
+			while ($row = mysqli_fetch_assoc($result)) {
 		    $baihat = new BaiHat_Model();
 		    $baihat->id = $row['id'];
 		    $baihat->ten = $row['ten'];
@@ -198,9 +213,56 @@ class BaiHat_Model{
 		    $baihat->link = $row['link'];
 
 		    array_push($baihats, $baihat);
+			}
+		return $baihats;
+		}else {
+			return 0;
 		}
 
-		return $baihats;
+	}
+
+	public function LuotNgheTuIDBaiHat($id){
+		$conn = FT_Database::instance()->getConnection();
+		$sql = "SELECT COUNT(luotnghes.user_id) as 'luotnghe' FROM luotnghes WHERE luotnghes.baihat_id = " . $id;
+		$result = mysqli_query($conn, $sql);
+		if(!$result)
+			die('Error: ');
+		if ($result->num_rows > 0) {
+			$result = mysqli_fetch_assoc($result);
+			return $result['luotnghe'];
+		}else {
+			return -1;
+		}
+	}
+
+	public function LuotThichTheoIDBaiHat($id){
+		$conn = FT_Database::instance()->getConnection();
+		$sql = "SELECT COUNT(yeuthichs.user_id) as 'luotthich' FROM yeuthichs WHERE yeuthichs.baihat_id = " . $id;
+		$result = mysqli_query($conn, $sql);
+		if(!$result)
+			die('Error: ');
+		if ($result->num_rows > 0) {
+			$result = mysqli_fetch_assoc($result);
+			return $result['luotthich'];
+		}else {
+			return -1;
+		}
+	}
+
+	public function getLyric($id){
+		$conn = FT_Database::instance()->getConnection();
+		$sql = "SELECT loi_bai_hat FROM baihats WHERE id = " . $id;
+	
+		$result = mysqli_query($conn, $sql);
+		if(!$result)
+		die('Error: ');
+
+		if ($result->num_rows > 0) {
+			$result = mysqli_fetch_assoc($result);
+			return $result['loi_bai_hat'];	
+		}else {
+			return 0;
+		}
 	}
 
 }

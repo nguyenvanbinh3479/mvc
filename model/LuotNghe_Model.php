@@ -70,22 +70,61 @@ class LuotNghe_Model{
 		$stmt->close();
 	}
 
-	public function login($baihat_id, $user_id)
-	{
-		$conn = FT_Database::instance()->getConnection();
-		$sql = "SELECT * FROM luotnghes WHERE baihat_id = '" . $baihat_id . "' and user_id = '" . $user_id . "'";
-		$result = mysqli_query($conn, $sql);
+	// public function login($baihat_id, $user_id)
+	// {
+	// 	$conn = FT_Database::instance()->getConnection();
+	// 	$sql = "SELECT * FROM luotnghes WHERE baihat_id = '" . $baihat_id . "' and user_id = '" . $user_id . "'";
+	// 	$result = mysqli_query($conn, $sql);
 
+	// 	if(!$result)
+	// 		die('Error: ');
+
+	// 	$row = mysqli_fetch_assoc($result);
+ //        $luotnghe = new LuotNghe_Model();
+ //        $luotnghe->id = $row['id'];
+ //        $luotnghe->baihat_id = $row['baihat_id'];
+ //        $luotnghe->user_id = $row['user_id'];
+ //        $luotnghe->ngay = $row['ngay'];
+
+ //        return $luotnghe;
+	// }
+
+	public function checkUser($user_id){
+		$conn = FT_Database::instance()->getConnection();
+		$sql = "SELECT * FROM users WHERE id = " . $user_id;
+		$result = mysqli_query($conn, $sql);
 		if(!$result)
 			die('Error: ');
+		if (mysqli_num_rows($result) > 0) {
+			return true;
+		}else {
+			return false;
+		}
+	}
 
-		$row = mysqli_fetch_assoc($result);
-        $luotnghe = new LuotNghe_Model();
-        $luotnghe->id = $row['id'];
-        $luotnghe->baihat_id = $row['baihat_id'];
-        $luotnghe->user_id = $row['user_id'];
-        $luotnghe->ngay = $row['ngay'];
+	public function checkBaiHat($baihat_id){
+		$conn = FT_Database::instance()->getConnection();
+		$sql = "SELECT * FROM baihats WHERE id = " . $baihat_id;
+		$result = mysqli_query($conn, $sql);
+		if(!$result)
+			die('Error: ');
+		if (mysqli_num_rows($result) > 0) {
+			return true;
+		}else {
+			return false;
+		}
+	}
 
-        return $luotnghe;
+	public function PlusMusic($baihat_id, $user_id, $ngay){
+		$conn = FT_Database::instance()->getConnection();
+
+		if ($this->checkUser($user_id) && $this->checkBaiHat($baihat_id)) {
+			$sql = "INSERT INTO luotnghes(baihat_id, user_id, ngay)
+			 VALUES(" . $baihat_id . "," . $user_id . "," . $ngay .") ";
+			 mysqli_query($conn, $sql);
+			 return 1;
+		}else {
+			return 0;
+		}
 	}
 }

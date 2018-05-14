@@ -15,7 +15,8 @@ class User_Controller extends Base_Controller {
 	public function login()
 	{
 		$json = [];
-
+		echo '{';
+		echo "\"user\":";
 		if (isset($_POST['email']) && isset($_POST['password'])) {
 			$email = $_POST['email'];
 			$password = $_POST['password'];
@@ -23,11 +24,8 @@ class User_Controller extends Base_Controller {
 			$this->model->load('User');
 			$result = $this->model->User->login($email, $password);
 
-			http_response_code(200);
 			if (isset($result->id)) {
-				echo '{';
-				echo "\"user\":";
-
+				http_response_code(200);
 				array_push($json, array(
 					'id' => $result->id,
 					'infor' => array(
@@ -39,7 +37,7 @@ class User_Controller extends Base_Controller {
 					'token' => $result->token
 					)
 				);
-				echo json_encode($json);
+				echo json_encode($json, JSON_UNESCAPED_UNICODE);
 
 				echo '}';
 			}
@@ -51,7 +49,7 @@ class User_Controller extends Base_Controller {
 	{
 
 		if (isset($_POST['email']) && isset($_POST['password'])) {
-
+			$json = [];
 			$this->model->load('User');
 	        $this->model->User->email = $_POST['email'];
 	        $this->model->User->password = $_POST['password'];
@@ -61,33 +59,42 @@ class User_Controller extends Base_Controller {
 	        $id = $this->model->User->save();
 
 	        if (isset($id) && $id != 0) {
-	        	echo "{\"register_success:[\"\"id:\"$id]}";
+	        	http_response_code(200);
+	        	array_push($json, [
+	        		"id" => $id
+	        	]);
 	        }else {
-	        	echo "{null}";
+	        	http_response_code(401);
+	        	array_push($json, [
+	        		'message' => 'false'
+	        	]);
 	        }
-
+	        echo json_encode($json, JSON_UNESCAPED_UNICODE);
 		}
 	}
 
 	public function newPassword()
 	{
+		$json = [];
 
-		if (isset($_POST['email']) && isset($_POST['password'])) {
-			$this->model->load('User');
-			$user = $ID = $this->model->User->findByEmail($_POST['email']);
+		$this->model->load('User');
+		$result = $this->model->User->newPassword($_POST['id'], $_POST['password']);
 
-			if (isset($user->id)) {
-				$this->model->load('User');
-				$this->model->User->id = $user->id;
-				$this->model->User->password = $_POST['password'];
-				$this->model->User->email = $user->email;
-				$this->model->User->role = $user->role;
-				$this->model->User->status = $user->status;
-				$this->model->User->token = $user->token;
-
-				$this->model->User->update();
-			}
+		if ($result > 0) {
+			echo "{";
+			echo "\"newPassword\":";
+			http_response_code(200);
+			array_push($json, [
+				"message" => "true"
+			]);
+		}else {
+			http_response_code(401);
+			array_push($json, [
+				'message' => 'false'
+			]);
 		}
+		echo json_encode($json, JSON_UNESCAPED_UNICODE);
+		echo '}';
 	}
 
 }
