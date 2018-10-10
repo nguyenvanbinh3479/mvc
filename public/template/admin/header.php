@@ -89,7 +89,7 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="admin.php?c=login">Logout</a>
+                                        <a @click="handleLogout()">Logout</a>
                                     </li>
                                 </ul>
                             </li>
@@ -107,3 +107,16 @@
                     </div>
                 </div>
             </nav>
+
+            
+<script>
+export default {
+  methods: {
+    handleLogout() {
+      this.$store.dispatch('logout').then(() => {
+        location.reload()// In order to re-instantiate the vue-router object to avoid bugs
+      })
+    },
+  }
+}
+</script>
