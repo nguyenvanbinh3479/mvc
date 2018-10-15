@@ -21,7 +21,7 @@
     <div class="wrapper">
         <div class="sidebar" data-color="red" data-image="public/img/sidebar-2.jpg" >
             <div class="logo">
-                <a href="https://quoctuan1998.github.io/" class="simple-text">
+                <a href="index.php" class="simple-text">
                     M.S.C - UNIVERSE
                 </a>
             </div>
@@ -47,7 +47,7 @@
                             <span class="icon-bar"></span>
                         </button>
                         <a class="navbar-brand" href="https://goo.gl/CYpD4c">Channel</a>
-                        <a class="navbar-brand" href="https://quoctuan1998.github.io/">Website</a>
+                        <a class="navbar-brand" href="index.php">Website</a>
                     </div>
                 </div>
             </nav>
@@ -108,7 +108,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="https://quoctuan1998.github.io/">
+                                <a href="index.php">
                                     Website
                                 </a>
                             </li>
@@ -119,7 +119,7 @@
                         <script>
                             document.write(new Date().getFullYear())
                         </script>
-                        <a href="https://quoctuan1998.github.io/">M.S.C Universe</a>, made with love for all songs
+                        <a href="index.php">M.S.C Universe</a>, made with love for all songs
                     </p>
                 </div>
             </footer>

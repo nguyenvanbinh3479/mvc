@@ -9,7 +9,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="https://quoctuan1998.github.io/">
+                                <a href="index.php">
                                     Website
                                 </a>
                             </li>
@@ -20,7 +20,7 @@
                         <script>
                             document.write(new Date().getFullYear())
                         </script>
-                        <a href="https://quoctuan1998.github.io/">M.S.C Universe</a>, made with love for all songs
+                        <a href="index.php">M.S.C Universe</a>, made with love for all songs
                     </p>
                 </div>
             </footer>

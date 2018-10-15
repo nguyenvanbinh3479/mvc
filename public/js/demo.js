@@ -248,8 +248,8 @@ demo = {
         marker.setMap(map);
     },
 
-    showNotification: function(from, align, URL) {
-        color = Math.floor((Math.random() * 1) + 1);
+    showNotification: function(from, align) {
+        color = green;
 
         $.notify({
             icon: "notifications",
@@ -263,7 +263,6 @@ demo = {
                 align: align
             }
         });
-        setTimeout( function() { window.location = URL }, 1000 );
     }
 
 
