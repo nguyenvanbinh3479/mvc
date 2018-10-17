@@ -3,10 +3,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="icon" type="image/png" href="public/img/icons/logo.png">
-        <link rel="stylesheet" href="public/css/index/styles.css">
+        <link rel="stylesheet" href="public/css/styles.css">
         <meta http-equiv="Content-Language" content="vi">
         <meta http-equiv="X-UA-Compatible" content="requiresActiveX=true">     
-		<link rel="stylesheet" href="public/css/index/bootstrap.min.css">
+		<link rel="stylesheet" href="public/css/bootstrap.min.css">
 		<script src="public/js/jquery-3.3.1.min.js"></script>
         <script src="public/js/bootstrap.min.js"></script>
         <!-- <script src="public/js/disable-copy.js"></script> -->
